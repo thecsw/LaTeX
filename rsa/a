@@ -1,0 +1,4 @@
+pdflatex rsa.tex
+bibtex rsa
+pdflatex rsa.tex
+pdflatex rsa.tex

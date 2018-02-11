@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, 12pt]{article}
 
 \usepackage{amsmath}
 \usepackage{url}
@@ -7,7 +7,8 @@
 \usepackage{hyperref}
 \usepackage{cite}
 \usepackage{color}
- 
+\usepackage{setspace}
+\doublespacing
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -34,16 +35,33 @@
  
 \lstset{style=mystyle}
 
-\title{Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?}
-\date{06-12-2018}
-\author{Sagindyk Urazayev}
+\title{Extended Essay. Mathematics.}
+%\date{06-12-2018}
+\date{}
+%\author{Sagindyk Urazayev}
 
 \begin{document}
 
-\maketitle
 \pagenumbering{gobble}
+
+\maketitle
+
+\begin{center}
+Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?
+\end{center}
+
+\begin{flushleft}
+\begin{figure}[b]
+  Session: May 2018\\
+  School number: 007055\\
+  Student number: 0004\\
+  Word count: UNKNOWN\\
+\end{figure}
+\end{flushleft}
+
 \newpage
-\pagenumbering{arabic}
+
+\pagenumbering{roman}
 
 \tableofcontents
 
@@ -51,7 +69,9 @@
 \listoftables
 \lstlistoflistings
 
+
 \newpage
+\pagenumbering{arabic}
 
 \begin{figure}[h!]
   \begin{center}
@@ -659,7 +679,7 @@ The average worst-case scenario is approximately $O(n^{1/4})$. In this Extended 
 other factorization methods will not be discussed.
 
 \newpage
-
+\singlespace
 \appendix
 \section{Extended Calculations from Decryption Process}
 \label{calc}
