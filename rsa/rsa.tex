@@ -1,8 +1,4 @@
 \documentclass[a4paper, 12pt]{article}
-
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{graphicx}
@@ -67,7 +63,7 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 \pagenumbering{roman}
 
 \tableofcontents
-
+\newpage
 \listoffigures
 \listoftables
 \lstlistoflistings
@@ -90,7 +86,9 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 By starting this Extended Essay with a lovely web-comic by Randall Munroe, one can guess that the "4096-BIT RSA" sounds like it is tough to crack.
 However, what is "RSA" and how does it work that even a "MILLION-DOLLAR CLUSTER" is not enough to crack it?\\
 The research question of this Extended Essay is - "Does RSA provide secure data transmission
-and confidential certificate signatures?" This Extended Essay will explore the history of RSA
+and confidential certificate signatures?"
+
+This Extended Essay will explore the history of RSA
 algorithm, the structure of the cryptographic technique, usage of it and ways to crack the algorithm.
 For the sake of demonstration and proof, I have written several programs in C Language\cite{Clang} that can help us to understand the process "behind the curtains". After all these parts, in the end, we can conclude how RSA technique is secure.
 \end{abstract}
@@ -99,11 +97,11 @@ For the sake of demonstration and proof, I have written several programs in C La
 \label{sec:introduction}
 
 First time when I heard about RSA technique, was during the ITGS class in IB course. In ITGS
-Course Companion "Information Technology in a Global Society" by Stuart Gray, there is a
+Course Companion\cite{itgs} there is a
 chapter about Security and Secret Key Encryptions. As an example, the author included two cases
 of encryption: Symmetric Key Encryption or Single Key Encryption and Asymmetric key
-encryption, more known as Public Key Encryption Information Technology in a Global Society.
-Stuart Gray. Page 107.
+encryption, more known as Public Key Encryption.
+
 During the lesson, the fact that a message can be encrypted by one key and only a second key can
 decrypt the message intrigued me. After that, I did some research on asymmetric encryptions,
 particularly about RSA and other cryptographic technique based on it. I found that RSA is not only
@@ -111,6 +109,7 @@ used for messages encryption, but also for signing online certificates to prove 
 chose this topic for my Extended Essay because I believe the Mathematics in the algorithm is
 simple and elegant; also, it is safe to say that RSA is used everywhere and the Internet trust relies
 on this particular algorithm.
+
 RSA encryption algorithm is essential if not the most critical security algorithm today, as nearly
 every system in the world uses this asymmetric encryption technique to encrypt and decrypt data.
 In this Extended Essay, I will be researching the methods of RSA: the way the algorithm works,
@@ -131,23 +130,25 @@ need for secrecy.
 
 First records of known cryptographic techniques go back to the times that were Before the
 Common Era, in the times Julius Caesar. Caesar cypher or Caesar's code is one the first methods
-of encrypting texts. Relatively, it is straightforward and taught in schools for critical thinking and
-mental abilities. It works in a way that there are a text and a key, where the key is an integer value.\\
+of encrypting texts. It works in a way that there are a text and a key, where the key is an integer value.
+
 The key shows a shift of letters in the document according to the Latin alphabet. For example, if
 the key is two, then the first letter of the alphabet will become third, the second will become forth
 and so on. During his lifetime, Julius Caesar mostly used three as a shift to protect messages of
-military significance. 
+military significance.\cite{singh}
 
 \subsection{Enigma Machine}
 \label{bsec:enigma_machine}
 
 We can say for sure that the moment, when encryption was the tool of secretly transmitting data
 so important and valuable that lives of thousands of people depended on how well that information
-is transferred from one end to another, is World War II. Enigma machine was the German
+is transferred from one end to another, is World War II.
+
+Enigma machine was the German
 perfection of cryptography and engineering, the device so small and so complex, that it produced
-2code, which was considered as impossible to crack. However, during the war, a brilliant
+code, which was considered as impossible to crack. However, during the war, a brilliant
 mathematician and cryptographer Alan Turing found a flaw in Enigma Machine and was able to
-build the first computer to exploit the system's vulnerability.
+build the first computer to exploit the system's vulnerability\cite{enigma}.
 
 \subsection{Flaw in Symmetric Cryptography}
 \label{bsec:flaw}
@@ -155,8 +156,7 @@ build the first computer to exploit the system's vulnerability.
 All existing algorithms had one most significant vulnerability in all of them- both ends should have
 known the key or secret passphrase, which is used to encrypt and decrypt messages. In the example
 with Enigma machine, German radio operators had a book with Enigma codes for the next month,
-and it was a massive risk if hostile troops possess the codes. It is a flaw in every symmetric
-cryptography algorithms.
+and it was a massive risk if hostile troops possess the codes. 
 
 \subsection{Whitfield Diffie and Martin Hellman}
 \label{bsec:diffie}
@@ -167,9 +167,9 @@ Singh, there is a story about how these cryptographers came up with the idea of 
 encryption: “I walked downstairs to get a Coke, and almost forgot about the idea. I remembered
 that I'd been thinking about something interesting, but couldn't quite recall what it was. Then it
 came back in a real adrenaline rush of excitement. I was aware for the first time in my work on
-cryptography of having discovered something really valuable.” \cite{singh} \\
-They have discovered a
-revolutionary type of cypher – asymmetric cryptography. This means that it solved the problem of
+cryptography of having discovered something really valuable.” \cite{singh}
+
+They have discovered a revolutionary type of cyphering – asymmetric cryptography. This means that it solved the problem of
 single key encryption, where encoder and decoder needed to know the passphrase. The work of
 the algorithm is described in part \ref{bsec:asymmetric}. Unfortunately, they did not find a one-way function for
 solving the problem, they have published the concept in 1976 and left it open.
@@ -185,10 +185,12 @@ all the latest scientific papers and with an ability to implement something new 
 Shamir is also a computer scientist with a lightning intellect and ability to directly focus on the
 core of the problem. Adleman was a mathematician with broad knowledge and patience, so during
 the research, he was finding flaws in the works of Rivest and Shamir, and ensured that
-cryptographers did not follow a false lead. A year later Ron Rivest with the help of Adi Shamir
+cryptographers did not follow a false lead.\cite{singh}
+
+A year later Ron Rivest with the help of Adi Shamir
 and Leonard Adleman has made a breakthrough by finding the desired one-way function, thus
 solving the problem of symmetric encryptions. In August 1977, the trio published a full paper
-about the new asymmetric encryption technique, which was named after its creators- R.S.A.
+about the new asymmetric encryption technique, which was named after its creators- R.S.A.\cite{rsapaper}
 
 \section{The Usage of RSA}
 \label{sec:usage}
@@ -197,15 +199,10 @@ As an algorithm and cryptographic technique, RSA is brilliant without a doubt. I
 that RSA and its versions are used everywhere in our digital world. It is crucial for modern
 cryptography techniques to be sophisticated for computers to brute-force but not too complicated
 and inefficient for computers to encrypt and decrypt data. RSA is located right in the middle, as
-the operations do need good computational resources to encrypt data efficiently, but there are
-various optimizations for the system's speed, which will be discussed in part \ref{sec:math}. To show the work
-and the functioning of the algorithm, three types of cryptography techniques will be displayed:
-single key encryption, RSA and Pretty Good Privacy. Single key encryption is the basic symmetric
-encryption with one key to encrypt and decrypt. RSA is the form of asymmetric encryption with
-two separate keys, where one is for encryption and the second one for decryption, also works vice
-versa. "Pretty Good Privacy" or PGP is a technology that combines symmetric encryption and
-asymmetric encryption techniques to make the process of encrypting more efficient and faster.
-More detailed information about PGP in \ref{bbsec:pgp}.
+the operations performed in \ref{sec:math} do not need a lot of computational power but to attack it requires a lot of it.\ref{sec:security}
+
+To demonstrate the work and the functionalities of the algorithm, three types of cryptography techniques will be displayed:
+single key encryption, RSA and Pretty Good Privacy.
 
 \subsection{Symmetric Encryption}
 \label{bsec:symmetry}
@@ -213,56 +210,59 @@ More detailed information about PGP in \ref{bbsec:pgp}.
 This type of encrypting and decrypting algorithms is the oldest way to cypher data. It works with
 one key, one text and two ends. On the first end, there is an encoder, who cyphers the text with a
 known key and then sends the encrypted data to the other end, decoder, who later decrypts text
-with the same key. The example with Blowfish symmetric encryption algorithm with key
+with the same key. The example with Blowfish\cite{blowfish} algorithm with key
 “jeopardize” can be seen below in Figure \ref{fig:symmetric}.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=\textwidth]{symmetric.png}
+    \includegraphics[width=\textwidth]{symmetric.png}1
     \caption{Example of Symmetric Encryption}
     \label{fig:symmetric}
     \end{center}
   \end{figure}
 
-The algorithm is stable, and it would be tough to brute-force the key and decipher the text, but the
-downside is that both ends of the transmission should know the shared key. In the scenario where
-people have, met and shared the encryption key in real life there is no danger that someone can
-steal the shared key and decrypt the message. The problem arises when we have a scenario where
-one end is a server with an unknown location, the second end with a group of users and an
-eavesdropper in the middle. Both ends want to transmit data securely, so the eavesdropper in the
-middle will not understand the contents of the transmitted information. In this scenario, it is
-impossible to transmit data securely, because, to decrypt text messages, both ends should know
+The downside is that both ends of the transmission should know the shared key. In the scenario where
+people have met and shared the encryption key in real life, there is no danger that someone can
+steal the shared key and decrypt transmissions. The problem arises when we have a scenario where
+parties on both ends never talked with each other and are located on distinct physical locations.
+Both ends want to transmit data securely, so the eavesdropper in the
+middle will not understand the contents of the transmitted information.
+
+In this scenario, it is
+impossible to transmit data securely, because to decrypt text messages, both ends should know
 the same key. Before the conversation, one end should send the key to the other end; however,
 the eavesdropper will be able to "sniff" the key and will be able to understand all further encrypted
-transmissions, thus making the whole system not secure. Asymmetric encryption algorithms can
-solve the current problem.
+transmissions, thus compromising all further interactions.
 
 \subsection{Asymmetric Encryption}
 \label{bsec:asymmetric}
 
-As I have mentioned in \ref{sec:usage}, asymmetric encryption relies on two distinct keys, where one is
-used for encrypting data and the second one is for decrypting data that was decoded by its pair.
+Asymmetric encryption relies on two distinct keys, where one is
+used for encrypting data and the second one is for decrypting data that was decoded by its unique pair.
 Keys for encrypting and decrypting are called public and private, respectively. There are two ways
-of using RSA: to send an encrypted message to the decoder to read and signing certificates for
+of using RSA: to send an encrypted message to the decoder and signing certificates for
 proving one's identity.
 
 \subsubsection{Encrypting Messages}
 \label{bbsec:encryption}
 
 Every user has a pair of connected keys: a public key and private key. The public key is available
-to everyone while the private key is available only to one person, to the owner of the unique pair
+to everyone while the private key should be kept private to the owner of the unique pair
 of keys. It is a preferred way of encryption; because both ends do not need to exchange the secret
 key, they would already know the required part of the pair to transmit messages securely.
-Continuing from part \ref{bsec:asymmetric}, this is widely used for servers and users. Imagine a scenario with three
+Continuing from part \ref{bsec:asymmetric}, this is widely used for secure data transmissions.
+
+Imagine a scenario with three
 users: Hal, Dave and Eavesdropper. If Hal wants to send a message to Dave, Hal should use Dave's
 public key and encrypt the desired message, later Hal sends an encrypted message to Dave. As
 eavesdropper is sitting in the middle of Hal and Dave's transmission line, he can intercept the
 transmitted data, make a copy of it and send it forward to Dave, thus having a copy of the letter.
 Now, Dave and Eavesdropper have the encrypted message from Hal. Dave, using his private key
 that is available only to him, can decrypt the message from Hal and read the contents. Fortunately,
-the eavesdropper has access only to Dave's public key and not to his private key, so he has no way
-of decrypting the message's contents. The transmission is shown below
-in Figure \ref{fig:asymmetric}.
+the eavesdropper has access only to Dave's public key and not to his private key, so he is not able to read
+message's contents.
+
+The transmission is shown in Figure \ref{fig:asymmetric}.
 
 \begin{figure}[h!]
   \begin{center}
@@ -275,23 +275,19 @@ in Figure \ref{fig:asymmetric}.
 \subsubsection{Signing Certificates}
 \label{bbsec:signing}
 
-Asymmetric encryption, mainly RSA has Authentication Mode, used for proving one's identity. If
-during the data encryption, we use the public key for encrypting and private key for decrypting,
-during Authentication Mode the message is encoded by the private key and decoded by the public
-key. Let us imagine a scenario, where Hal sends Dave a message and uses Dave's message to
-encrypt the message. On the other hand, Dave does not believe or is not sure that it is Hal, who is
-sending a message. Hal can confirm his identity by signing a message with his private key and
-send it to Dave. Dave can decipher the received message using Hal's public key, and if the
-decrypted message matches the original content, then it is genuinely Hal. Figure \ref{fig:certificate}
-shows the process of signing certificates and proving one's identity.
+RSA encryption and decryption works in both ways, so a
+message can be encrypted by public key and decrypted by private key and vice versa.
 
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[width=\textwidth]{certificate.png}
-    \caption{Example of Usage of Asymmetric Encryption in Process of Signing Certificates}
-    \label{fig:certificate}
-    \end{center}
-  \end{figure}
+Imagine a scenario, whem Hal wants to send an email to Stanley. The problem is that Hal is not sure
+if Stanley is indeed Stanley and not a thief who stole Stanley's identity. To resolve the issue, RSA
+technique should be used. 
+
+Hal and Stanley have a common friend - Dave. Dave can prove Stanley's identity by signing Stanley's
+public key with his private key. Later, Hal can decrypt Stanley's public key with Dave's public key.
+With this, Hal would be confident about Stanley's identity.
+
+This whole process is based on trust. If Person A will sign a key of an untrusted entity, Person B, all other parties
+would lose trust in Person A as he compromised secure network by signing unknown public key.
 
 \subsection{Pretty Good Privacy}
 \label{bbsec:pgp}
@@ -306,8 +302,7 @@ operation due to mathematical functions will take an enormous amount of time. In
 encrypts the book with symmetric encryption, which is fast. Later encrypts the symmetric
 encryption key with Dave’s public key, and then sends the encrypted data with an encrypted key
 to Dave. Dave can decrypt the symmetric key and later with the decrypted single key, he can
-decipher the book in a quite fast manner. PGP is included here to give an example, how RSA can
-be used in other cryptographic techniques to ensure efficiency and quality.
+decipher the book in a quite fast manner.
 
 \section{Mathematical Foundation of RSA}
 \label{sec:math}
@@ -343,7 +338,7 @@ number of totatives will be $p - 1$, as no integers share same multiples with $p
 \label{bsec:gcd}
 
 Greatest common divisor, using the notation $gcd(a,b)=c$, means that and b share some common
-divisors and where $c$ is the largest divisor. For an example: $gcd(24,9)=3$. If we have an
+divisors and where $c$ is the largest divisor. For example: $gcd(24,9)=3$. If we have an
 expression that $gcd(d,e)=1$, it means that d and e are coprime because they are both integrally
 divisible only by one.
 
@@ -460,6 +455,7 @@ some of the calculations by hand, after 4th step, I will use Wolfram Alpha to co
       \item Choosing the right public exponential $e$ is very important because we want the encryption
 process to be fast, for that, we should pick a secure and reasonably small value. For this
 example, $e=7$
+
 \item Now we should find the private exponent
   \begin{align*}
     d \times e &\equiv 1 \bmod(\varphi(n))\\
@@ -587,16 +583,16 @@ the world are trying to factor values of $n$, thus meaning finding initial prime
 
 RSA Factoring Challenge is a challenge by RSA Laboratories. They have calculated multiple n on
 a computer with no network connection and all the hard are destroyed in order to keep $p$ and $q$ a
-secret.\\
+secret.
 
 The factoring is a very big mathematical challenge, because in general we will need to brute-force
-all possible combination and find the correct match.\\
+all possible combination and find the correct match.
 
 \subsection{Full Brute-Force}
 \label{bsec:full}
 
 Full brute-force algorithm will try all $p$ and $q$ number from 2 to n and will try to find a match. My
-implementation of this algorithm can be found in Appendix 6. Generally, the algorithm runs two
+implementation of this algorithm can be found in Appendix \ref{fullbrute}. Generally, the algorithm runs two
 nested loops, each with n steps. The performance can be described as $O(n^2)$, where $n^2$ is the
 expected number of calculations required during the worst-case scenario.
 This algorithm is very slow, for example, some $n$ with a value of
@@ -614,7 +610,7 @@ And when converted to years
   \end{equation*}
 
 In worst-case scenario, it would take the algorithm approximately 76 hours to factorize 9237079. The time spent on factorizing
-will be increasing exponentially and very rapidly, so full brute-force can’t be used to effectively factorize
+will be increasing exponentially and very rapidly, so full brute-force cannot be used to effectively factorize
 moduli.\\
 
 For the sake of demonstration, I wrote a program in C that factorizes input number by using all integers. When the program
@@ -629,14 +625,14 @@ finds the correct match, it exists, so it would not spend time on further calcul
   \end{lstlisting}
 \end{center}
 
-It took the computer only 60 seconds, because the executed algorithm used best-case scenario and was optimized.
+It took the computer only 60 seconds, because the executed algorithm used best-case scenario and was optimized.\cite{github}
 
 \subsection{Brute-Force Only With Prime Numbers}
 \label{bsec:primes}
 
-The algorithm in part 5.1 is too slow, because it loops through all numbers less than $n$ for all
+The algorithm in part \ref{bsec:full} is too slow, because it loops through all numbers less than $n$ for all
 numbers that are less than $n$. We know that p and q are primes, so instead of looping through all
-numbers below $n$, we can loop only through prime numbers that are less than $n$.\\
+numbers below $n$, we can parse only through prime numbers that are less than $n$.\\
 Unfortunately, there is no formula to find the exact number of prime numbers before $n$ - $\pi(x)$, we will need to use
 the formula from Prime Number Theorem that approximates number of primes that less than $n$\cite{pi}.
 
@@ -659,8 +655,8 @@ input and find its primes. For full description of the code, please refer to its
   The results and additional data :
       Number of primes generated to factorize 9237079 : 617252
       Prime index of p (2351) : 349
-	  Prime index of q (3929) : 545
-
+      Prime index of q (3929) : 545
+      
   Execution time in seconds : 2.484568
   \end{lstlisting}
 
@@ -670,16 +666,34 @@ For more details, please refer to my GitHub with the open code, comments and doc
 \subsection{Fast Factorizing Algorithm}
 \label{bsec:fast}
 
-There are fast factoring algorithms, for example as described in original paper about RSA by R.
-Rivest, A. Shamir and L. Adleman “A Method for Obtaining Digital Signatures and Public-Key
-Cryptosystems”, they suggest factoring algorithm by Richard Schroeppel
+There are fast factoring algorithms, for example as described in original RSA paper\cite{rsapaper},
+they suggest factoring algorithm by Richard Schroeppel
 
 \begin{equation}
   (ln(n))^{\sqrt{\frac{lnln(n)}{ln(n)}}}\\
   \end{equation}
 
-The average worst-case scenario is approximately $O(n^{1/4})$. In this Extended Essay,
-other factorization methods will not be discussed.
+The average worst-case scenario is approximately $O(n^{1/4})$. Even for fastest algorithms, the difficulty
+of breaking the key will rise expenonteially with each new digit. Table \ref{table:rsa} shows the performance of one of the fastest factoring algortihms.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{l l l}
+      
+  \label{table:rsa}
+    \textit{Digits} & \textit{Number of operations} & \textit{Time}\\
+    50 & $1.4 \times 10^{10}$ & 3.9 hours\\
+    75 & $9.0 \times 10^{12}$ & 104 days\\
+    100 & $2.3 \times 10^{15}$ & 74 years\\
+    200 & $1.2 \times 10^{23}$ & $3.8 \times 10^9$ years\\
+    300 & $1.5 \times 10^{29}$ & $4.9 \times 10^{15}$ years\\
+    500 & $1.3 \times 10^{39}$ & $4.2 \times 10^{25}$ years\\
+  \end{tabular}
+  \caption{Relationship between factoring time and number of digits in modulo n.\cite{rsapaper}}
+  \end{center}
+  \end{table}
+
+In this Extended Essay, other factorization methods will not be discussed.
 
 \newpage
 \singlespace
@@ -924,7 +938,7 @@ Exiting...
 
 \newpage
 \section{Factorization with Integers (Source Code)}
-
+\label{fullbrute}
 Full code with documentation is available on my Github page.\cite{github}\\
 
 \begin{lstlisting}[language=C, caption=Source Code of rsa-with-integers.c]
