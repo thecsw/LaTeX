@@ -1,0 +1,48 @@
+\documentclass[a4]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage{xspace} 
+\usepackage{amsmath}
+
+\title{Criterion A - Planning}
+\author{Sagindyk Urazayev}
+\date{14-06-2017}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Defining the problem}
+
+My client (Yerken Shantayev) is an owner of the company, which sells coffee powder. He calculates and stores his employees’ names, surnames, education level, and performance level, number of skipped days, salaries and premiums using just a piece of paper and a pen. Each employee should have its own record in the database, so data could be easily accessed, processed and updated. Firstly, my client needs a well-organized database with all his employees’ records. The application should be able to calculate the salary for all employees and premium, depending on salary budget and employees’ data. In addition, my client wished to have an option to build graphs, so he can see all incomes in a comfortable way, so it will be easier to compare records with each other. My clients’ company should pay its taxes and other obligations, so every month they should pass the accountant books with employees’ names, their info, and money spent on employees’ salaries and premiums. The application should have an option to output a report, which will be used as accountants’ book. Soon my client is hiring an accountant and new supervisor; he needs the application to have different access levels. In case of an integrity issue, Yerken Shantayev wants to see all the activity in the application, so he wants log files.
+
+\section{Justification for the proposed product}
+
+I have decided to use C\# as the programming language and Microsoft Visual Studio as Integrated Development Environment. This language will create an executable file, so any windows machine can run it.\\
+
+Firstly, for my client the executable file will be the best way to launch the application because my client has Windows as an operating system on his main computer C\# can support charts, graph-plotting, timers, editing and other techniques can be applied. With the Visual Studios’ Windows Form option, it is easy to create a user-friendly design with a huge variety of different text boxes, buttons, labels etc. \\
+
+Secondly, to run my application, my client would not need any additional installations or packets, except the dynamic link library file in the folder. My application would need around 50 MB of RAM. Thanks to C\# automatic garbage collection, my application will dump all garbage and reclaim memory occupied by objects, which are no longer in use.\\
+
+\section{Success Criteria}
+
+\begin{enumerate}
+    \item Make a login window, where the user can write his/her name, honorific and position, so the application will greet the user correctly and grant appropriate access level.
+    \item Create a list view item with “Add”, “Edit” and “Delete” buttons, so the user will be able to add, edit and delete records from the database.
+    \item Create a “Calculate” option to calculate the salary for all employees; also, it will calculate all statistical data, as median, average, standard deviation, and interquartile range, lower and upper quartile.
+    \item Create an option to calculate the salary with or without premium included, when it is active, part of the budget will be distributed between salary budget and premium budget.
+    \item Create a sort option. When all salaries are calculated, this option will sort them all in descending order and update the database to show new list.
+    \item	Make an option to open graphs, which will open new windows with graphs on it, graphs are being built using the data from the records.
+    \item	In the graphs window, add several buttons, each will activate different graph type and redraw the graph in the window.
+    \item	Implement an automatic saving and automatic upload from the data file.
+    \item	Make an option to add a photo to each record and if the photo is missing, replace the profile photo with default “missing” avatar.
+    \item	Create an option to output full report file, which will include the budget information, all records data and statistics data.
+    \item   Enable log files, so all activities and events in the application will be tracked, registered and saved into a separate log file.
+    \item	Support different localizations: Russian and English.
+\end{enumerate}
+\end{document}

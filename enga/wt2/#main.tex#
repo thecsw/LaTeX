@@ -1,0 +1,16 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\doublespacing
+\title{English A Language & Literature. Written Task 2}
+\date{}
+\author{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\begin{center}
+  
+  \end{center}
+\newpage
+
+  \end{document}
