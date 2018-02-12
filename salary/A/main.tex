@@ -6,22 +6,22 @@
 \usepackage{subcaption}
 \usepackage{xspace} 
 \usepackage{amsmath}
-
+\usepackage{setspace}
 \title{Criterion A - Planning}
 \author{Sagindyk Urazayev}
 \date{14-06-2017}
 
 \begin{document}
-
-\maketitle
+\doublespacing
+%\maketitle
 
 \newpage
 
-\section{Defining the problem}
+\section*{Defining the problem}
 
 My client (Yerken Shantayev) is an owner of the company, which sells coffee powder. He calculates and stores his employees’ names, surnames, education level, and performance level, number of skipped days, salaries and premiums using just a piece of paper and a pen. Each employee should have its own record in the database, so data could be easily accessed, processed and updated. Firstly, my client needs a well-organized database with all his employees’ records. The application should be able to calculate the salary for all employees and premium, depending on salary budget and employees’ data. In addition, my client wished to have an option to build graphs, so he can see all incomes in a comfortable way, so it will be easier to compare records with each other. My clients’ company should pay its taxes and other obligations, so every month they should pass the accountant books with employees’ names, their info, and money spent on employees’ salaries and premiums. The application should have an option to output a report, which will be used as accountants’ book. Soon my client is hiring an accountant and new supervisor; he needs the application to have different access levels. In case of an integrity issue, Yerken Shantayev wants to see all the activity in the application, so he wants log files.
 
-\section{Justification for the proposed product}
+\section*{Justification for the proposed product}
 
 I have decided to use C\# as the programming language and Microsoft Visual Studio as Integrated Development Environment. This language will create an executable file, so any windows machine can run it.\\
 
@@ -29,7 +29,7 @@ Firstly, for my client the executable file will be the best way to launch the ap
 
 Secondly, to run my application, my client would not need any additional installations or packets, except the dynamic link library file in the folder. My application would need around 50 MB of RAM. Thanks to C\# automatic garbage collection, my application will dump all garbage and reclaim memory occupied by objects, which are no longer in use.\\
 
-\section{Success Criteria}
+\section*{Success Criteria}
 
 \begin{enumerate}
     \item Make a login window, where the user can write his/her name, honorific and position, so the application will greet the user correctly and grant appropriate access level.
