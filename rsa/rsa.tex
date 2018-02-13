@@ -52,8 +52,8 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 \begin{flushleft}
 \begin{figure}[b]
   Session: May 2018\\
-  School number: 007055\\
-  Student number: 0004\\
+%  School number: 007055\\
+%  Student number: 0004\\
   Word count: UNKNOWN\\
 \end{figure}
 \end{flushleft}
@@ -582,13 +582,13 @@ nested loops, each with n steps. The performance can be described as $O(n^2)$, w
 expected number of calculations required during the worst-case scenario.
 This algorithm is very slow, for example, some $n$ with a value of
 9237079 will require $9237079^2 = 85323628452241$ steps, which will take the system from
-Appendix 4 approximately
+Appendix \ref{specs} approximately
 
 \begin{equation*}
   \frac{9237079^2 \text{ operations}}{ 310984726 \text{ operations per second}} = 274365 \text{ seconds}\\
   \end{equation*}
 
-And when converted to years
+And when converted to hours
 
 \begin{equation*}
   274365 \text{ seconds}=\frac{274365 \text{ seconds}}{3600  \text{ seconds in one hour}} \approx 76.21 \text{ hours}\\
@@ -631,7 +631,7 @@ It is expected for the worst-case performance to be $O(\pi(n)^2)$ or $O((\frac{n
 Because this algorithm loops only prime
 numbers, it would need to go through fewer number of iterations, thus making the algorithm more efficient.
 In order to demonstrate the work of the algorithm, I have written another C program that will factorize
-input and find its primes. For full description of the code, please refer to its documentation.
+input and find its primes.
 
 \begin{lstlisting}[caption=Demonstartion of Prime Factorization with Primes]
   $ ./factor_with_primes 9237079
@@ -655,7 +655,7 @@ There are fast factoring algorithms, for example as described in original RSA pa
 they suggest factoring algorithm by Richard Schroeppel
 
 \begin{equation}
-  (ln(n))^{\sqrt{\frac{lnln(n)}{ln(n)}}}\\
+  (ln(n))^{\sqrt{\frac{ln(n)}{ln(ln(n))}}}\\
   \end{equation}
 
 The average worst-case scenario is approximately $O(n^{1/4})$. Even for fastest algorithms, the difficulty
@@ -683,7 +683,7 @@ In this Extended Essay, other factorization methods will not be discussed.
 
 \section{Conclusion}
 
-Hurray!
+After thorough research and 
 
 \newpage
 \singlespace
@@ -750,8 +750,7 @@ programs\cite{github} in this Extended Essay.
           `NMM/ 
           +MN:                               
           mh. 
-         -/ 
-
+         -/          
   \end{lstlisting}
 
 \newpage 
@@ -759,7 +758,7 @@ programs\cite{github} in this Extended Essay.
 \section{Encryption and Decryption with RSA (Source Code)}
 \label{big}
 The program is written in C\cite{Clang} language to demonstrate RSA cryptographic technique
-with GMP\cite{gmp}, the library allows C to allocate memory for variables with values more than $2 ^{32} − 1$.\\
+with GMP\cite{gmp}, the library allows C to allocate memory for variables with values more than $2 ^{32} - 1$.\\
 
 The extended version of the program with comments and documentation is available\cite{github}.
 
