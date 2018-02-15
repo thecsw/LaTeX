@@ -54,7 +54,7 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
   Session: May 2018\\
 %  School number: 007055\\
 %  Student number: 0004\\
-  Word count: UNKNOWN\\
+  Word count: 3990\\
 \end{figure}
 \end{flushleft}
 
@@ -90,7 +90,7 @@ and confidential certificate signatures?"
 
 This Extended Essay will explore the history of RSA
 algorithm, the structure of the cryptographic technique, usage of it and ways to crack the algorithm.
-For the sake of demonstration and proof, I have written several programs in C Language\cite{Clang} that can help us to understand the process "behind the curtains". After all these parts, in the end, we can conclude how RSA technique is secure.
+For the sake of demonstration and proof, I have written several programs in C Language\cite{Clang} that can help us to understand the process "behind the curtains". After all these parts, at the end, we can conclude how RSA technique is secure.
 \end{abstract}
 
 \section{Introduction}
@@ -672,7 +672,7 @@ of breaking the key will rise expenonteially with each new digit. Table \ref{tab
     300 & $1.5 \times 10^{29}$ & $4.9 \times 10^{15}$ years\\
     500 & $1.3 \times 10^{39}$ & $4.2 \times 10^{25}$ years\\
     \end{tabular}
-  \caption{Relationship between factoring time and number of digits in modulo n.\cite{rsapaper}}
+  \caption{Relationship between factoring time and number of digits in moduli.\cite{rsapaper}}
   \label{table:rsa}
   \end{center}
   \end{table}
@@ -683,7 +683,11 @@ In this Extended Essay, other factorization methods will not be discussed.
 
 \section{Conclusion}
 
-After thorough research and 
+The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works\ref{sec:usage} \ref{bsec:asymmetric} \ref{sec:math} \ref{sec:rsa} and how it can be hacked\ref{sec:security}.
+
+Throughout the investigation we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by slightly increasing size of the moduli.
+
+Over the last decades, RSA has proven its stability and efficiency, therefore it is actively used by almost all companies and organizations to ensure one's privacy and prove identity of users, thus increasing the overall trust on the web and making the world a safer place.\\ 
 
 \newpage
 \singlespace
@@ -881,7 +885,7 @@ int main(int argc, char** argv) {
 \newpage
 
 \section{Result of Execution of rsa.c Demonstration Program}
-
+\label{result}
 \begin{lstlisting}[caption=Output from the Execution of rsa.c]
 $ ./rsa 9516311845790656153499716760847001433441357 65537 5617843187844953170308463622230283376298685 "The cake is a lie."
 
@@ -970,7 +974,7 @@ int main(int argc, char** argv) {
 \end{lstlisting}
 \newpage
 \section{Factorization with Primes (Source Code)}
-
+\label{primes}
 Program to factor input and find two primes.\\
 
 Full code with documentation is available on my Github page.\cite{github}\\
