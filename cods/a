@@ -1,0 +1,4 @@
+pdflatex cods.tex
+bibtex cods
+pdflatex cods.tex
+pdflatex cods.tex
