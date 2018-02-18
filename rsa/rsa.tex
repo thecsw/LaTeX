@@ -54,7 +54,7 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
   Session: May 2018\\
 %  School number: 007055\\
 %  Student number: 0004\\
-  Word count: 3990\\
+  Word count: 3996\\
 \end{figure}
 \end{flushleft}
 
@@ -83,7 +83,7 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 \begin{abstract}
 \label{sec:abstract}
 
-By starting this Extended Essay with a lovely web-comic by Randall Munroe, one can guess that the "4096-BIT RSA" sounds like it is tough to crack.
+By starting this Extended Essay with a lovely webcomic by Randall Munroe, one can guess that the "4096-BIT RSA" sounds like it is tough to crack.
 However, what is "RSA" and how does it work that even a "MILLION-DOLLAR CLUSTER" is not enough to crack it?\\
 The research question of this Extended Essay is - "Does RSA provide secure data transmission
 and confidential certificate signatures?"
@@ -174,13 +174,13 @@ single key encryption, where encoder and decoder needed to know the passphrase. 
 the algorithm is described in part \ref{bsec:asymmetric}. Unfortunately, they did not find a one-way function for
 solving the problem, they have published the concept in 1976 and left it open.
 
-\subsection{Rivest, Shamir and Adleman}
+\subsection{Rivest, Shamir, and Adleman}
 \label{bsec:rsa}
 
 The paper released by Whitfield Diffie and Martin Hellman showed that there was a solution for
 the problem of symmetric encryption in the form of a one-way function. Another trio of researchers
-made the actual discovery and proof: Ron Rivest, Adi Shamir and Leonard Adleman. Rivest,
-Shamir and Adleman were a perfect team, as Rivest was a computer scientist, who was tracking
+made the actual discovery and proof: Ron Rivest, Adi Shamir, and Leonard Adleman. Rivest,
+Shamir, and Adleman were a perfect team, as Rivest was a computer scientist, who was tracking
 all the latest scientific papers and with an ability to implement something new in new places.
 Shamir is also a computer scientist with a lightning intellect and ability to directly focus on the
 core of the problem. Adleman was a mathematician with broad knowledge and patience, so during
@@ -253,11 +253,11 @@ key, they would already know the required part of the pair to transmit messages 
 Continuing from part \ref{bsec:asymmetric}, this is widely used for secure data transmissions.
 
 Imagine a scenario with three
-users: Hal, Dave and Eavesdropper. If Hal wants to send a message to Dave, Hal should use Dave's
+users: Hal, Dave, and Eavesdropper. If Hal wants to send a message to Dave, Hal should use Dave's
 public key and encrypt the desired message, later Hal sends an encrypted message to Dave. As
 eavesdropper is sitting in the middle of Hal and Dave's transmission line, he can intercept the
 transmitted data, make a copy of it and send it forward to Dave, thus having a copy of the letter.
-Now, Dave and Eavesdropper have the encrypted message from Hal. Dave, using his private key
+Now, Dave and Eavesdropper have the encrypted message from Hal. Dave, using the private key
 that is available only to him, can decrypt the message from Hal and read the contents. Fortunately,
 the eavesdropper has access only to Dave's public key and not to his private key, so he is not able to read
 message's contents.
@@ -276,9 +276,9 @@ The transmission is shown in Figure \ref{fig:asymmetric}.
 \label{bbsec:signing}
 
 RSA encryption and decryption works in both ways, so a
-message can be encrypted by public key and decrypted by private key and vice versa.
+message can be encrypted by a public key and decrypted by the private key and vice versa.
 
-Imagine a scenario, whem Hal wants to send an email to Stanley. The problem is that Hal is not sure
+Imagine a scenario, when Hal wants to send an email to Stanley. The problem is that Hal is not sure
 if Stanley is indeed Stanley and not a thief who stole Stanley's identity. To resolve the issue, RSA
 technique should be used. 
 
@@ -302,9 +302,9 @@ required theorems and formulas before the RSA steps.
 
 In mathematics, the modulus is the operation to get the remainder when diving one number by
 another. For example, if we want to find modulus of $31$ to $9$, we use the notation: $31\bmod9$, this
-means that we divide $31$ by $9$ and take out only the remainder, in this case it's going to be $4$.
+means that we divide $31$ by $9$ and take out only the remainder, in this case, it is going to be $4$.
 Congruence means that if two numbers $b$ and $c$ have the property that their difference $b - c$ is
-integrally divisible by a number mm, so that $b - c/m$ is an integer, then $b$ and $c$ are said to be
+integrally divisible by a number $m$, so that $b - c/m$ is an integer, then $b$ and $c$ are said to be
 "congruent modulo $m$", where $m$ is called the modulus. The notation as follows:
 
 \begin{equation*}
@@ -314,8 +314,8 @@ integrally divisible by a number mm, so that $b - c/m$ is an integer, then $b$ a
 \subsection{Euler's Totient Function}
 \label{bsec:euler}
 
-The Euler's totient function $\varphi(n)$ is defined as a function that returns number of positive integers
-$<n$ that are relatively coprime to nn, thus means that they are not sharing any common factor. For
+The Euler's totient function $\varphi(n)$ is defined as a function that returns a number of positive integers
+$<n$ that are relatively coprime to $n$, this means that they are not sharing any common factor. For
 example, the totatives of $n = 9$ are $1, 2, 4, 5, 7 \text{ and } 8$. So that $\varphi(9) = 6$. For prime number $p$, the
 number of totatives will be $p - 1$, as no integers share same multiples with $p$, except $p$.
 
@@ -379,11 +379,11 @@ totient function of $n$.
 \label{bsec:ed}
 
 After completing the necessary calculations, which are described in part 4.1, the large prime
-numbers $p$, $q$ and totient value of $n$- $\varphi(n)$ should be deleted or not revealed to anyone except the
-host, where keys were generated. We have two generated keys: public key and private key. The
+numbers $p$, $q$, and totient value of $n$- $\varphi(n)$ should be deleted or not revealed to anyone except the
+host, where keys were generated. We have two generated keys: a public key and private key. The
 host should share his/her public key, so it is available to anyone and keep the private in secret. As
 the RSA encryption method is described in part \ref{bsec:asymmetric}, we will continue now with the process of
-encryption and decryption, later on accompanied by two examples.\\
+encryption and decryption, later on, accompanied by two examples.\\
 
 Let us return to the scenario with Dave and Hal in part \ref{bsec:asymmetric}. Hal wants to send Dave a message, so
 he knows only Dave's public key. To encrypt the message and transmit it securely, Hal firstly
@@ -491,7 +491,7 @@ efficiently, we will encrypt each pair using our public key, where our public ex
 modulus is 143. The following calculations have been completed by using Wolfram Alpha. I will
 calculate only unique letters’ codes and then combine it to make an encrypted message. Notation
 $Encrypt(N)$ will be used for simplicity, where $N$ is the number of a letter or a letter from Latin alphabet.
-$???$ will be used to represent a letter that cannot be converted from digits, according to the table above.
+"$???$" will be used to represent a letter that cannot be converted from digits, according to the table above.
 
 \begin{align*}
   &Encrypt(A)=&Encrypt(01)=01^7 \bmod 143=1 \bmod 143=01&=A\\
@@ -504,16 +504,16 @@ $???$ will be used to represent a letter that cannot be converted from digits, a
 \end{align*}
 
 The original message's code is 012020010311012004012314, will be encrypted to
-0113613601421320113682012353, which obviously doesn’t look like our initial input. This is
+0113613601421320113682012353, which obviously does not look like our initial input. This is
 the encrypted message; it is non-readable and non-understandable to all users. Only the receiver
 with the private key can decipher the message and find the initial content.\\
 
-It is noticable that encrypted version of A and W are the same. This can be viewed as a flaw in RSA, however
-the probability of this correspondance is very low and individual letters would not compromise the message's
+It is noticeable that encrypted version of A and W are the same. This can be viewed as a flaw in RSA, however,
+the probability of this correspondence is very low and individual letters would not compromise the message's
 initial contents.\\
 
 As we have the private key with the private exponent, we can decipher the encrypted message and
-calculate the initial message’s content. To do that so, the decryption formula will be used. Rising
+calculate the content of the initial message. To do that so, the decryption formula will be used. Rising
 numbers to power 103 will give us very big numbers. Calculations below include only the result,
 for the extended calculations please refer to \ref{calc}. Function called $Decrypt(N)$ will be used
 for simplicity to represent decryption process, where $N$ is an encrypted number that should be
@@ -537,7 +537,7 @@ RSA has proved its work with small values of $p$ and $q$, we can test RSA for bi
 
 In order to work with big primes, calculations by hand or Wolfram Alpha will become inefficient
 and quite difficult. To demonstrate the work of RSA, I wrote a program in C. 
-The program takes an input of modulo - n, public exponent - e, private exponent – d
+The program takes an input of modulo - $n$, public exponent - $e$, private exponent – $d$
 and a message that needs to be encrypted. More detailed information about the code in
 \ref{big}.\\
 
@@ -549,8 +549,8 @@ work of RSA encryption algorithm with big primes and proving the security of RSA
 The input and output of the program will be shown in boxes below. Calculations have been
 made on a computer with specifications that can be found in \ref{specs}\\
 
-I have entered values 516311845790656153499716760847001433441357, 65537 and
-5617843187844953170308463622230283376298685 for modulo n, public exponent e and private
+I have entered values 516311845790656153499716760847001433441357,\\ 65537 and
+5617843187844953170308463622230283376298685 for modulo n, public exponent e, and private
 exponent d, respectively. p and q values are unknown. We will encrypt message – “The cake is a
 lie”. The executed program shows the hexadecimal version of our message and the encrypted
 value of our message. When we try to read it, we get “c?SX?|ˆT??tv??”, which is not our
@@ -570,7 +570,7 @@ RSA Factoring Challenge is a challenge by RSA Laboratories. They have calculated
 a computer with no network connection and all the hard are destroyed in order to keep $p$ and $q$ a
 secret.
 
-The factoring is a very big mathematical challenge, because in general we will need to brute-force
+The factoring is a very big mathematical challenge because in general we will need to brute-force
 all possible combination and find the correct match.
 
 \subsection{Full Brute-Force}
@@ -594,7 +594,7 @@ And when converted to hours
   274365 \text{ seconds}=\frac{274365 \text{ seconds}}{3600  \text{ seconds in one hour}} \approx 76.21 \text{ hours}\\
   \end{equation*}
 
-In worst-case scenario, it would take the algorithm approximately 76 hours to factorize 9237079. The time spent on factorizing
+In a worst-case scenario, it would take the algorithm approximately 76 hours to factorize 9237079. The time spent on factorizing
 will be increasing exponentially and very rapidly, so full brute-force cannot be used to effectively factorize
 moduli.\\
 
@@ -602,7 +602,7 @@ For the sake of demonstration, I wrote a program in C that factorizes input numb
 finds the correct match, it exists, so it would not spend time on further calculations.\cite{github}
 
 \begin{center}
-\begin{lstlisting}[caption=Demonstartion of Prime Factorization with Integers]
+\begin{lstlisting}[caption=Demonstration of Prime Factorization with Integers]
       $ ./factor_with_integers 9237079            
       Primes for 9237079 are : 2351 and 3929
 
@@ -610,16 +610,16 @@ finds the correct match, it exists, so it would not spend time on further calcul
   \end{lstlisting}
 \end{center}
 
-It took the computer only 60 seconds, because the executed algorithm used best-case scenario and was optimized.\cite{github}
+It took the computer only 60 seconds because the executed algorithm used best-case scenario and was optimized.\cite{github}
 
 \subsection{Brute-Force Only With Prime Numbers}
 \label{bsec:primes}
 
-The algorithm in part \ref{bsec:full} is too slow, because it loops through all numbers less than $n$ for all
+The algorithm in part \ref{bsec:full} is too slow because it loops through all numbers less than $n$ for all
 numbers that are less than $n$. We know that p and q are primes, so instead of looping through all
 numbers below $n$, we can parse only through prime numbers that are less than $n$.\\
 Unfortunately, there is no formula to find the exact number of prime numbers before $n$ - $\pi(x)$, we will need to use
-the formula from Prime Number Theorem that approximates number of primes that less than $n$\cite{pi}.
+the formula from Prime Number Theorem that approximates the number of primes that less than $n$\cite{pi}.
 
 \begin{equation}
   \pi(x)=\frac{x}{ln(x)}\\
@@ -629,11 +629,11 @@ I wrote another code in C\cite{Clang} Language that factorizes $n$, by iterating
 numbers. My implementation of the code is in Appendix 7 and the system is from Appendix 4.
 It is expected for the worst-case performance to be $O(\pi(n)^2)$ or $O((\frac{n}{ln(n)})^2)$.
 Because this algorithm loops only prime
-numbers, it would need to go through fewer number of iterations, thus making the algorithm more efficient.
+numbers, it would need to go through a fewer number of iterations, thus making the algorithm more efficient.
 In order to demonstrate the work of the algorithm, I have written another C program that will factorize
 input and find its primes.
 
-\begin{lstlisting}[caption=Demonstartion of Prime Factorization with Primes]
+\begin{lstlisting}[caption=Demonstration of Prime Factorization with Primes]
   $ ./factor_with_primes 9237079
   Primes are : 2351 and 3929
 
@@ -659,7 +659,8 @@ they suggest factoring algorithm by Richard Schroeppel
   \end{equation}
 
 The average worst-case scenario is approximately $O(n^{1/4})$. Even for fastest algorithms, the difficulty
-of breaking the key will rise expenonteially with each new digit. Table \ref{table:rsa} shows the performance of one of the fastest factoring algortihms.
+of breaking the key will rise exponentially with each new digit. Table \ref{table:rsa} shows the performance
+of one of the fastest factoring algorithms.
 
 \begin{table}
   \begin{center}
@@ -672,7 +673,7 @@ of breaking the key will rise expenonteially with each new digit. Table \ref{tab
     300 & $1.5 \times 10^{29}$ & $4.9 \times 10^{15}$ years\\
     500 & $1.3 \times 10^{39}$ & $4.2 \times 10^{25}$ years\\
     \end{tabular}
-  \caption{Relationship between factoring time and number of digits in moduli.\cite{rsapaper}}
+  \caption{The Relationship between factoring time and a number of digits in moduli.\cite{rsapaper}}
   \label{table:rsa}
   \end{center}
   \end{table}
@@ -685,9 +686,9 @@ In this Extended Essay, other factorization methods will not be discussed.
 
 The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works\ref{sec:usage} \ref{bsec:asymmetric} \ref{sec:math} \ref{sec:rsa} and how it can be hacked\ref{sec:security}.
 
-Throughout the investigation we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by slightly increasing size of the moduli.
+Throughout the investigation, we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by the slightly increasing size of the moduli.
 
-Over the last decades, RSA has proven its stability and efficiency, therefore it is actively used by almost all companies and organizations to ensure one's privacy and prove identity of users, thus increasing the overall trust on the web and making the world a safer place.\\ 
+Over the last decades, RSA has proven its stability and efficiency, therefore it is actively used by almost all companies and organizations to ensure one's privacy and prove the identity of users, thus increasing the overall trust on the web and making the world a safer place.\\ 
 
 \newpage
 \singlespace
@@ -762,7 +763,7 @@ programs\cite{github} in this Extended Essay.
 \section{Encryption and Decryption with RSA (Source Code)}
 \label{big}
 The program is written in C\cite{Clang} language to demonstrate RSA cryptographic technique
-with GMP\cite{gmp}, the library allows C to allocate memory for variables with values more than $2 ^{32} - 1$.\\
+with GMP\cite{gmp}, the library allows C to allocate memory for variables with values more than $2 ^{32} - 1$. \cite{limit}\\
 
 The extended version of the program with comments and documentation is available\cite{github}.
 
