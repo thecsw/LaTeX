@@ -1,4 +1,6 @@
 \documentclass[a4paper,12pt]{article}
+%\documentclass{article}
+
 \title{Determining the Goldilock Zones for 8 stars of different types.}
 \date{}
 \author{}
@@ -28,39 +30,40 @@
 \newpage
 \pagenumbering{arabic}
 \doublespacing
+%\onehalfspacing
 % --------------- COVER PAGE ENDS HERE ---------------
 
 % ---------------  QUOTE STARTS HERE   ---------------
 \begin{center}
   "If we stay on Earth forever, there will be some eventual extinction event." 
-  \end{center}
+\end{center}
 \begin{flushright}
   -Elon Musk \cite{musk}
 \end{flushright}
 % ---------------    QUOTE ENDS HERE   ---------------
-
+\onehalfspacing
 \begin{abstract}
-  This physics Investigation is called "Determining the Goldilocks Zone for 8 stars of different types".
+  This physics Investigation is called ``Determining the Goldilocks Zone for 8 stars of different types''.
   During this investigation, I will pick 10 random stars of different types: White Dwarfs, Red Giants, Main-Sequence Stars and Red Dwarfs.
   I will research the stars in terms of luminosty, radius and the length of Goldilock Zones, more known as Circumferential Habitable Zones.
   During this research, I will investigate different properties and charasteristics of a star to determine its habitability.
   At the end of the research, we will understand which star types are more preferrable for life.
   For the sake of demonstration, I have written several programs and simulations to support my investigation. 
-  \end{abstract}
+\end{abstract}
 
 % -------------    PICTURE STARTS HERE   ---------------
 %\begin{center}
-  \begin{figure}[b!]
-    %\centering
-\begin{center}
+\begin{figure}[b!]
+  %\centering
+  \begin{center}
     \includegraphics[width=0.8\textwidth]{kepler.jpg}
-     \caption{Sharing the Light of Two Suns \cite{kepler}}
-\end{center}
-   
-  \end{figure}
+    \caption{Sharing the Light of Two Suns~\cite{kepler}}
+  \end{center}
+  
+\end{figure}
 %\end{center}
 % -------------    PICTURE ENDS HERE   ---------------
-
+\doublespacing
 
 
 \newpage
@@ -69,9 +72,9 @@
 
 Soon, our Mother-Star, Sun will make the poles of Earth a tropical paradise and later on destroy all the life on Earth. Approximately in 5.4 billion years, the critical amount of hydrogen in Sun's core will be depleted. In that event, because of lack of hydrogen, Sun will start collapsing under its own weight. The delicate balance between fusion energy and the gravitational pull has fallen.
 
-This catastrophic event forces the core of our Star to contract and therefore, to start fusion of Helium and more heavy elements. This will stop the active contraction of the star but in this event, Sun will burst a colossal amount of energy into outer layers, thus increasing in size so much, that out star will "eat" Mercury and Venus, scientists are not sure about Earth. We can be sure in one fact -  by that time, all the life on Earth will be ceased. Indeed, life will cease to exist way before the Sun's Red Giant phase.
+This catastrophic event forces the core of our Star to contract and therefore, to start fusion of Helium and more heavy elements. This will stop the active contraction of the star but in this event, Sun will burst a colossal amount of energy into outer layers, thus increasing in size so much, that out star will ``consume'' Mercury and Venus, scientists are not sure about Earth. We can be sure in one fact -  by that time, all the life on Earth will be ceased. Indeed, life will cease to exist way before the Sun's Red Giant phase.
 
-Around in 1.1 billion years, Sun's luminosity will increase by about 10\%. It seems not that much, however, this increase in luminosity will cause a very big shift in Sun's Goldilock zone length. The more active greenhouse effect will take place on Earth, transforming our home planet into a hot, dry and unhabitable planet that Venus is right now.\cite{sun}
+Around in 1.1 billion years, Sun's luminosity will increase by about 10\%. It seems not that much, however, this increase in luminosity will cause a very big shift in Sun's Goldilock zone length. The more active greenhouse effect will take place on Earth, transforming our home planet into a hot, dry and unhabitable planet that Venus is right now.~\cite{sun}
 
 As the means of humanity's future survival, we will be forced to leave our planet Earth and find a new planet, new home that maybe can recall our Earth. In order to do that, we should know which planets are habitable and which are not. I will take 8 stars of different types to figure out, what types of stars can host life.
 
@@ -96,169 +99,215 @@ Today, life on Earth is the only known habited planet. We have no information or
   The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or even mentioned in the guides.
   
   \newpage
- \onehalfspacing
+  \onehalfspacing
   \section{Variables list}
-
-\subsection{Dependent variables}
+  
+  \subsection{Dependent variables}
   
   \begin{itemize}
 
-    \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
-
-      \begin{itemize}
-
-        \item This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years
-        
-        \end{itemize}
+  \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
+    
+    \begin{itemize}
       
-    \item Inner Edge of Goldilock Zone of a star, $D_L$ ($AU$) 
-
-      \item Outer Edge of Goldilock Zone of a star, $D_U$ ($AU$)
-
-        \item Bolometric Magnitude, $M_{bol}$ ($unit$)
-          
-          \item Apparent Brightness, $b$ ($W m^{-2}$)
-          
+    \item This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years
+      
+    \end{itemize}
+    
+  \item Inner Edge of Goldilock Zone of a star, $D_L$ ($AU$) 
+    
+  \item Outer Edge of Goldilock Zone of a star, $D_U$ ($AU$)
+    
+  \item Bolometric Magnitude, $M_{bol}$ ($unit$)
+    
+  \item Apparent Brightness, $b$ ($W m^{-2}$)
+    
   \end{itemize}
-
-
+  
+  
   \subsection{Independent variables}
-
+  
   \begin{itemize}
-
+    
   \item Astronomical distance to a star, $d$ ($pc$)
     
   \item Apparent Visual Magnutuse of a star, $M$ ($unit$ *from database)
-
-    \item Bolometric Correction, $BC$ ($unit$ *from database)
-
-            \begin{itemize}
-
-            \item This is a correction made to the star's absolute visual magnitude in order to convert its
-              visible magnitude into bolometric magnitude.
-        
-        \end{itemize}
-
+    
+  \item Bolometric Correction, $BC$ ($unit$ *from database)
+    
+    \begin{itemize}
       
-\end{itemize}
+    \item This is a correction made to the star's absolute visual magnitude in order to convert its
+      visible magnitude into bolometric magnitude.
+      
+    \end{itemize}
+    
+    
+  \end{itemize}
   
   
   \subsection{Controlled variables}
-
-  \begin{itemize}
-
-    \item Stefan-Boltzmann constant, $\delta$ ($5.67 \times 10^{-8} W m^{-2} K^{-4}$)
-
-    \item Solar Luminosity, $L_{\odot}$ ($3.828 \times 10^{26}W$)
-
-    \item Astronomical Unit, $AU$ ($150 \times 10^{9}m$)
-      
-\end{itemize}
   
-
+  \begin{itemize}
+    
+  \item Stefan-Boltzmann constant, $\delta$ ($5.67 \times 10^{-8} W m^{-2} K^{-4}$)
+    
+  \item Solar Luminosity, $L_{\odot}$ ($3.828 \times 10^{26}W$)
+    
+  \item Astronomical Unit, $AU$ ($150 \times 10^{9}m$)
+    
+  \end{itemize}
+  
+  
   \doublespacing
-\newpage
+  \newpage
   \section{Database}
   \label{database}
   The HYG Database \cite{hyg} will be used for extraction and parsing of astronomical data. The database contains more than 120,000 stars and it can provide me with the needed data, as the apparent visual magnitudes of stars. Further information and details about the database's entries can be found in in the references. 
-
-
-\section{Bolometric correction}
-
-The table below demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will used the generalized version of the original. REFERENCE HERE!!!\\
-
-
+  
+  
+  \section{Bolometric correction}
+  
+  The table below demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will used the generalized version of the original. REFERENCE HERE!!!\\
+  
+  
   \begin{table}[h!]
     \begin{center}
       \centering
-    \caption{The relationship between Bolometric Correction and star's spectral type.}
-    \begin{tabular}{c | c}
-      \textbf{Spectral Type} & \textbf{Bolometric Correction} \\
-      A & -0.3\\
-      B & -2.0\\
-      F & -0.06\\
-      G & -0.04\\
-      K & -0.6\\
-      M & -2.0\\
-    \end{tabular}
-    \label{stars}
-  \end{center}
-    \end{table}
-
+      \caption{The relationship between Bolometric Correction and star's spectral type.}
+      \begin{tabular}{c | c}
+        \textbf{Spectral Type} & \textbf{Bolometric Correction} \\
+        A & -0.3\\
+        B & -2.0\\
+        F & -0.06\\
+        G & -0.04\\
+        K & -0.6\\
+        M & -2.0\\
+      \end{tabular}
+      \label{stars}
+    \end{center}
+  \end{table}
+  
   \newpage
   \section{Stars}
-
-  Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python, in Appendix \ref{hr} that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.
-
-  I will take 8 stars of 4 different types, so 2 stars of each type. In the next table, Red Dwarfs, Main-Sequence stars, Red Giants, White Dwarfs are presented, respectively. Table \ref{stars} demonstrates 8 stars that I choosed for research.
-
-  \begin{table}[h!]
-    \begin{center}
-    \caption{Chosen 8 stars for the investigation.}
-    \begin{tabular}{l | l | l | l}
-      \textbf{GlieseID} & \textbf{Star name} & \textbf{Type} & \textbf{Spectra}\\
-      551 & Proxima Centauri & Red Dwarf & M5Ve\\
-      623 & Gliese 623 & Red Dwarf & M3\\
-      482A & 29Gam Vir & Main-Sequence & FOV+...\\
-      231 & Alp Men & Main-Sequence & G5V\\
-      286 & Pollux & Red Giant & K0IIIvar\\
-      841 & HD 208527 & Red Giant & M0\\
-      35 & Van Maan & White Dwarf & DG\\
-      440 & LP 145-141 & White Dwarf & DC:\\
-    \end{tabular}
-    \label{stars}
-  \end{center}
-    \end{table}
-
-The results of the program from Appendix \ref{hr} are demonstrated below. Figure \ref{full} is the result of the program, when 4715 random stars from our database are plotted. We can clearly see that it is indeed the HR diagram with the necessary zones. On the other hand, Figure \ref{str} shows the Hertzprung-Russel Diagram only with out 8 stars, which were mentioned in Table \ref{stars}. On the Figure \ref{str}, we see how each 2 stars are located in different sections of the HR Diagram, therefore proving that our stars are from different types of stars. 
   
-    \begin{figure}[h]
-      \centering
-      \begin{minipage}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{full.png}
-        \caption{Hertzprung-Russel Diagram with 4715 stars.}
-        \label{full}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{stretch.png}
-        \caption{Hertzprung-Russel Diagram with our 8 stars.}
-        \label{str}
-      \end{minipage}
-      \end{figure}
-
-
-
-\section{Calculating the Circumferential Habitable Zones (Goldilock Zones) of the stars}
-
-As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research.
-
-Firstly, we should know the distance and Apparent Visual Magnitude of our stars. Table \ref{data} shows the data that was pulled from the database.
-
+  Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python, in Appendix \ref{hr} that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.
+  
+  I will take 8 stars of 4 different types, so 2 stars of each type. In the next table, Red Dwarfs, Main-Sequence stars, Red Giants, White Dwarfs are presented, respectively. Table \ref{stars} demonstrates 8 stars that I choosed for research.
+  
   \begin{table}[h!]
     \begin{center}
-    \caption{Initial data about stars}
-    \begin{tabular}{c | c | c}
-      \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\
-      551 & 1.2959 & 11.010\\
-      623 & 8.0567 & 10.270\\
-      482A & 11.6850 & 2.740\\
-      231 & 10.1978 & 5.080\\
-      286 & 10.3584 & 1.160\\
-      841 & 15.9719 & 10.360\\
-      35 & 4.2626 & 12.370\\
-      440 & 4.6081 & 11.500\\
-    \end{tabular}
-    \label{data}
-  \end{center}
-    \end{table}
+      \caption{Chosen 8 stars for the investigation.}
+      \begin{tabular}{l | l | l | l}
+        \textbf{GlieseID} & \textbf{Star name} & \textbf{Type} & \textbf{Spectra}\\
+        \hline
+        551 & Proxima Centauri & Red Dwarf & M5Ve\\
+        623 & Gliese 623 & Red Dwarf & M3\\
+        482A & 29Gam Vir & Main-Sequence & FOV+...\\
+        231 & Alp Men & Main-Sequence & G5V\\
+        286 & Pollux & Red Giant & K0IIIvar\\
+        841 & HD 208527 & Red Giant & M0\\
+        35 & Van Maan & White Dwarf & DG\\
+        440 & LP 145-141 & White Dwarf & DC:\\
+      \end{tabular}
+      \label{stars}
+    \end{center}
+  \end{table}
+  
+  The results of the program from Appendix \ref{hr} are demonstrated below. Figure \ref{full} is the result of the program, when 4715 random stars from our database are plotted. We can clearly see that it is indeed the HR diagram with the necessary zones. On the other hand, Figure \ref{str} shows the Hertzprung-Russel Diagram only with out 8 stars, which were mentioned in Table \ref{stars}. On the Figure \ref{str}, we see how each 2 stars are located in different sections of the HR Diagram, therefore proving that our stars are from different types of stars. 
+  
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{full.png}
+      \caption{Hertzprung-Russel Diagram with 4715 stars.}
+      \label{full}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{stretch.png}
+      \caption{Hertzprung-Russel Diagram with our 8 stars.}
+      \label{str}
+    \end{minipage}
+  \end{figure}
+  
+  
+  
+  \section{Calculating the Circumferential Habitable Zones (Goldilock Zones) of the stars}
+  
+  As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research.
+  
+  Firstly, we should know the distance and Apparent Visual Magnitude of our stars. Table \ref{data} shows the data that was pulled from the database.
+  
+  \begin{table}[h!]
+    \begin{center}
+      \caption{Initial data about stars}
+      \begin{tabular}{c | c | c}
+        \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\ppp
+        \hline
+        551 & 1.2959 & 11.010\\
+        623 & 8.0567 & 10.270\\
+        482A & 11.6850 & 2.740\\
+        231 & 10.1978 & 5.080\\
+        286 & 10.3584 & 1.160\\
+        841 & 15.9719 & 10.360\\
+        35 & 4.2626 & 12.370\\
+        440 & 4.6081 & 11.500\\
+      \end{tabular}
+      \label{data}
+    \end{center}
+  \end{table}
+  
+  \subsection{Absolute Visual Magnitude}
 
-\subsection{Absolute Visual Magnitude}
-
-\begin{equation}
+  First of all, we should find the absolute visual magnitude of each star. Apparent Visual Magnitudes and Absolute Visual Magnitudes are practically the same but with 1 key difference. If Apparent Magnitude shows how bright the star is from point of view of Earth, Abolsute Magnitude shows us how bright the star is in comparison will all other stars in the universe. This is important, because we need a unified metrics of stars, which are put on ``equal'' conditions. I found a formula that uses Apparent Visual Magnitude and the distance to a start to calculate the Absolute Visual Magnitude. 
+  
+  \begin{equation}
+    {100}^{\frac{M-M_V}{5}} = {(\frac{d}{10pc})}^2\\
   \end{equation}
 
+  After some rearrangments and logarithmic manipulations, we get:
+
+  \begin{equation}
+    M_V = M - 5(\log_{10}{(d_{pc})}-1)\\
+    \end{equation}
     
+  Now, with this knowledge, we can find precise and accurate values of our stars' Absolute Visual Magnitudes. All the calculations will
+ be performed by using Wolfram Alpha Calculator.
+\begin{table}[h!]
+    \begin{center}
+      \caption{Calculations of stars' Absolute Magnitudes}
+      \begin{tabular}{c | c | c}
+        \textbf{GlieseID} & \textbf{Absolute Magnitude} & \textbf{Absolute Magnitude (3sf)}\\
+        \hline
+        551 & 15.447142550675103 & 15.447\\
+        623 & 10.739214037414767 & 10.739\\
+        482A & 2.401856416358772 & 2.402\\
+        231 & 5.037467548500953 & 5.037\\
+        286 & 1.0835366113876055 & 1.084\\
+        841 & 9.343217087925737 & 9.343\\
+        35& 14.221627096960558 & 14.222\\
+        440 & 13.182390524468321 & 13.182\\
+        
+      \end{tabular}
+      \label{avm}
+    \end{center}
+  \end{table}
+  
+We have found the values of our first variables in the problem, we may proceed.
+
+\subsection{Bolometric Correction}
+
+We have found absolute magnitudes of our stars. The next step we need to take is finding the Bolometric Correction of our stars.
+
+
+
+
+
+
+
+
+
 
 
   
@@ -352,7 +401,7 @@ Firstly, we should know the distance and Apparent Visual Magnitude of our stars.
 
     plt.show()
     \end{lstlisting}
-
+  
   
 % --------------- REFERENCES START HERE ------------------
   \newpage
