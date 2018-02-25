@@ -1,7 +1,7 @@
-\documentclass[a4paper,12pt]{article}
-%\documentclass{article}
+\documentclass[a4paper,10pt]{article}
+%\documentclass{IEEEtran}
 
-\title{Determining the Goldilock Zones for 8 stars of different types.}
+\title{Physics Investigation.}
 \date{}
 \author{}
 \usepackage{url}
@@ -19,13 +19,20 @@
 % --------------- COVER PAGE STARTS HERE ---------------
 \pagenumbering{gobble}
 \maketitle
-\tableofcontents
+\begin{center}
+  Determining the Goldilock Zones for 8 stars of different types.\\
+\end{center}
 
-\begin{figure}
+
+\begin{figure}[b]
   \begin{flushleft}
     Session: May 2018\\
     \end{flushleft}
   \end{figure}
+
+\newpage
+
+\tableofcontents
 
 \newpage
 \pagenumbering{arabic}
@@ -53,20 +60,20 @@
 
 % -------------    PICTURE STARTS HERE   ---------------
 %\begin{center}
-\begin{figure}[b!]
+%\begin{figure}[b!]
   %\centering
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{kepler.jpg}
-    \caption{Sharing the Light of Two Suns~\cite{kepler}}
-  \end{center}
+%  \begin{center}
+%    \includegraphics[width=0.8\textwidth]{kepler.jpg}
+%    \caption{Sharing the Light of Two Suns~\cite{kepler}}
+%  \end{center}
   
-\end{figure}
+%\end{figure}
 %\end{center}
 % -------------    PICTURE ENDS HERE   ---------------
-\doublespacing
+%\doublespacing
 
 
-\newpage
+%\newpage
 
 \section{Inroduction}
 
@@ -98,7 +105,7 @@ Today, life on Earth is the only known habited planet. We have no information or
 
   The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or even mentioned in the guides.
   
-  \newpage
+  %\newpage
   \onehalfspacing
   \section{Variables list}
   
@@ -159,8 +166,8 @@ Today, life on Earth is the only known habited planet. We have no information or
   \end{itemize}
   
   
-  \doublespacing
-  \newpage
+%  \doublespacing
+%  \newpage
   \section{Database}
   \label{database}
   The HYG Database \cite{hyg} will be used for extraction and parsing of astronomical data. The database contains more than 120,000 stars and it can provide me with the needed data, as the apparent visual magnitudes of stars. Further information and details about the database's entries can be found in in the references. 
@@ -177,6 +184,7 @@ Today, life on Earth is the only known habited planet. We have no information or
       \caption{The relationship between Bolometric Correction and star's spectral type.}
       \begin{tabular}{c | c}
         \textbf{Spectral Type} & \textbf{Bolometric Correction} \\
+        \hline
         A & -0.3\\
         B & -2.0\\
         F & -0.06\\
@@ -188,12 +196,12 @@ Today, life on Earth is the only known habited planet. We have no information or
     \end{center}
   \end{table}
   
-  \newpage
+%  \newpage
   \section{Stars}
   
   Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python, in Appendix \ref{hr} that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.
   
-  I will take 8 stars of 4 different types, so 2 stars of each type. In the next table, Red Dwarfs, Main-Sequence stars, Red Giants, White Dwarfs are presented, respectively. Table \ref{stars} demonstrates 8 stars that I choosed for research.
+  I will take 8 stars of 4 different types, so 2 stars of each type. In the next table, Red Dwarfs, Main-Sequence stars, Red Giants, White Dwarfs are presented, respectively. Table \ref{stars} demonstrates 8 stars that I chose for research.
   
   \begin{table}[h!]
     \begin{center}
@@ -215,7 +223,6 @@ Today, life on Earth is the only known habited planet. We have no information or
   \end{table}
   
   The results of the program from Appendix \ref{hr} are demonstrated below. Figure \ref{full} is the result of the program, when 4715 random stars from our database are plotted. We can clearly see that it is indeed the HR diagram with the necessary zones. On the other hand, Figure \ref{str} shows the Hertzprung-Russel Diagram only with out 8 stars, which were mentioned in Table \ref{stars}. On the Figure \ref{str}, we see how each 2 stars are located in different sections of the HR Diagram, therefore proving that our stars are from different types of stars. 
-  
   \begin{figure}[h]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
@@ -241,9 +248,9 @@ Today, life on Earth is the only known habited planet. We have no information or
   
   \begin{table}[h!]
     \begin{center}
-      \caption{Initial data about stars}
+      \caption{Initial data of the stars}
       \begin{tabular}{c | c | c}
-        \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\ppp
+        \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\
         \hline
         551 & 1.2959 & 11.010\\
         623 & 8.0567 & 10.270\\
@@ -299,6 +306,7 @@ We have found the values of our first variables in the problem, we may proceed.
 \subsection{Bolometric Correction}
 
 We have found absolute magnitudes of our stars. The next step we need to take is finding the Bolometric Correction of our stars.
+We need to find the Bolometric Correction values of our stars to 
 
 
 
