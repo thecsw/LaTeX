@@ -1,5 +1,5 @@
-\documentclass[a4paper,10pt]{article}
-%\documentclass{IEEEtran}
+%\documentclass[a4paper,10pt]{article}
+\documentclass{IEEEtran}
 
 \title{Physics Investigation.}
 \date{}
@@ -17,38 +17,20 @@
 
 \begin{document}
 % --------------- COVER PAGE STARTS HERE ---------------
-\pagenumbering{gobble}
 \maketitle
 \begin{center}
   Determining the Goldilock Zones for 8 stars of different types.\\
 \end{center}
 
 
-\begin{figure}[b]
+\begin{figure}
   \begin{flushleft}
     Session: May 2018\\
     \end{flushleft}
   \end{figure}
 
-\newpage
+%\newpage
 
-\tableofcontents
-
-\newpage
-\pagenumbering{arabic}
-\doublespacing
-%\onehalfspacing
-% --------------- COVER PAGE ENDS HERE ---------------
-
-% ---------------  QUOTE STARTS HERE   ---------------
-\begin{center}
-  "If we stay on Earth forever, there will be some eventual extinction event." 
-\end{center}
-\begin{flushright}
-  -Elon Musk \cite{musk}
-\end{flushright}
-% ---------------    QUOTE ENDS HERE   ---------------
-\onehalfspacing
 \begin{abstract}
   This physics Investigation is called ``Determining the Goldilocks Zone for 8 stars of different types''.
   During this investigation, I will pick 10 random stars of different types: White Dwarfs, Red Giants, Main-Sequence Stars and Red Dwarfs.
@@ -57,6 +39,25 @@
   At the end of the research, we will understand which star types are more preferrable for life.
   For the sake of demonstration, I have written several programs and simulations to support my investigation. 
 \end{abstract}
+
+
+\tableofcontents
+
+%\newpage
+\pagenumbering{arabic}
+%\doublespacing
+%\onehalfspacing
+% --------------- COVER PAGE ENDS HERE ---------------
+
+% ---------------  QUOTE STARTS HERE   ---------------
+\newpage
+\begin{center}
+  "If we stay on Earth forever, there will be some eventual extinction event." 
+\end{center}
+\begin{flushright}
+  -Elon Musk \cite{musk}
+\end{flushright}
+% ---------------    QUOTE ENDS HERE   ---------------
 
 % -------------    PICTURE STARTS HERE   ---------------
 %\begin{center}
@@ -106,7 +107,7 @@ Today, life on Earth is the only known habited planet. We have no information or
   The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or even mentioned in the guides.
   
   %\newpage
-  \onehalfspacing
+%  \onehalfspacing
   \section{Variables list}
   
   \subsection{Dependent variables}
@@ -175,7 +176,7 @@ Today, life on Earth is the only known habited planet. We have no information or
   
   \section{Bolometric correction}
   
-  The table below demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will used the generalized version of the original. REFERENCE HERE!!!\\
+  Table \ref{bc} demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will used the generalized version of the original.\\
   
   
   \begin{table}[h!]
@@ -192,14 +193,14 @@ Today, life on Earth is the only known habited planet. We have no information or
         K & -0.6\\
         M & -2.0\\
       \end{tabular}
-      \label{stars}
+      \label{bc}
     \end{center}
   \end{table}
   
 %  \newpage
   \section{Stars}
   
-  Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python, in Appendix \ref{hr} that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.
+  Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.
   
   I will take 8 stars of 4 different types, so 2 stars of each type. In the next table, Red Dwarfs, Main-Sequence stars, Red Giants, White Dwarfs are presented, respectively. Table \ref{stars} demonstrates 8 stars that I chose for research.
   
@@ -222,16 +223,16 @@ Today, life on Earth is the only known habited planet. We have no information or
     \end{center}
   \end{table}
   
-  The results of the program from Appendix \ref{hr} are demonstrated below. Figure \ref{full} is the result of the program, when 4715 random stars from our database are plotted. We can clearly see that it is indeed the HR diagram with the necessary zones. On the other hand, Figure \ref{str} shows the Hertzprung-Russel Diagram only with out 8 stars, which were mentioned in Table \ref{stars}. On the Figure \ref{str}, we see how each 2 stars are located in different sections of the HR Diagram, therefore proving that our stars are from different types of stars. 
+  The results of the program are demonstrated below. Figure \ref{full} is the result of the program, when 4715 random stars from our database are plotted. We can clearly see that it is indeed the HR diagram with the necessary zones. On the other hand, Figure \ref{str} shows the Hertzprung-Russel Diagram only with out 8 stars, which were mentioned in Table \ref{stars}. On the Figure \ref{str}, we see how each 2 stars are located in different sections of the HR Diagram, therefore proving that our stars are from different types of stars. The source code and example output of all the programs and simulations written and used for this investigation are available on my Github page.\cite{github}
   \begin{figure}[h]
     \centering
-    \begin{minipage}[b]{0.45\textwidth}
+    \begin{minipage}[b]{0.24\textwidth}
       \includegraphics[width=\textwidth]{full.png}
       \caption{Hertzprung-Russel Diagram with 4715 stars.}
       \label{full}
     \end{minipage}
     \hfill
-    \begin{minipage}[b]{0.45\textwidth}
+    \begin{minipage}[b]{0.24\textwidth}
       \includegraphics[width=\textwidth]{stretch.png}
       \caption{Hertzprung-Russel Diagram with our 8 stars.}
       \label{str}
@@ -318,103 +319,10 @@ We need to find the Bolometric Correction values of our stars to
 
 
 
-  
-  \singlespacing
-  \newpage
-  \tiny
-  \appendix
-  \section{Source code of the Hertzprung-Russel Diagram plotting program}
-  \label{hr}
-  \begin{lstlisting}
-    from tqdm import tqdm
-    import matplotlib.pyplot as plt
-    import csv
-    import math
-    import time
-    ax = plt.gca()
-    ax.set_facecolor('black')
-    stars_abs_mag = []
-    stars_color_index = []
-
-    #White Dwarfs, Main sequence, Red Giants, Super Giants
-    stars_types = [0.0, 0.0, 0.0, 0.0]
-
-    def save_figure(cname, cdpi):
-    plt.savefig('{}.png'.format(cname), dpi = cdpi, format = 'png')
-    plt.savefig('{}.svg'.format(cname), dpi = cdpi, format = 'svg')
-
-    print(``Extracting stars' data from the database...'')
-
-    with open('HYG-Database/hygdata_v3.csv', 'r') as file:
-    cord = csv.reader(file)
-    counter = 0
-    added_values = 0
-    for row in tqdm(cord):
-    if not counter == 0 and counter % 25 == 0 or counter == 1:
-    # We are skipping first row, as it is text title, not needed
-    if not row[16] == '': #If its empty, skip it
-    stars_abs_mag.append(float(row[14]))
-    stars_color_index.append(float(row[16]))
-
-    if stars_abs_mag[added_values] < -5.0:
-    stars_types[3] += 1
-    elif stars_abs_mag[added_values] > 10.0 and stars_color_index[added_values] < 1.0:
-    stars_types[0] += 1
-    elif stars_abs_mag[added_values] < 5.0 and stars_abs_mag[added_values]
-    > -5.0 and stars_color_index[added_values] > 0.75:
-    stars_types[2] += 1
-
-    added_values+=1
-    counter += 1
-    file.close()
-
-    plt.scatter(stars_color_index, stars_abs_mag, s = 0.37, c = 'w')
-
-    plt.annotate('Sun', xy = (stars_color_index[0], stars_abs_mag[0]))
-
-    print (``\nOur sun: \n\
-    \tAbsolute magnitude : {}\n\
-    \tColor index : {}\n''.format(stars_abs_mag[0], stars_color_index[0]))
-
-    stars_types[1] = added_values-stars_types[0]-stars_types[2]-stars_types[3]
-
-    print(``Statistics :\n\
-    \t Parsed stars : {} ({}%)\n\
-    \t Main Sequence: {} ({}%)\n\
-    \t Read Giants  : {} ({}%)\n\
-    \t White Dwarfs : {} ({}%)\n\
-    \t Super Giants : {} ({}%)\n''.format(added_values,
-    round(added_values/added_values*100, 2),
-    stars_types[1],
-    round(stars_types[1]/added_values*100, 2),
-    stars_types[2],
-    round(stars_types[2]/added_values*100, 2),
-    stars_types[0],
-    round(stars_types[0]/added_values*100, 2),
-    stars_types[3],
-    round(stars_types[3]/added_values*100, 2)
-    ))
-
-    plt.ylim([15, -10])
-    plt.xlim([-0.5, 2])
-
-    plt.xlabel('Color index')
-    plt.ylabel('Absolute magnitude')
-
-    plt.title('Hertzprung-Russel diagram')
-    print('Saving the diagrams...')
-    save_figure('pics/HRD', 2500)
-    print('Done!')
-
-
-    plt.show()
-    \end{lstlisting}
-  
+    
   
 % --------------- REFERENCES START HERE ------------------
-  \newpage
   \normalsize
-\singlespacing
 \bibliographystyle{ieeetr}
 \bibliography{main}
 % --------------- REFERENCES  END  HERE ------------------
