@@ -94,7 +94,9 @@ Around in 1.1 billion years, Sun's luminosity will increase by about 10\%. It se
 
 As the means of humanity's future survival, we will be forced to leave our planet Earth and find a new planet, new home that maybe can recall our Earth. In order to do that, we should know which planets are habitable and which are not. I will take 8 stars of different types to figure out, what types of stars can host life.\\
 
-\section{Research question}
+\section{Investigation data}
+
+\subsection{Research question}
 
 My phsyics investgation is aimed at finding the best odds of living near different types of stars, more differentiated by their spectral type. These include: White Dwarfs, Red Giants, Red Dwarfs, and Main-Sequence Stars.\\
 
@@ -102,7 +104,7 @@ My phsyics investgation is aimed at finding the best odds of living near differe
 
 \textit{What is the relationship between the conditions of existence of life in the Goldilock Zone versus star's spectra and type }
 
-\section{Hypothesis}
+\subsection{Hypothesis}
 
 Today, life on Earth is the only known habited planet. We have no information or confirmation about the existence of other life forms and species on other extraterrestial objects. Earth rotates its home star - Sun, which is a typical member of Main-Sequence stars.\\
 
@@ -110,81 +112,19 @@ Today, life on Earth is the only known habited planet. We have no information or
 
   \textit{The most favorable conditions for life formations are near the members of Main-Sequence stars.}
 
-  \section{Outside of the syllabus}
+  \subsection{Outside of the syllabus}
 
-  The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or even mentioned in the guides.
-  
-  %\newpage
-%  \onehalfspacing
-  \section{Variables list}
-  
-  \subsection{Dependent variables}
-  
-  \begin{itemize}
+  The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or mentioned in the guides. During the investigation, Luminosity and Apparrent Brightness formulas from the Physics Guide will be used. 
 
-  \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
-    
-    \begin{itemize}
-      
-    \item This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years
-      
-    \end{itemize}
-    
-  \item Inner Edge of Goldilock Zone of a star, $D_L$ ($AU$) 
-    
-  \item Outer Edge of Goldilock Zone of a star, $D_U$ ($AU$)
-    
-  \item Bolometric Magnitude, $M_{bol}$ ($unit$)
-    
-  \item Apparent Brightness, $b$ ($W m^{-2}$)
-    
-  \end{itemize}
   
-  
-  \subsection{Independent variables}
-  
-  \begin{itemize}
-    
-  \item Astronomical distance to a star, $d$ ($pc$)
-    
-  \item Apparent Visual Magnutuse of a star, $M$ ($unit$ *from database)
-    
-  \item Bolometric Correction, $BC$ ($unit$ *from database)
-    
-    \begin{itemize}
-      
-    \item This is a correction made to the star's absolute visual magnitude in order to convert its
-      visible magnitude into bolometric magnitude.
-      
-    \end{itemize}
-    
-    
-  \end{itemize}
-  
-  
-  \subsection{Controlled variables}
-  
-  \begin{itemize}
-    
-  \item Stefan-Boltzmann constant, $\delta$ ($5.67 \times 10^{-8} W m^{-2} K^{-4}$)
-    
-  \item Solar Luminosity, $L_{\odot}$ ($3.828 \times 10^{26}W$)
-    
-  \item Astronomical Unit, $AU$ ($150 \times 10^{9}m$)
-    
-  \end{itemize}
-  
-  
-%  \doublespacing
-%  \newpage
-  \section{Database}
+\section{Initial set of data and choices}
+
+  \subsection{Database}
   \label{database}
-  The HYG Database \cite{hyg} will be used for extraction and parsing of astronomical data. The database contains more than 120,000 stars and it can provide me with the needed data, as the apparent visual magnitudes of stars. Further information and details about the database's entries can be found in in the references.\\
-  
-  
+  The HYG Database \cite{hyg} will be used for extraction and parsing of astronomical data. The database contains more than 120,000 stars and it can provide me with the needed data, as the apparent visual magnitudes of stars. Further information and details about the database's entries can be found in in the references.\\  
   
 %  \newpage
-  \section{Stars}
+  \subsection{Stars}
   
   Now, we need to choose our 8 stars. For the sake of demonstration and visualization, I wrote a small program in Python that takes the values from the database from part \ref{database} and plots Hertzprung-Russel Diagram. Note that instead of luminosity and temperature, values of absolute visual magnitutes and color indexes are used.\\
   
@@ -229,10 +169,74 @@ Today, life on Earth is the only known habited planet. We have no information or
   \end{figure}
   
   
+  %\newpage
+%  \onehalfspacing
+  \section{Variables list}
+  
+  \subsection{Dependent variables}
+  
+  \begin{itemize}
+
+  \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
+    
+    \begin{itemize}
+      
+    \item This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years
+      
+    \end{itemize}
+    
+  \item Inner Edge of Goldilock Zone of a star, $D_L$ ($AU$) 
+    
+  \item Outer Edge of Goldilock Zone of a star, $D_U$ ($AU$)
+    
+  \item Bolometric Magnitude, $M_{bol}$ ($unit$)
+    
+  \item Apparent Brightness, $b$ ($W m^{-2}$)
+    
+  \end{itemize}
+  
+  
+  \subsection{Independent variables}
+  
+  \begin{itemize}
+    
+  \item Astronomical distance to a star, $d$ ($pc$)
+    
+  \item Apparent Visual Magnutuse of a star, $M$ ($unit$ *from database)
+    
+  \item Bolometric Correction, $BC$ ($unit$ *from database)
+    
+    \begin{itemize}
+      
+    \item This is a correction made to the star's absolute visual magnitude in order to convert its
+      visible magnitude into bolometric magnitude.
+      
+    \end{itemize}    
+    
+  \end{itemize}
+  
+  \subsection{Controlled variables}
+  
+  \begin{itemize}
+    
+  \item Stefan-Boltzmann constant, $\delta$ ($5.67 \times 10^{-8} W m^{-2} K^{-4}$)
+    
+  \item Solar Luminosity, $L_{\odot}$ ($3.828 \times 10^{26}W$)
+    
+  \item Astronomical Unit, $AU$ ($150 \times 10^{9}m$)
+
+  \item Solar Bolometric Magnitude, $M_{bol, \odot}$ ($+4.74$)
+    
+  \end{itemize}
+  
+  
+%  \doublespacing
+%  \newpage
+  
   
   \section{Calculating the Circumferential Habitable Zones (Goldilock Zones) of the stars}
   
-  As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research.\\
+  As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research. Please not that all the calculation will not be represented in a classical 3 significant figures way. Because astrophysics deals with very large or very small values, there is a need of using values with high preciseness. \\
   
   Firstly, we should know the distance and Apparent Visual Magnitude of our stars. Table \ref{data} shows the data that was pulled from the database.
   
@@ -242,14 +246,14 @@ Today, life on Earth is the only known habited planet. We have no information or
       \begin{tabular}{c | c | c}
         \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\
         \hline
-        551 & 1.2959 & 11.010\\
-        623 & 8.0567 & 10.270\\
+        551  & 1.2959  & 11.010\\
+        623  & 8.0567  & 10.270\\
         482A & 11.6850 & 2.740\\
-        231 & 10.1978 & 5.080\\
-        286 & 10.3584 & 1.160\\
-        841 & 15.9719 & 10.360\\
-        35 & 4.2626 & 12.370\\
-        440 & 4.6081 & 11.500\\
+        231  & 10.1978 & 5.080\\
+        286  & 10.3584 & 1.160\\
+        841  & 15.9719 & 10.360\\
+        35   & 4.2626  & 12.370\\
+        440  & 4.6081  & 11.500\\
       \end{tabular}
       \label{data}
     \end{center}
@@ -276,16 +280,16 @@ Today, life on Earth is the only known habited planet. We have no information or
     \begin{center}
       \caption{Calculations of stars' Absolute Magnitudes}
       \begin{tabular}{c | c | c}
-        \textbf{GlieseID} & \textbf{Absolute Magnitude} & \textbf{Abs. Magnitude (3sf)}\\
+        \textbf{GlieseID} & \textbf{Absolute Magnitude} & \textbf{Abs. Magnitude (4sf)}\\
         \hline
-        551 & 15.447142550675103 & 15.447\\
-        623 & 10.739214037414767 & 10.739\\
-        482A & 2.401856416358772 & 2.402\\
-        231 & 5.037467548500953 & 5.037\\
-        286 & 1.0835366113876055 & 1.084\\
-        841 & 9.343217087925737 & 9.343\\
-        35& 14.221627096960558 & 14.222\\
-        440 & 13.182390524468321 & 13.182\\
+        551  & 15.447142550675103 & 15.447\\
+        623  & 10.739214037414767 & 10.739\\
+        482A & 2.401856416358772  & 2.402\\
+        231  & 5.037467548500953  & 5.037\\
+        286  & 1.0835366113876055 & 1.084\\
+        841  & 9.343217087925737  & 9.343\\
+        35   & 14.221627096960558 & 14.222\\
+        440  & 13.182390524468321 & 13.182\\
         
       \end{tabular}
       \label{avm}
@@ -295,7 +299,7 @@ Today, life on Earth is the only known habited planet. We have no information or
 We have found the values of our first variables in the problem, we may proceed.
 
 \subsection{Bolometric Correction and Magnitude}
-
+\label{bcm}
 We have found absolute magnitudes of our stars. The next step we need to take is finding the Bolometric Magnitude of our stars. Bolometric magnitude is the absolute magnitude of a star that takes into account electromagentic radiation of a star with all its wavelenegths. It is defined based on the luminosity of a star. Further on, it will help us later to find the ration of star's luminosity to a solar luminosity.\\
 
 Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will use the extended version of the original Kaler table\cite{kaler}. Because we have 8 stars with different spectral types, we need to use more accurate data for the results to be exact. Bolometric correction is the correction that has been made to Absolute Magnitudes of stars in order to convert its visual magnitude to Bolometric Magnitude.\cite{bc}\\
@@ -325,29 +329,27 @@ Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections ar
     \end{center}
   \end{table}
 
-  Secondly, after applying the data from Table \ref{bc}, we are able to assign Bolometric Correction values to our stars. If some stars have spectral type nor with 0 nor with 5, I will average the Bolometric Correction. For example, if a star has spectral type ``K2.5'', I will take the average between K0 and K5 and later assign that value.  \\
+  Secondly, after applying the data from Table \ref{bc}, we are able to assign Bolometric Correction values to our stars. If some stars have spectral type nor with 0 nor with 5, I will average the Bolometric Correction. For example, if a star has spectral type ``K2.5'', I will take the average between K0 and K5 and later assign that value. Table \ref{bcv} demonstrates the distribution of Bolometric Correction values on the stars.\\
 
 
-\begin{table}[h!]
+\begin{table}[h]
     \begin{center}
       \caption{Stars' Bolometric Correction values}
       \begin{tabular}{c | c | c}
         \textbf{GlieseID} & \textbf{Spectral Type} & \textbf{Bolometric Correction}\\
         \hline
-        551 & M5Ve & -2.3\\
-        623 & M3 & -1.86\\
+        551  & M5Ve & -2.3\\
+        623  & M3 & -1.86\\
         482A & FOV+... & -0.06\\
-        231 & G5V & -0.07\\
-        286 & K0IIIvar & -0.2\\
-        841 & M0 & -1.2\\
-        35 &  DG & N/A\\
-        440 &  DC: & N/A\\
+        231  & G5V & -0.07\\
+        286  & K0IIIvar & -0.2\\
+        841  & M0 & -1.2\\
+        35   & DG & 0\\
+        440  & DC: & 0\\
       \end{tabular}
       \label{bcv}
     \end{center}
   \end{table}
-
-Please note that I left the values of Bolometric Correction for White Dwarfs empty because I could not find the correct values for them. Maybe they do not even exist. To compensate the missing data, I will use the already available ratio of White Dwarfs' luminosity to the solar luminosity. \\
   
   Thirdly, as because the Bolometric Correction is the correction of Absolute Visual Magnitude to Bolometric Visual Magnitude, this means that the formula for Bolometric Correction of a star will look like this:
 
@@ -363,20 +365,20 @@ Please note that I left the values of Bolometric Correction for White Dwarfs emp
 
   With the values of Bolometric Correction from Table \ref{bcv} we can find the values of Bolometric Magntudes for our stars. All the calcualtions below are performed by using Wolfram Alpha Calculator. The result of the calculation are presented in Table \ref{mbol}\\
 
-\begin{table}[h!]
+\begin{table}[h]
     \begin{center}
       \caption{Stars' Bolometric Magnitude values}
-      \begin{tabular}{c | c }
+      \begin{tabular}{c | c}
         \textbf{GlieseID} & \textbf{Bolometric Magnitude}\\
         \hline
-        551 & 13.147\\
-        623 & 8.879\\
+        551  & 13.147\\
+        623  & 8.879\\
         482A & 2.342\\
-        231 & 4.967\\
-        286 & 0.884\\
-        841 & 8.143\\
-        35 & N/A\\
-        440 & N/A\\
+        231  & 4.967\\
+        286  & 0.884\\
+        841  & 8.143\\
+        35   & 14.222\\
+        440  & 13.182\\
       \end{tabular}
       \label{mbol}
     \end{center}
@@ -392,13 +394,72 @@ Luminosity is best desribed as the amount of power radiated by a Black Body like
   L = \delta AT^4\\
   \end{equation}
 
+\subsubsection{Stars' Luminosities}
+
+We will find the lumonisities of ours stars in terms of solar luminosity ($L_{\odot}$). In order to do that, I will use the formula of relationship of Bolometric Magnitude and the ratio of lumonisties, where $M_{bol, *}$ and $L_*$ are Bolometric Magnitude and Luminosity of a star, respectively.
+
+\begin{equation}
+  M_{bol, *} - M_{bol, \odot} = -2.5 \log{10}{(\frac{L_*}{L_{\odot}})}\\
+  \end{equation}
+
+After some rearrangements, we can express the formula in the way that we can find the Luminosity of a star in relationship to Solar Luminosity.
+
+\begin{equation}
+  \frac{L_*}{L_{\odot}} = 10^{\frac{M_{bol, *} - M_{bol, \odot}} {2.5}} = 10^{0.4(M_{bol, *} - M_{bol, \odot})}\\
+  \end{equation}
+
+With the data gained from \ref{bcm}, we can find the lumonisities of our 8 stars. I will use Wolfram Alpha as a calculator. The results are presented in Table \ref{lum}    \\
+
+\begin{table}[h]
+    \begin{center}
+      \caption{Stars' Bolometric Magnitude values}
+      \begin{tabular}{c | c | c}
+        \textbf{GlieseID} & \textbf{$\frac{L_*}{L_{\odot}}$} & \textbf{$\frac{L_*}{L_{\odot}}$} (9sf)\\
+        \hline
+        551  & 0.00043365362363341085 & 0.00043365 \\
+        623  & 0.02209603682544578    & 0.02209604 \\
+        482A & 9.104527949318182      & 9.10452795 \\
+        231  & 0.8109852969785725     & 0.8109853 \\
+        286  & 34.880713131600245     & 34.88071313 \\
+        841  & 0.04352243294403225    & 0.04352243 \\
+        35   & 0.000161194107212134   & 0.00016119 \\
+        440  & 0.000419801310713262   & 0.0004198 \\
+      \end{tabular}
+      \label{lum}
+    \end{center}
+  \end{table}
+
+Please note that the values that I have calculated might differ from official ones. This innacuracy can happen because of innaccuracies in formulas. As I use the simplified and generalized versions of formulas, instead of closed or non-published more accurate formulas. 
+
+\subsection{Circumferential Habitable Zones}
+
+bla bla bla
+
+dasdas
+dasd
+da
+dasdas
+
+dasas
 
 
 
-    
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 % --------------- REFERENCES START HERE ------------------
-  \normalsize
+\newpage
 \bibliographystyle{ieeetr}
 \bibliography{main}
 % --------------- REFERENCES  END  HERE ------------------
