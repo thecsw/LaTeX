@@ -61,7 +61,7 @@
 
 
 %\newpage
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
 %\doublespacing
 %\onehalfspacing
 % --------------- COVER PAGE ENDS HERE ---------------
@@ -136,14 +136,14 @@ Today, life on Earth is the only known habited planet. We have no information or
       \begin{tabular}{l | l | l | l}
         \textbf{GlieseID} & \textbf{Star name} & \textbf{Type} & \textbf{Spectra}\\
         \hline
-        551 & Proxima Centauri & Red Dwarf & M5Ve\\
-        623 & Gliese 623 & Red Dwarf & M3\\
-        482A & 29Gam Vir & Main-Sequence & FOV+...\\
-        231 & Alp Men & Main-Sequence & G5V\\
-        286 & Pollux & Red Giant & K0IIIvar\\
-        841 & HD 208527 & Red Giant & M0\\
-        35 & Van Maan & White Dwarf & DG\\
-        440 & LP 145-141 & White Dwarf & DC:\\
+        551  & Proxima Centauri & Red Dwarf     & M5Ve\\
+        623  & Gliese 623       & Red Dwarf     & M3\\
+        482A & 29Gam Vir        & Main-Sequence & FOV+...\\
+        231  & Alp Men          & Main-Sequence & G5V\\
+        286  & Pollux           & Red Giant     & K0IIIvar\\
+        841  & HD 208527        & Red Giant     & M0\\
+        35   & Van Maan         & White Dwarf   & DG\\
+        440  & LP 145-141       & White Dwarf   & DC:\\
       \end{tabular}
       \label{stars}
     \end{center}
@@ -176,7 +176,7 @@ Today, life on Earth is the only known habited planet. We have no information or
   \subsection{Dependent variables}
   
   \begin{itemize}
-
+    
   \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
     
     \begin{itemize}
@@ -185,13 +185,23 @@ Today, life on Earth is the only known habited planet. We have no information or
       
     \end{itemize}
     
-  \item Inner Edge of Goldilock Zone of a star, $D_L$ ($AU$) 
+  \item Inner Edge of Goldilock Zone of a star, $r_i$ ($AU$) 
     
-  \item Outer Edge of Goldilock Zone of a star, $D_U$ ($AU$)
+  \item Outer Edge of Goldilock Zone of a star, $r_o$ ($AU$)
     
   \item Bolometric Magnitude, $M_{bol}$ ($unit$)
     
   \item Apparent Brightness, $b$ ($W m^{-2}$)
+
+  \item Luminosity of a star, $L_*$ ($W$)
+    
+  \item Absolute Luminosity, $L_{star}$ ($W$)
+
+    \begin{itemize}
+      
+    \item This is the ratio of the luminosty of a star to solar luminosity, $\frac{L_*}{L_{\odot}}$
+      
+    \end{itemize}
     
   \end{itemize}
   
@@ -234,7 +244,7 @@ Today, life on Earth is the only known habited planet. We have no information or
 %  \newpage
   
   
-  \section{Calculating the Circumferential Habitable Zones (Goldilock Zones) of the stars}
+  \section{Main calculations}
   
   As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research. Please not that all the calculation will not be represented in a classical 3 significant figures way. Because astrophysics deals with very large or very small values, there is a need of using values with high preciseness. \\
   
@@ -338,14 +348,14 @@ Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections ar
       \begin{tabular}{c | c | c}
         \textbf{GlieseID} & \textbf{Spectral Type} & \textbf{Bolometric Correction}\\
         \hline
-        551  & M5Ve & -2.3\\
-        623  & M3 & -1.86\\
-        482A & FOV+... & -0.06\\
-        231  & G5V & -0.07\\
+        551  & M5Ve     & -2.3\\
+        623  & M3       & -1.86\\
+        482A & FOV+...  & -0.06\\
+        231  & G5V      & -0.07\\
         286  & K0IIIvar & -0.2\\
-        841  & M0 & -1.2\\
-        35   & DG & 0\\
-        440  & DC: & 0\\
+        841  & M0       & -1.2\\
+        35   & DG       & 0\\
+        440  & DC:      & 0\\
       \end{tabular}
       \label{bcv}
     \end{center}
@@ -405,16 +415,16 @@ We will find the lumonisities of ours stars in terms of solar luminosity ($L_{\o
 After some rearrangements, we can express the formula in the way that we can find the Luminosity of a star in relationship to Solar Luminosity.
 
 \begin{equation}
-  \frac{L_*}{L_{\odot}} = 10^{\frac{M_{bol, *} - M_{bol, \odot}} {2.5}} = 10^{0.4(M_{bol, *} - M_{bol, \odot})}\\
+  L = \frac{L_*}{L_{\odot}} = 10^{\frac{M_{bol, *} - M_{bol, \odot}} {2.5}} = 10^{0.4(M_{bol, *} - M_{bol, \odot})}\\
   \end{equation}
 
 With the data gained from \ref{bcm}, we can find the lumonisities of our 8 stars. I will use Wolfram Alpha as a calculator. The results are presented in Table \ref{lum}    \\
 
 \begin{table}[h]
     \begin{center}
-      \caption{Stars' Bolometric Magnitude values}
+      \caption{Stars' Absolute Luminosity values}
       \begin{tabular}{c | c | c}
-        \textbf{GlieseID} & \textbf{$\frac{L_*}{L_{\odot}}$} & \textbf{$\frac{L_*}{L_{\odot}}$} (9sf)\\
+        \textbf{GlieseID} & \textbf{$L_{star}$} & \textbf{$L_{star}$} (9sf)\\
         \hline
         551  & 0.00043365362363341085 & 0.00043365 \\
         623  & 0.02209603682544578    & 0.02209604 \\
@@ -433,21 +443,49 @@ Please note that the values that I have calculated might differ from official on
 
 \subsection{Circumferential Habitable Zones}
 
-bla bla bla
+For this investigation we will find the lengths of Goldilock Zones of our stars. According to an article by Tom. E. Morris \cite{habz}, the formulas of the inner and outer edges of Circumstellar Habitable are the following
 
-dasdas
-dasd
-da
-dasdas
+\begin{equation}
+  r_i = \sqrt{\frac{L_{star}}{1.1}}\\
+  \end{equation}
 
-dasas
+\begin{equation}
+  r_o = \sqrt{\frac{L_{star}}{0.53}}\\
+  \end{equation}
 
-
-
-
-
+Now, we are able to find the answer. All the calculations are performed by Wolfram Alpha. All the values are calculated in terms of Astronomical Unit, which is the distance from Sun to Earth. It is done in this way, so it is easier to understand the ranges in comparison with out Solar System. The results are presented in Table \ref{chz}.
 
 
+\begin{table}[h]
+    \begin{center}
+      \caption{Stars' Absolute Luminosity values}
+      \begin{tabular}{c | c | c | c}
+        \textbf{GlieseID} & \textbf{$r_i$} \textbf{($AU$)} & \textbf{$r_o$} \textbf{($AU$)} & \textbf{$r_o - r_i$} \textbf{($AU$)}\\
+        \hline
+        551 & 0.02 & 0.03 & 0.01\\
+        623 & 0.14 & 0.2 & 0.06\\
+        482A & 2.88 & 4.14 & 1.27\\
+        231 & 0.86 & 1.24 & 0.38\\
+        286 & 5.63 & 8.11 & 2.48\\
+        841 & 0.2 & 0.29 & 0.09\\
+        35 & 0.01 & 0.02 & 0.01\\
+        440 & 0.02 & 0.03 & 0.01\\
+      \end{tabular}
+      \label{chz}
+    \end{center}
+  \end{table}
+
+We have found the Goldilock Zones of our 8 stars.
+
+\section{Further Calculations}
+
+I thought that 8 stars is not quite enough to judge the hospitability of different star types. I decided to write a program that will take into the account around 120,000 stars and find the length of CHZ.\\
+
+Before introducing the program, I should find the general formula for finding the range of CHZ. Taking into the account all previous section, we can derive this nice formula
+
+\begin{equation}
+  r_o - r_i = \sqrt{\frac{10^{0.4(M_{BC + M - 5(\log_{10}{(d_{pc})}-1)} - M_{bol, \odot})}}{0.53}} - \sqrt{\frac{10^{0.4(M_{BC + M - 5(\log_{10}{(d_{pc})}-1)} - M_{bol, \odot})}}{1.1}}\\
+  \end{equation}
 
 
 
