@@ -418,7 +418,7 @@ After some rearrangements, we can express the formula in the way that we can fin
   L = \frac{L_*}{L_{\odot}} = 10^{\frac{M_{bol, *} - M_{bol, \odot}} {2.5}} = 10^{0.4(M_{bol, *} - M_{bol, \odot})}\\
   \end{equation}
 
-With the data gained from \ref{bcm}, we can find the lumonisities of our 8 stars. I will use Wolfram Alpha as a calculator. The results are presented in Table \ref{lum}    \\
+With the data gained from \ref{bcm}, we can find the lumonisities of our 8 stars. I will use Wolfram Alpha as a calculator. The results are presented in Table \ref{lum}\\
 
 \begin{table}[h]
     \begin{center}
@@ -484,13 +484,20 @@ I thought that 8 stars is not quite enough to judge the hospitability of differe
 Before introducing the program, I should find the general formula for finding the range of CHZ. Taking into the account all previous section, we can derive this nice formula
 
 \begin{equation}
-  r_o - r_i = \sqrt{\frac{10^{0.4(M_{BC + M - 5(\log_{10}{(d_{pc})}-1)} - M_{bol, \odot})}}{0.53}} - \sqrt{\frac{10^{0.4(M_{BC + M - 5(\log_{10}{(d_{pc})}-1)} - M_{bol, \odot})}}{1.1}}\\
+  r_i = \sqrt{\frac{10^{\frac{BC + M - 5(\log_{10}{(d_{pc})}-1) - M_{bol, \odot}} {2.5}}}{1.1}}\\
   \end{equation}
 
+\begin{equation}
+  r_o = \sqrt{\frac{10^{\frac{BC + M - 5(\log_{10}{(d_{pc})}-1) - M_{bol, \odot}} {2.5}}}{0.53}}\\
+  \end{equation}
 
+I wrote a simulation in Python Programming Language that takes nearly all the stars from the database and calculates CHZ lengths for all types of stars.
 
+OUTPUT HERE
 
+\section{Conclusion}
 
+It is better to 
 
 
 
