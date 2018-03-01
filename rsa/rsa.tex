@@ -32,7 +32,7 @@
     showtabs=false,                  
     tabsize=1
 }
- 
+
 \lstset{style=mystyle}
 
 \title{Extended Essay. Mathematics. \\ RSA: Encrypting, Decrypting, Hacking.}
@@ -55,7 +55,7 @@
   Session: May 2018\\
 %  School number: 007055\\
 %  Student number: 0004\\
-  Word count: 3948\\
+  Word count: 4000\\
 \end{figure}
 \end{flushleft}
 
@@ -125,7 +125,7 @@ Ever since people began to write down events or private information, there has b
 cryptography. Cryptography is a study of techniques of encrypting a text in such a manner that
 outsiders to the code cannot understand the contents, but the desired reader can decrypt and read
 the message in its original form. Just like for an early man and modern man, there always has been a
-need for secrecy. \\
+need for secrecy.\\
 
 \subsection{Caesar Cypher}
 \label{bsec:caesar_cypher}
@@ -165,15 +165,14 @@ and it was a massive risk if hostile troops possess the codes. \\
 
 The first attempt at solving the problem of symmetric algorithms goes back to a pair of
 cryptologists: Whitfield Diffie and Martin Hellman. In the book "The Code Book" by Simon
-Singh, there is a story about how these cryptographers came up with the idea of a public-key
+Singh \cite{singh}, there is a story about how these cryptographers came up with the idea of a public-key
 encryption: “I walked downstairs to get a Coke, and almost forgot about the idea. I remembered
 that I'd been thinking about something interesting, but couldn't quite recall what it was. Then it
 came back in a real adrenaline rush of excitement. I was aware for the first time in my work on
-cryptography of having discovered something really valuable.” \cite{singh}\\
+cryptography of having discovered something really valuable.”\\
 
 They have discovered a revolutionary type of cyphering – asymmetric cryptography. This means that it solved the problem of
-single key encryption, where encoder and decoder needed to know the passphrase. The work of
-the algorithm is described in part \ref{bsec:asymmetric}. Unfortunately, they did not find a one-way function for
+single key encryption, where encoder and decoder needed to know the passphrase. Unfortunately, they did not find a one-way function for
 solving the problem, they have published the concept in 1976 and left it open.\\
 
 \subsection{Rivest, Shamir, and Adleman}
@@ -335,7 +334,7 @@ divisible only by one.\\
 
 There are five main steps to generate public and private keys and two steps for encryption and
 decryption together. In this chapter, part \ref{bsec:key} will explain the process of keys generation and part
-\roef{bbsec:first} will show how the message can be encrypted and decrypted. Section \ref{bbsec:second} will present a program, written
+\ref{bbsec:first} will show how the message can be encrypted and decrypted. Section \ref{bbsec:second} will present a program, written
 in C Programming \cite{Clang} Language by me. More detailed information about that in the next parts.
 
 \subsection{Key Generation}
@@ -685,7 +684,7 @@ In this Extended Essay, other factorization methods will not be discussed.
 
 \section{Conclusion}
 
-The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works\ref{sec:usage} \ref{bsec:asymmetric} \ref{sec:math} \ref{sec:rsa} and how it can be hacked\ref{sec:security}.\\
+The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works in parts \ref{sec:usage}, \ref{bsec:asymmetric}, \ref{sec:math}, \ref{sec:rsa} and how it can be hacked from part \ref{sec:security}.\\
 
 Throughout the investigation, we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by the slightly increasing size of the moduli.\\
 
