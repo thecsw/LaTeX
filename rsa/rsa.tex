@@ -3,7 +3,8 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{listings}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{hyperref}
 \usepackage{cite}
 \usepackage{color}
 \usepackage{setspace}
@@ -34,10 +35,10 @@
  
 \lstset{style=mystyle}
 
-\title{Extended Essay. Mathematics.}
+\title{Extended Essay. Mathematics. \\ RSA: Encrypting, Decrypting, Hacking.}
 %\date{06-12-2018}
 \date{}
-\author{Sagindyk Urazayev}
+%\author{Sagindyk Urazayev}
 
 \begin{document}
 
@@ -45,16 +46,16 @@
 
 \maketitle
 
-\begin{center}
-Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?
-\end{center}
+%\begin{center}
+%RSA: Encrypting, Decrypting, Hacking.\\
+%\end{center}
 
 \begin{flushleft}
 \begin{figure}[b]
-%  Session: May 2018\\
+  Session: May 2018\\
 %  School number: 007055\\
 %  Student number: 0004\\
-  Word count: 3996\\
+  Word count: 3948\\
 \end{figure}
 \end{flushleft}
 
@@ -67,7 +68,6 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 \listoffigures
 \listoftables
 \lstlistoflistings
-
 
 \newpage
 \pagenumbering{arabic}
@@ -83,14 +83,16 @@ Does RSA Provide Secure Data Transmission and Confidential Certificate Signature
 \begin{abstract}
 \label{sec:abstract}
 
-By starting this Extended Essay with a lovely webcomic by Randall Munroe, one can guess that the "4096-BIT RSA" sounds like it is tough to crack.
+By starting this Extended Essay with a lovely webcomic by Randall Munroe, one can guess that the ``4096-BIT RSA'' sounds like it is tough to crack.
 However, what is "RSA" and how does it work that even a "MILLION-DOLLAR CLUSTER" is not enough to crack it?\\
-The research question of this Extended Essay is - "Does RSA provide secure data transmission
-and confidential certificate signatures?"
+The research question of this Extended Essay is - ``Does RSA provide secure data transmission and confidential certificate signatures?''\\
 
 This Extended Essay will explore the history of RSA
 algorithm, the structure of the cryptographic technique, usage of it and ways to crack the algorithm.
-For the sake of demonstration and proof, I have written several programs in C Language\cite{Clang} that can help us to understand the process "behind the curtains". After all these parts, at the end, we can conclude how RSA technique is secure.
+For the sake of demonstration and proof, I have written several programs in C Language\cite{Clang} that can help us to understand the process "behind the curtains". After all these parts, at the end, we can conclude how RSA technique is secure.\\
+
+Word Count : 133
+
 \end{abstract}
 
 \section{Introduction}
@@ -100,7 +102,7 @@ First time when I heard about RSA technique, was during the ITGS class in IB cou
 Course Companion\cite{itgs} there is a
 chapter about Security and Secret Key Encryptions. As an example, the author included two cases
 of encryption: Symmetric Key Encryption or Single Key Encryption and Asymmetric key
-encryption, more known as Public Key Encryption.
+encryption, more known as Public Key Encryption.\\
 
 During the lesson, the fact that a message can be encrypted by one key and only a second key can
 decrypt the message intrigued me. After that, I did some research on asymmetric encryptions,
@@ -108,13 +110,13 @@ particularly about RSA and other cryptographic technique based on it. I found th
 used for messages encryption, but also for signing online certificates to prove one's identity. I
 chose this topic for my Extended Essay because I believe the Mathematics in the algorithm is
 simple and elegant; also, it is safe to say that RSA is used everywhere and the Internet trust relies
-on this particular algorithm.
+on this particular algorithm.\\
 
 RSA encryption algorithm is essential if not the most critical security algorithm today, as nearly
 every system in the world uses this asymmetric encryption technique to encrypt and decrypt data.
 In this Extended Essay, I will be researching the methods of RSA: the way the algorithm works,
 why it is considered secure, where and how it is used, mathematical proof with examples and ways
-to break or brute-force the algorithm.
+to break or brute-force the algorithm.\\
 
 \section{Historical background}
 \label{bsec:historical_background}
@@ -123,32 +125,32 @@ Ever since people began to write down events or private information, there has b
 cryptography. Cryptography is a study of techniques of encrypting a text in such a manner that
 outsiders to the code cannot understand the contents, but the desired reader can decrypt and read
 the message in its original form. Just like for an early man and modern man, there always has been a
-need for secrecy. 
+need for secrecy. \\
 
 \subsection{Caesar Cypher}
 \label{bsec:caesar_cypher}
 
 First records of known cryptographic techniques go back to the times that were Before the
 Common Era, in the times Julius Caesar. Caesar cypher or Caesar's code is one the first methods
-of encrypting texts. It works in a way that there are a text and a key, where the key is an integer value.
+of encrypting texts. It works in a way that there are a text and a key, where the key is an integer value.\\
 
 The key shows a shift of letters in the document according to the Latin alphabet. For example, if
 the key is two, then the first letter of the alphabet will become third, the second will become forth
 and so on. During his lifetime, Julius Caesar mostly used three as a shift to protect messages of
-military significance.\cite{singh}
+military significance.\cite{singh}\\
 
 \subsection{Enigma Machine}
 \label{bsec:enigma_machine}
 
 We can say for sure that the moment, when encryption was the tool of secretly transmitting data
 so important and valuable that lives of thousands of people depended on how well that information
-is transferred from one end to another, is World War II.
+is transferred from one end to another, is World War II.\\
 
 Enigma machine was the German
 perfection of cryptography and engineering, the device so small and so complex, that it produced
 code, which was considered as impossible to crack. However, during the war, a brilliant
 mathematician and cryptographer Alan Turing found a flaw in Enigma Machine and was able to
-build the first computer to exploit the system's vulnerability\cite{enigma}.
+build the first computer to exploit the system's vulnerability\cite{enigma}.\\
 
 \subsection{Flaw in Symmetric Cryptography}
 \label{bsec:flaw}
@@ -156,7 +158,7 @@ build the first computer to exploit the system's vulnerability\cite{enigma}.
 All existing algorithms had one most significant vulnerability in all of them- both ends should have
 known the key or secret passphrase, which is used to encrypt and decrypt messages. In the example
 with Enigma machine, German radio operators had a book with Enigma codes for the next month,
-and it was a massive risk if hostile troops possess the codes. 
+and it was a massive risk if hostile troops possess the codes. \\
 
 \subsection{Whitfield Diffie and Martin Hellman}
 \label{bsec:diffie}
@@ -167,12 +169,12 @@ Singh, there is a story about how these cryptographers came up with the idea of 
 encryption: “I walked downstairs to get a Coke, and almost forgot about the idea. I remembered
 that I'd been thinking about something interesting, but couldn't quite recall what it was. Then it
 came back in a real adrenaline rush of excitement. I was aware for the first time in my work on
-cryptography of having discovered something really valuable.” \cite{singh}
+cryptography of having discovered something really valuable.” \cite{singh}\\
 
 They have discovered a revolutionary type of cyphering – asymmetric cryptography. This means that it solved the problem of
 single key encryption, where encoder and decoder needed to know the passphrase. The work of
 the algorithm is described in part \ref{bsec:asymmetric}. Unfortunately, they did not find a one-way function for
-solving the problem, they have published the concept in 1976 and left it open.
+solving the problem, they have published the concept in 1976 and left it open.\\
 
 \subsection{Rivest, Shamir, and Adleman}
 \label{bsec:rsa}
@@ -185,12 +187,12 @@ all the latest scientific papers and with an ability to implement something new 
 Shamir is also a computer scientist with a lightning intellect and ability to directly focus on the
 core of the problem. Adleman was a mathematician with broad knowledge and patience, so during
 the research, he was finding flaws in the works of Rivest and Shamir, and ensured that
-cryptographers did not follow a false lead.\cite{singh}
+cryptographers did not follow a false lead.\cite{singh}\\
 
 A year later Ron Rivest with the help of Adi Shamir
 and Leonard Adleman has made a breakthrough by finding the desired one-way function, thus
 solving the problem of symmetric encryptions. In August 1977, the trio published a full paper
-about the new asymmetric encryption technique, which was named after its creators- R.S.A.\cite{rsapaper}
+about the new asymmetric encryption technique, which was named after its creators- R.S.A.\cite{rsapaper}\\
 
 \section{The Usage of RSA}
 \label{sec:usage}
@@ -199,10 +201,11 @@ As an algorithm and cryptographic technique, RSA is brilliant without a doubt. I
 that RSA and its versions are used everywhere in our digital world. It is crucial for modern
 cryptography techniques to be sophisticated for computers to brute-force but not too complicated
 and inefficient for computers to encrypt and decrypt data. RSA is located right in the middle, as
-the operations performed in \ref{sec:math} do not need a lot of computational power but to attack it requires a lot of it.\ref{sec:security}
+the operations performed in part \ref{sec:math} do not need a lot of computational power but to attack it requires a lot of it.
+For more information please refer to part \ref{sec:security}\\
 
 To demonstrate the work and the functionalities of the algorithm, three types of cryptography techniques will be displayed:
-single key encryption, assymetric encryption and certificate signatures.
+single key encryption, assymetric encryption and certificate signatures.\\
 
 \subsection{Symmetric Encryption}
 \label{bsec:symmetry}
@@ -226,13 +229,13 @@ people have met and shared the encryption key in real life, there is no danger t
 steal the shared key and decrypt transmissions. The problem arises when we have a scenario where
 parties on both ends never talked with each other and are located on distinct physical locations.
 Both ends want to transmit data securely, so the eavesdropper in the
-middle will not understand the contents of the transmitted information.
+middle will not understand the contents of the transmitted information.\\
 
 In this scenario, it is
 impossible to transmit data securely, because to decrypt text messages, both ends should know
 the same key. Before the conversation, one end should send the key to the other end; however,
 the eavesdropper will be able to "sniff" the key and will be able to understand all further encrypted
-transmissions, thus compromising all further interactions.
+transmissions, thus compromising all further interactions.\\
 
 \subsection{Asymmetric Encryption}
 \label{bsec:asymmetric}
@@ -241,7 +244,7 @@ Asymmetric encryption relies on two distinct keys, where one is
 used for encrypting data and the second one is for decrypting data that was decoded by its unique pair.
 Keys for encrypting and decrypting are called public and private, respectively. There are two ways
 of using RSA: to send an encrypted message to the decoder and signing certificates for
-proving one's identity.
+proving one's identity.\\
 
 \subsubsection{Encrypting Messages}
 \label{bbsec:encryption}
@@ -250,7 +253,7 @@ Every user has a pair of connected keys: a public key and private key. The publi
 to everyone while the private key should be kept private to the owner of the unique pair
 of keys. It is a preferred way of encryption; because both ends do not need to exchange the secret
 key, they would already know the required part of the pair to transmit messages securely.
-Continuing from part \ref{bsec:asymmetric}, this is widely used for secure data transmissions.
+Continuing from part \ref{bsec:asymmetric}, this is widely used for secure data transmissions.\\
 
 Imagine a scenario with three
 users: Hal, Dave, and Eavesdropper. If Hal wants to send a message to Dave, Hal should use Dave's
@@ -260,7 +263,7 @@ transmitted data, make a copy of it and send it forward to Dave, thus having a c
 Now, Dave and Eavesdropper have the encrypted message from Hal. Dave, using the private key
 that is available only to him, can decrypt the message from Hal and read the contents. Fortunately,
 the eavesdropper has access only to Dave's public key and not to his private key, so he is not able to read
-message's contents.
+message's contents.\\
 
 The transmission is shown in Figure \ref{fig:asymmetric}.
 
@@ -276,18 +279,18 @@ The transmission is shown in Figure \ref{fig:asymmetric}.
 \label{bbsec:signing}
 
 RSA encryption and decryption works in both ways, so a
-message can be encrypted by a public key and decrypted by the private key and vice versa.
+message can be encrypted by a public key and decrypted by the private key and vice versa.\\
 
 Imagine a scenario, when Hal wants to send an email to Stanley. The problem is that Hal is not sure
 if Stanley is indeed Stanley and not a thief who stole Stanley's identity. To resolve the issue, RSA
-technique should be used. 
+technique should be used. \\
 
 Hal and Stanley have a common friend - Dave. Dave can prove Stanley's identity by signing Stanley's
 public key with his private key. Later, Hal can decrypt Stanley's public key with Dave's public key.
-With this, Hal would be confident about Stanley's identity.
+With this, Hal would be confident about Stanley's identity.\\
 
 This whole process is based on trust. If Person A will sign a key of an untrusted entity, Person B, all other parties
-would lose trust in Person A as he compromised secure network by signing unknown public key.
+would lose trust in Person A as he compromised secure network by signing unknown public key.\\
 
 \section{Mathematical Foundation of RSA}
 \label{sec:math}
@@ -295,7 +298,7 @@ would lose trust in Person A as he compromised secure network by signing unknown
 The mathematics involved in keys generation and RSA algorithm require knowledge on modular
 arithmetic, greatest common divisors, Euler's totient function, prime number theorem. In order to
 make the calculations understandable and not hard to follow, I will make an introduction to
-required theorems and formulas before the RSA steps.
+required theorems and formulas before the RSA steps.\\
 
 \subsection{Modular Arithmetic and Congruence}
 \label{bsec:mod}
@@ -317,7 +320,7 @@ integrally divisible by a number $m$, so that $b - c/m$ is an integer, then $b$ 
 The Euler's totient function $\varphi(n)$ is defined as a function that returns a number of positive integers
 $<n$ that are relatively coprime to $n$, this means that they are not sharing any common factor. For
 example, the totatives of $n = 9$ are $1, 2, 4, 5, 7 \text{ and } 8$. So that $\varphi(9) = 6$. For prime number $p$, the
-number of totatives will be $p - 1$, as no integers share same multiples with $p$, except $p$.
+number of totatives will be $p - 1$, as no integers share same multiples with $p$, except $p$.\\
 
 \subsection{Greatest Common Divisor}
 \label{bsec:gcd}
@@ -325,15 +328,15 @@ number of totatives will be $p - 1$, as no integers share same multiples with $p
 Greatest common divisor, using the notation $gcd(a,b)=c$, means that and b share some common
 divisors and where $c$ is the largest divisor. For example: $gcd(24,9)=3$. If we have an
 expression that $gcd(d,e)=1$, it means that d and e are coprime because they are both integrally
-divisible only by one.
+divisible only by one.\\
 
 \section{RSA}
 \label{sec:rsa}
 
 There are five main steps to generate public and private keys and two steps for encryption and
-decryption together. In this chapter, \ref{bsec:key} will explain the process of keys generation and part
-\ref{bbsec:first} will show how the message can be encrypted and decrypted. \ref{bbsec:second} will present a program, written
-in C Programming\cite{Clang} Language by me. More detailed information about that in the next parts.
+decryption together. In this chapter, part \ref{bsec:key} will explain the process of keys generation and part
+\roef{bbsec:first} will show how the message can be encrypted and decrypted. Section \ref{bbsec:second} will present a program, written
+in C Programming \cite{Clang} Language by me. More detailed information about that in the next parts.
 
 \subsection{Key Generation}
 \label{bsec:key}
@@ -408,13 +411,13 @@ It can be seen that the formula for encryption and decryption are inverse, the o
 the public and private exponents, which are connected to each other, as only in right pairs,
 encryption and decryption would take place. Thus, this is considered a one-way function, so
 without knowing the public exponent and private exponent, at the time it is considered impossible
-to brute-force private exponent. The reason for this will be explained in part \ref{sec:security}.
+to brute-force private exponent. The reason for this will be explained in part \ref{sec:security}.\\
 
 \subsection{Examples of RSA}
 \label{bsec:example}
 
 In this part I will include three RSA examples, firstly using fairly small prime numbers, after that
-I will use big prime numbers and during the second example, I will use my program, written in C.
+I will use big prime numbers and during the second example, I will use my program, written in C.\\
 
 \subsubsection{First Example with Small Primes}
 \label{bbsec:first}
@@ -530,7 +533,7 @@ deciphered with the appropriate private key.
 \end{align*}
 
 After the decryption, we can rebuild the initial message- “ATTACK AT DAWN”.
-RSA has proved its work with small values of $p$ and $q$, we can test RSA for bigger values.
+RSA has proved its work with small values of $p$ and $q$, we can test RSA for bigger values.\\
 
 \subsubsection{Second Example with Large Primes}
 \label{bbsec:second}
@@ -538,16 +541,14 @@ RSA has proved its work with small values of $p$ and $q$, we can test RSA for bi
 In order to work with big primes, calculations by hand or Wolfram Alpha will become inefficient
 and quite difficult. To demonstrate the work of RSA, I wrote a program in C. 
 The program takes an input of modulo - $n$, public exponent - $e$, private exponent – $d$
-and a message that needs to be encrypted. More detailed information about the code in
-\ref{big}.\\
-
+and a message that needs to be encrypted. More detailed information about the code in Appendix\ref{big}.\\
 The input message will be encoded in hexadecimal by using ASCII table. Using
 the message’s representation in hexadecimal, the program will encrypt it using the public key, later
 will make an attempt of reading the contents of the encrypted message and finally decrypting the
 message using the private key. I wrote this program for this Extended Essay to demonstrate the
-work of RSA encryption algorithm with big primes and proving the security of RSA later in \ref{sec:security}.
+work of RSA encryption algorithm with big primes and proving the security of RSA later in section \ref{sec:security}.
 The input and output of the program will be shown in boxes below. Calculations have been
-made on a computer with specifications that can be found in \ref{specs}\\
+made on a computer with specifications that can be found in Appendix\ref{specs}\\
 
 I have entered values 516311845790656153499716760847001433441357,\\ 65537 and
 5617843187844953170308463622230283376298685 for modulo n, public exponent e, and private
@@ -568,10 +569,10 @@ the world are trying to factor values of $n$, thus meaning finding initial prime
 
 RSA Factoring Challenge is a challenge by RSA Laboratories. They have calculated multiple n on
 a computer with no network connection and all the hard are destroyed in order to keep $p$ and $q$ a
-secret.
+secret.\\
 
 The factoring is a very big mathematical challenge because in general we will need to brute-force
-all possible combination and find the correct match.
+all possible combination and find the correct match.\\
 
 \subsection{Full Brute-Force}
 \label{bsec:full}
@@ -631,7 +632,7 @@ It is expected for the worst-case performance to be $O(\pi(n)^2)$ or $O((\frac{n
 Because this algorithm loops only prime
 numbers, it would need to go through a fewer number of iterations, thus making the algorithm more efficient.
 In order to demonstrate the work of the algorithm, I have written another C program that will factorize
-input and find its primes.
+input and find its primes.\\
 
 \begin{lstlisting}[caption=Demonstration of Prime Factorization with Primes]
   $ ./factor_with_primes 9237079
@@ -646,7 +647,7 @@ input and find its primes.
   \end{lstlisting}
 
 Here is the difference and the reason why the second version runs faster than the full brute-force.
-For more details, please refer to my GitHub with the open code, comments and documentation. 
+For more details, please refer to my GitHub with the open code, comments and documentation. \\
 
 \subsection{Fast Factorizing Algorithm}
 \label{bsec:fast}
@@ -660,7 +661,7 @@ they suggest factoring algorithm by Richard Schroeppel
 
 The average worst-case scenario is approximately $O(n^{1/4})$. Even for fastest algorithms, the difficulty
 of breaking the key will rise exponentially with each new digit. Table \ref{table:rsa} shows the performance
-of one of the fastest factoring algorithms.
+of one of the fastest factoring algorithms.\\
 
 \begin{table}
   \begin{center}
@@ -684,11 +685,11 @@ In this Extended Essay, other factorization methods will not be discussed.
 
 \section{Conclusion}
 
-The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works\ref{sec:usage} \ref{bsec:asymmetric} \ref{sec:math} \ref{sec:rsa} and how it can be hacked\ref{sec:security}.
+The main question of this Extended Essay is "Does RSA Provide Secure Data Transmission and Confidential Certificate Signatures?". Now, it is possible to the question as we have seen how the algorithm works\ref{sec:usage} \ref{bsec:asymmetric} \ref{sec:math} \ref{sec:rsa} and how it can be hacked\ref{sec:security}.\\
 
-Throughout the investigation, we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by the slightly increasing size of the moduli.
+Throughout the investigation, we see how the RSA algorithm is sophisticated and logical. Not too complicated for computers to calculate it and exponentially difficult to brute-force. My program from Appendix \ref{big} and \ref{result} demonstrated how quickly a relatively slow computer \ref{specs} is able to encrypt and decrypt digital data. On the other hand, programs from Appendix \ref{fullbrute} and \ref{primes} demonstrated the complications that can arise even by the slightly increasing size of the moduli.\\
 
-Over the last decades, RSA has proven its stability and efficiency, therefore it is actively used by almost all companies and organizations to ensure one's privacy and prove the identity of users, thus increasing the overall trust on the web and making the world a safer place.\\ 
+Over the last decades, RSA has proven its stability and efficiency, therefore it is actively used by almost all companies and organizations to ensure one's privacy and prove the identity of users, thus increasing the overall trust on the web and making the world a safer place.\\
 
 \newpage
 \singlespace
