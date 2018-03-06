@@ -55,7 +55,7 @@
   Session: May 2018\\
 %  School number: 007055\\
 %  Student number: 0004\\
-  Word count: 4000\\
+  Word count: 3975\\
 \end{figure}
 \end{flushleft}
 
@@ -110,11 +110,11 @@ particularly about RSA and other cryptographic technique based on it. I found th
 used for messages encryption, but also for signing online certificates to prove one's identity. I
 chose this topic for my Extended Essay because I believe the Mathematics in the algorithm is
 simple and elegant; also, it is safe to say that RSA is used everywhere and the Internet trust relies
-on this particular algorithm.\\
+on this algorithm.\\
 
 RSA encryption algorithm is essential if not the most critical security algorithm today, as nearly
 every system in the world uses this asymmetric encryption technique to encrypt and decrypt data.
-In this Extended Essay, I will be researching the methods of RSA: the way the algorithm works,
+In this EE, I will be researching the methods of RSA: the way the algorithm works,
 why it is considered secure, where and how it is used, mathematical proof with examples and ways
 to break or brute-force the algorithm.\\
 
@@ -164,7 +164,7 @@ and it was a massive risk if hostile troops possess the codes. \\
 \label{bsec:diffie}
 
 The first attempt at solving the problem of symmetric algorithms goes back to a pair of
-cryptologists: Whitfield Diffie and Martin Hellman. In the book "The Code Book" by Simon
+cryptologists: Whitfield Diffie and Martin Hellman. In the book by Simon
 Singh \cite{singh}, there is a story about how these cryptographers came up with the idea of a public-key
 encryption: “I walked downstairs to get a Coke, and almost forgot about the idea. I remembered
 that I'd been thinking about something interesting, but couldn't quite recall what it was. Then it
@@ -190,7 +190,7 @@ cryptographers did not follow a false lead.\cite{singh}\\
 
 A year later Ron Rivest with the help of Adi Shamir
 and Leonard Adleman has made a breakthrough by finding the desired one-way function, thus
-solving the problem of symmetric encryptions. In August 1977, the trio published a full paper
+solving the problem of symmetric encryptions. In 1977, the trio published a full paper
 about the new asymmetric encryption technique, which was named after its creators- R.S.A.\cite{rsapaper}\\
 
 \section{The Usage of RSA}
@@ -306,7 +306,7 @@ In mathematics, the modulus is the operation to get the remainder when diving on
 another. For example, if we want to find modulus of $31$ to $9$, we use the notation: $31\bmod9$, this
 means that we divide $31$ by $9$ and take out only the remainder, in this case, it is going to be $4$.
 Congruence means that if two numbers $b$ and $c$ have the property that their difference $b - c$ is
-integrally divisible by a number $m$, so that $b - c/m$ is an integer, then $b$ and $c$ are said to be
+integrally divisible by a number $m$, so that $(b - c)/m$ is an integer, then $b$ and $c$ are said to be
 "congruent modulo $m$", where $m$ is called the modulus. The notation as follows:
 
 \begin{equation*}
@@ -324,7 +324,7 @@ number of totatives will be $p - 1$, as no integers share same multiples with $p
 \subsection{Greatest Common Divisor}
 \label{bsec:gcd}
 
-Greatest common divisor, using the notation $gcd(a,b)=c$, means that and b share some common
+Greatest common divisor, using the notation $gcd(a,b)=c$, means that $a$ and $b$ share some common
 divisors and where $c$ is the largest divisor. For example: $gcd(24,9)=3$. If we have an
 expression that $gcd(d,e)=1$, it means that d and e are coprime because they are both integrally
 divisible only by one.\\
@@ -333,9 +333,7 @@ divisible only by one.\\
 \label{sec:rsa}
 
 There are five main steps to generate public and private keys and two steps for encryption and
-decryption together. In this chapter, part \ref{bsec:key} will explain the process of keys generation and part
-\ref{bbsec:first} will show how the message can be encrypted and decrypted. Section \ref{bbsec:second} will present a program, written
-in C Programming \cite{Clang} Language by me. More detailed information about that in the next parts.
+decryption together. More detailed information about that in the next parts.
 
 \subsection{Key Generation}
 \label{bsec:key}
@@ -415,8 +413,7 @@ to brute-force private exponent. The reason for this will be explained in part \
 \subsection{Examples of RSA}
 \label{bsec:example}
 
-In this part I will include three RSA examples, firstly using fairly small prime numbers, after that
-I will use big prime numbers and during the second example, I will use my program, written in C.\\
+In this part I will include two RSA examples.\\
 
 \subsubsection{First Example with Small Primes}
 \label{bbsec:first}
@@ -429,7 +426,7 @@ some of the calculations by hand, after 4th step, I will use Wolfram Alpha to co
   \begin{equation*}
     p=11 \text{ and } q=13\\
   \end{equation*}
-  \item In order to calculate our modulus, I will multiply these two primes and the result will be
+  \item In order to calculate modulus, I will multiply these two primes and the result will be
     the modulus $n$
     \begin{equation*}
       n=p \times q=11 \times 13=143
@@ -547,7 +544,7 @@ will make an attempt of reading the contents of the encrypted message and finall
 message using the private key. I wrote this program for this Extended Essay to demonstrate the
 work of RSA encryption algorithm with big primes and proving the security of RSA later in section \ref{sec:security}.
 The input and output of the program will be shown in boxes below. Calculations have been
-made on a computer with specifications that can be found in Appendix\ref{specs}\\
+made on a computer with specifications that can be found in Appendix \ref{specs}.\\
 
 I have entered values 516311845790656153499716760847001433441357,\\ 65537 and
 5617843187844953170308463622230283376298685 for modulo n, public exponent e, and private
@@ -560,7 +557,7 @@ initial message – “The cake is a lie.” Further details and examples can be
 \section{Security of RSA}
 \label{sec:security}
 
-As mentioned multiple time before, RSA encryption algorithm is considered secure. The key
+As mentioned above, RSA encryption algorithm is considered secure. The key
 generation is not very expensive operation in terms of computer resources. For computers,
 multiplication is a very easy task and they can do it easily. On the other hand, if we know n, to
 find two prime numbers $p$ and $q$ is a tough challenge. There is a challenge, where people around
