@@ -8,6 +8,9 @@
 \usepackage{cite}
 \usepackage{color}
 \usepackage{setspace}
+%\usepackage[english]{babel}
+\usepackage{minted}
+
 \doublespacing
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -116,7 +119,7 @@ RSA encryption algorithm is essential if not the most critical security algorith
 every system in the world uses this asymmetric encryption technique to encrypt and decrypt data.
 In this EE, I will be researching the methods of RSA: the way the algorithm works,
 why it is considered secure, where and how it is used, mathematical proof with examples and ways
-to break or brute-force the algorithm.\\
+to break or brute-force the algorithm. 
 
 \section{Historical background}
 \label{bsec:historical_background}
@@ -764,7 +767,14 @@ with GMP\cite{gmp}, the library allows C to allocate memory for variables with v
 
 The extended version of the program with comments and documentation is available\cite{github}.
 
-\begin{lstlisting}[language=C, caption=Source Code of rsa.c]
+%\begin{lstlisting}[language=C, caption=Source Code of rsa.c]
+\begin{minted}
+  [
+    fontsize=\footnotesize,
+    linenos,
+    breaklines
+  ]
+  {c}
 #include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
@@ -878,7 +888,8 @@ int main(int argc, char** argv) {
     printf("\nThank you for using rsa-ee!\nExiting...\n");
     return EXIT_SUCCESS;
 }
-\end{lstlisting}
+\end{minted}
+%\end{lstlisting}
 
 \newpage
 
@@ -924,7 +935,6 @@ The results:
 
 Thank you for using rsa-ee!
 Exiting...
-
 \end{lstlisting}
 
 \newpage
@@ -932,7 +942,14 @@ Exiting...
 \label{fullbrute}
 Full code with documentation is available on my Github page.\cite{github}\\
 
-\begin{lstlisting}[language=C, caption=Source Code of rsa-with-integers.c]
+%\begin{lstlisting}[language=C, caption=Source Code of rsa-with-integers.c]
+\begin{minted}
+  [
+    fontsize=\footnotesize,
+    linenos,
+    breaklines
+  ]
+  {c}
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -969,7 +986,7 @@ int main(int argc, char** argv) {
     printf("\nExecution time in seconds : %f\n", time_spent);
     return EXIT_SUCCESS;
 }
-\end{lstlisting}
+\end{minted}
 \newpage
 \section{Factorization with Primes (Source Code)}
 \label{primes}
@@ -977,7 +994,13 @@ Program to factor input and find two primes.\\
 
 Full code with documentation is available on my Github page.\cite{github}\\
 
-\begin{lstlisting}[language=C, caption=Source Code of factor-with-primes.c]
+%\begin{lstlisting}[language=C, caption=Source Code of factor-with-primes.c]
+\begin{minted}[
+    fontsize=\footnotesize,
+    linenos,
+    breaklines
+  ]
+  {c}
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -1082,7 +1105,7 @@ int main(int argc, char** argv) {
     printf("\nExecution time in seconds : %f\n", time_spent);
     return EXIT_SUCCESS;
 }
-  \end{lstlisting}
+  \end{minted}
 
 \newpage
 \bibliography{rsa}

@@ -1,4 +1,4 @@
-pdflatex rsa.tex
+pdflatex -shell-escape rsa.tex
 bibtex rsa
-pdflatex rsa.tex
-pdflatex rsa.tex
+pdflatex -shell-escape rsa.tex
+pdflatex -shell-escape rsa.tex
