@@ -6,7 +6,7 @@
 \author{}
 \usepackage{url}
 \usepackage{setspace}
-%\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{listings}
@@ -14,6 +14,8 @@
 \usepackage{multicol}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{minted}
+\usepackage{siunitx}
 
 \begin{document}
 % --------------- COVER PAGE STARTS HERE ---------------
@@ -88,6 +90,7 @@ At the end of the research, we will understand which star types are more preferr
 
 For the sake of demonstration, I have written several programs and simulations to support my investigation. All of the source code is available on my Github page in the ``pyhyg'' repository. \cite{github}\\
 
+  The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or mentioned in the guides. During the investigation, Luminosity and Apparrent Brightness formulas from the Physics Guide will be used. 
 
 \section{Investigation data}
 
@@ -97,7 +100,9 @@ My phsyics investgation is aimed at finding the best odds of living near differe
 
 \textbf{The research question is}
 
-\textit{What is the relationship between the conditions of existence of life in the Goldilock Zone versus star's spectra and type }
+%\textit{What is the relationship between the conditions of existence of life, habitability in the Goldilock Zone versus star's spectra and type?}
+
+ \textit{What is the relationship between habitability in the star's Goldilock Zone versus star's Apparent Visual Magnitude?}
 
 \subsection{Hypothesis}
 
@@ -106,11 +111,6 @@ Today, life on Earth is the only known habited planet. We have no information or
 \textbf{My hypothesis is}
 
   \textit{The most favorable conditions for life formations are near the members of Main-Sequence stars.}
-
-  \subsection{Outside of the syllabus}
-
-  The topic and the concepts that I am exploring are mostly outside the curriculum of Physics: Option D Astrophysics. The topic of Circumferential Habitable Zones of stars are not explored or mentioned in the guides. During the investigation, Luminosity and Apparrent Brightness formulas from the Physics Guide will be used. 
-
   
 \section{Initial set of data and choices}
 
@@ -227,6 +227,20 @@ Today, life on Earth is the only known habited planet. We have no information or
   \section{Main calculations}
   
   As now, I have discussed and presented all the initial data, now is the time to start the calculations and physical research. Please not that all the calculation will not be represented in a classical 3 significant figures way. Because astrophysics deals with very large or very small values, there is a need of using values with high preciseness. \\
+
+  In order to find an answer for our research question, we will follow several steps during our main calculations. So, the calculations will go in the following order that is presented below.
+
+  \begin{enumerate}
+
+  \item Absolute Visual Magnitude
+
+  \item Bolometric Correction and Magnitude
+
+  \item Lumonosity
+
+  \item Circumferential Habitable Zones\\
+    
+    \end{enumerate}
   
   Firstly, we should know the distance and Apparent Visual Magnitude of our stars. Table \ref{data} shows the data that was pulled from the database.
   
@@ -236,14 +250,14 @@ Today, life on Earth is the only known habited planet. We have no information or
       \begin{tabular}{c | c | c}
         \textbf{GlieseID} & \textbf{Distance (pc)} & \textbf{Apparent Magnitude} \\
         \hline
-        551  & 1.2959  & 11.010\\
-        623  & 8.0567  & 10.270\\
-        482A & 11.6850 & 2.740\\
-        231  & 10.1978 & 5.080\\
-        286  & 10.3584 & 1.160\\
-        841  & 15.9719 & 10.360\\
-        35   & 4.2626  & 12.370\\
-        440  & 4.6081  & 11.500\\
+        551  & \num{1.23e+00} & \num{1.10e+01}\\
+        623  & \num{8.06e+00} & \num{1.03e+01}\\
+        482A & \num{1.17e+01} & \num{2.74e+00}\\
+        231  & \num{1.02e+01} & \num{5.08e+00}\\
+        286  & \num{1.04e+01} & \num{1.16e+00}\\
+        841  & \num{1.60e+01} & \num{1.04e+01}\\
+        35   & \num{4.26e+01} & \num{1.24e+01}\\
+        440  & \num{4.61e+01} & \num{1.15e+01}\\
       \end{tabular}
       \label{data}
     \end{center}
@@ -270,16 +284,16 @@ Today, life on Earth is the only known habited planet. We have no information or
     \begin{center}
       \caption{Calculations of stars' Absolute Magnitudes}
       \begin{tabular}{c | c | c}
-        \textbf{GlieseID} & \textbf{Absolute Magnitude} & \textbf{Abs. Magnitude (4sf)}\\
+        \textbf{GlieseID} & \textbf{Absolute Magnitude} & \textbf{Abs. Magnitude (sci3)}\\
         \hline
-        551  & 15.447142550675103 & 15.447\\
-        623  & 10.739214037414767 & 10.739\\
-        482A & 2.401856416358772  & 2.402\\
-        231  & 5.037467548500953  & 5.037\\
-        286  & 1.0835366113876055 & 1.084\\
-        841  & 9.343217087925737  & 9.343\\
-        35   & 14.221627096960558 & 14.222\\
-        440  & 13.182390524468321 & 13.182\\
+        551  & 15.447142550675103 & \num{1.54e+01}\\
+        623  & 10.739214037414767 & \num{1.07e+01}\\
+        482A & 2.401856416358772  & \num{2.40e+00}\\
+        231  & 5.037467548500953  & \num{5.037e+00}\\
+        286  & 1.0835366113876055 & \num{1.084}\\
+        841  & 9.343217087925737  & \num{9.343}\\
+        35   & 14.221627096960558 & \num{1.42e+01}\\
+        440  & 13.182390524468321 & \num{1.32e+01}\\
         
       \end{tabular}
       \label{avm}
@@ -361,14 +375,14 @@ Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections ar
       \begin{tabular}{c | c}
         \textbf{GlieseID} & \textbf{Bolometric Magnitude}\\
         \hline
-        551  & 13.147\\
+        551  & \num{1.31e+01}\\
         623  & 8.879\\
         482A & 2.342\\
         231  & 4.967\\
-        286  & 0.884\\
+        286  & \num{8.84e-01}\\
         841  & 8.143\\
-        35   & 14.222\\
-        440  & 13.182\\
+        35   & \num{1.42e+01}\\
+        440  & \num{1.32e+01}\\
       \end{tabular}
       \label{mbol}
     \end{center}
@@ -404,16 +418,16 @@ With the data gained from \ref{bcm}, we can find the lumonisities of our 8 stars
     \begin{center}
       \caption{Stars' Absolute Luminosity values}
       \begin{tabular}{c | c | c}
-        \textbf{GlieseID} & \textbf{$L_{star}$} & \textbf{$L_{star}$} (9sf)\\
+        \textbf{GlieseID} & \textbf{$L_{star}$} & \textbf{$L_{star}$} (sci3)\\
         \hline
-        551  & 0.00043365362363341085 & 0.00043365 \\
-        623  & 0.02209603682544578    & 0.02209604 \\
-        482A & 9.104527949318182      & 9.10452795 \\
-        231  & 0.8109852969785725     & 0.8109853 \\
-        286  & 34.880713131600245     & 34.88071313 \\
-        841  & 0.04352243294403225    & 0.04352243 \\
-        35   & 0.000161194107212134   & 0.00016119 \\
-        440  & 0.000419801310713262   & 0.0004198 \\
+        551  & 0.00043365362363341085 & \num{4.34e-04} \\
+        623  & 0.02209603682544578    & \num{2.21e-02} \\
+        482A & 9.104527949318182      & \num{9.10e+00} \\
+        231  & 0.8109852969785725     & \num{8.11e-01} \\
+        286  & 34.880713131600245     & \num{3.49e+01} \\
+        841  & 0.04352243294403225    & \num{4.35e-02} \\
+        35   & 0.000161194107212134   & \num{1.61e-04} \\
+        440  & 0.000419801310713262   & \num{4.20e-04} \\
       \end{tabular}
       \label{lum}
     \end{center}
@@ -442,14 +456,14 @@ Now, we are able to find the answer. All the calculations are performed by Wolfr
       \begin{tabular}{c | c | c | c}
         \textbf{GlieseID} & \textbf{$r_i$} \textbf{($AU$)} & \textbf{$r_o$} \textbf{($AU$)} & \textbf{$r_o - r_i$} \textbf{($AU$)}\\
         \hline
-        551 & 0.02 & 0.03 & 0.01\\
-        623 & 0.14 & 0.2 & 0.06\\
+        551  & 0.02 & 0.03 & 0.01\\
+        623  & 0.14 & 0.20 & 0.06\\
         482A & 2.88 & 4.14 & 1.27\\
-        231 & 0.86 & 1.24 & 0.38\\
-        286 & 5.63 & 8.11 & 2.48\\
-        841 & 0.2 & 0.29 & 0.09\\
-        35 & 0.01 & 0.02 & 0.01\\
-        440 & 0.02 & 0.03 & 0.01\\
+        231  & 0.86 & 1.24 & 0.38\\
+        286  & 5.63 & 8.11 & 2.48\\
+        841  & 0.20 & 0.29 & 0.09\\
+        35   & 0.01 & 0.02 & 0.01\\
+        440  & 0.02 & 0.03 & 0.01\\
       \end{tabular}
       \label{chz}
     \end{center}
@@ -457,31 +471,15 @@ Now, we are able to find the answer. All the calculations are performed by Wolfr
 
 We have found the Goldilock Zones of our 8 stars.
 
-\section{Further Calculations}
-
-I thought that 8 stars is not quite enough to judge the hospitability of different star types. I decided to write a program that will take into the account around 120,000 stars and find the length of CHZ.\\
-
-Before introducing the program, I should find the general formula for finding the range of CHZ. Taking into the account all previous section, we can derive this nice formula
-
-\begin{equation}
-  r_i = \sqrt{\frac{10^{\frac{BC + M - 5(\log_{10}{(d_{pc})}-1) - M_{bol, \odot}} {2.5}}}{1.1}}\\
-  \end{equation}
-
-\begin{equation}
-  r_o = \sqrt{\frac{10^{\frac{BC + M - 5(\log_{10}{(d_{pc})}-1) - M_{bol, \odot}} {2.5}}}{0.53}}\\
-  \end{equation}
-
-I wrote a simulation in Python Programming Language that takes nearly all the stars from the database and calculates CHZ lengths for all types of stars.
-
-OUTPUT HERE
-
 \section{Conclusion}
 
-It is better to 
+Now, it is time for the conclusion of our investigation. Firstly, let's return back to our research question - `` \textit{What is the relationship between habitability in the star's Goldilock Zone versus star's Apparent Visual Magnitude?}``.\\
 
+After concluding our investigation it is apparent that Red Giants and Main Sequence stars have the largest and thickest Goldilock Zones, which means that the probability of a planet being there and being hospitable is indeed higher. It also means that the planets that are located in the Goldilock Zone most probably would have water in a liquid state. And we see how the chances and average lengths of CHZ layers are very low near Red Dwarf and White Dwarfs. It is indeed true due to the differences between luminosities and the amount of spread out power and heat. Can we conclude that the last and most preferable places for future humanity and civilizations would be Main Sequence stars and Red Giants?\\
 
+Actually, not really. My investigation mainly focused on the CHZ layer and its dependance on star's Apparent Visual Magnitude. We did not research the safety measures and other conditions that should apply when living near a star. For example how stable it is and what is its age. In reality, Red Dwarfs would not be a great place live by as they are very unstable, the energy output can rise and fall rapidly. Red Giants and Main Sequence stars are a good choices as theoretically they can host life but only during the period of their lifetime. In the moment of transformation of Main Sequence to Red Giant or White Dwarf and Red Giant to Black Hole or Neutron star the life near them would cease to exist as the conditions would be too harsh and chaotic to sustain any known type of life. Actually, White Dwarfs are a very good candidates for hosting life. White Dwarfs are known to be extremely stable due to absense of thermo-nuclear reactions and they can provide a stable energy output for an undefined period of time, even more than \num{10e+10} years \cite{wdlife}. Scientists have not yet discovered any remains of White Dwarfs, Black Dwarfs because the universe does not excist for that long for a White Dwarf to end its life.\\
 
-
+In the end, the investigation was a success from its part and we have received the desired conclusion from our hypothesis.\\
 
 % --------------- REFERENCES START HERE ------------------
 \newpage
