@@ -14,8 +14,8 @@
 \usepackage{multicol}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{minted}
 \usepackage{siunitx}
+\usepackage[margin=1in]{geometry}
 
 \begin{document}
 % --------------- COVER PAGE STARTS HERE ---------------
@@ -25,13 +25,6 @@
 %\end{center}
 
 \onehalfspacing
-
-\begin{figure}
-  \begin{flushleft}
-    Session: May 2018\\
-    \end{flushleft}
-  \end{figure}
-
 %\newpage
 
 
@@ -81,6 +74,8 @@ Around in 1.1 billion years, Sun's luminosity will increase by about 10\%. It se
 
 As the means of humanity's future survival, we will be forced to leave our planet Earth and find a new planet, new home that maybe can recall our Earth. In order to do that, we should know which planets are habitable and which are not. I will take 8 stars of different types to figure out, what types of stars can host life.\\
 
+I was always finding my interest in astrophysics and astronomy. The vastness and greatness of all the objects in our Universe. How close the seem to us and how far away from us they really are. The questions of ``Where other civilizations may live?'' and ``Where humanity will live long time after us?'' always have puzzled me.\\
+
 This physics Investigation is called ``Determining the Goldilocks Zone for 8 stars of different types''.
 During this investigation, I will pick 8 stars of different types: White Dwarfs, Red Giants, Main-Sequence Stars and Red Dwarfs.
 I will research the stars in terms of luminosty, radius and the length of Goldilock Zones, more known as Circumferential Habitable Zones.\\
@@ -102,7 +97,7 @@ My phsyics investgation is aimed at finding the best odds of living near differe
 
 %\textit{What is the relationship between the conditions of existence of life, habitability in the Goldilock Zone versus star's spectra and type?}
 
- \textit{What is the relationship between habitability in the star's Goldilock Zone versus star's Apparent Visual Magnitude?}
+ \textit{What is the relationship between radius of star's Goldilock Zone versus star's Apparent Visual Magnitude?}
 
 \subsection{Hypothesis}
 
@@ -171,30 +166,14 @@ Today, life on Earth is the only known habited planet. We have no information or
   \subsection{Dependent variables}
   
   \begin{itemize}
-    
-  \item Absolute Visual Magnitude of a star, $M_V$ ($unit$)
+
+  \item Width of Goldilock zone, $r_o-r_i$ ($AU$)
     
     \begin{itemize}
       
-    \item This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years
+    \item Inner Edge of Goldilock Zone of a star, $r_i$ ($AU$) 
       
-    \end{itemize}
-    
-  \item Inner Edge of Goldilock Zone of a star, $r_i$ ($AU$) 
-    
-  \item Outer Edge of Goldilock Zone of a star, $r_o$ ($AU$)
-    
-  \item Bolometric Magnitude, $M_{bol}$ ($unit$)
-    
-  \item Apparent Brightness, $b$ ($W m^{-2}$)
-
-  \item Luminosity of a star, $L_*$ ($W$)
-    
-  \item Absolute Luminosity, $L_{star}$ ($W$)
-
-    \begin{itemize}
-      
-    \item This is the ratio of the luminosty of a star to solar luminosity, $\frac{L_*}{L_{\odot}}$
+    \item Outer Edge of Goldilock Zone of a star, $r_o$ ($AU$)
       
     \end{itemize}
     
@@ -205,19 +184,8 @@ Today, life on Earth is the only known habited planet. We have no information or
   
   \begin{itemize}
     
-  \item Astronomical distance to a star, $d$ ($pc$)
-    
   \item Apparent Visual Magnutuse of a star, $M$ ($unit$ *from database)
-    
-  \item Bolometric Correction, $BC$ ($unit$ *from database)
-    
-    \begin{itemize}
-      
-    \item This is a correction made to the star's absolute visual magnitude in order to convert its
-      visible magnitude into bolometric magnitude.
-      
-    \end{itemize}    
-    
+        
   \end{itemize}
   
 %  \doublespacing
@@ -265,7 +233,7 @@ Today, life on Earth is the only known habited planet. We have no information or
   
   \subsection{Absolute Visual Magnitude}
 
-  Secondly, Apparent Visual Magnitudes and Absolute Visual Magnitudes are practically the same but with 1 key difference. If Apparent Magnitude shows how bright the star is from point of view of Earth, Abolsute Magnitude shows us how bright the star is in comparison will all other stars in the universe. This is important, because we need a unified metrics of stars, which are put on ``equal'' conditions. I found a formula that uses Apparent Visual Magnitude and the distance to a start to calculate the Absolute Visual Magnitude.
+  Secondly, Apparent Visual Magnitudes and Absolute Visual Magnitudes are practically the same but with 1 key difference. If Apparent Magnitude shows how bright the star is from point of view of Earth, Abolsute Magnitude shows us how bright the star is in comparison will all other stars in the universe. This is important, because we need a unified metrics of stars, which are put on ``equal'' conditions. I found a formula that uses Apparent Visual Magnitude and the distance to a start to calculate the Absolute Visual Magnitude $M_V$. This is Apparent Visual Magnitude of a star that is seen from a distance of 10 parsecs or 32.6 light years.
   
   \begin{equation}
     {100}^{\frac{M-M_V}{5}} = {(\frac{d}{10pc})}^2\\
@@ -304,9 +272,9 @@ We have found the values of our first variables in the problem, we may proceed.
 
 \subsection{Bolometric Correction and Magnitude}
 \label{bcm}
-We have found absolute magnitudes of our stars. The next step we need to take is finding the Bolometric Magnitude of our stars. Bolometric magnitude is the absolute magnitude of a star that takes into account electromagentic radiation of a star with all its wavelenegths. It is defined based on the luminosity of a star. Further on, it will help us later to find the ration of star's luminosity to a solar luminosity.\\
+We have found absolute magnitudes of our stars. The next step we need to take is finding the Bolometric Magnitude of our stars. Bolometric magnitude is the absolute magnitude of a star that takes into account electromagentic radiation of a star with all its wavelenegths. It is defined based on the luminosity of a star. Further on, it will help us later to find the ratio of star's luminosity to a solar luminosity - Absolute Luminosity, $L_{star}$.\\
 
-Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will use the extended version of the original Kaler table\cite{kaler}. Because we have 8 stars with different spectral types, we need to use more accurate data for the results to be exact. Bolometric correction is the correction that has been made to Absolute Magnitudes of stars in order to convert its visual magnitude to Bolometric Magnitude.\cite{bc}\\
+Firstly, Table \ref{bc} demonstrates how the values of Bolometric Corrections are assigned to individual spectral types. I will use the extended version of the original Kaler table\cite{kaler}. Because we have 8 stars with different spectral types, we need to use more accurate data for the results to be exact. Bolometric correction is the correction that has been made to Absolute Magnitudes of stars in order to convert its visual magnitude to Bolometric Magnitude.\cite{bc}\\ $M_{bol}$ is the Bolomertric Magnitude.
   
   \begin{table}[h!]
     \begin{center}
@@ -473,7 +441,7 @@ We have found the Goldilock Zones of our 8 stars.
 
 \section{Conclusion}
 
-Now, it is time for the conclusion of our investigation. Firstly, let's return back to our research question - `` \textit{What is the relationship between habitability in the star's Goldilock Zone versus star's Apparent Visual Magnitude?}``.\\
+Now, it is time for the conclusion of our investigation. Firstly, let's return back to our research question - `` \textit{What is the relationship between radius of star's Goldilock Zone versus star's Apparent Visual Magnitude?}``.\\
 
 After concluding our investigation it is apparent that Red Giants and Main Sequence stars have the largest and thickest Goldilock Zones, which means that the probability of a planet being there and being hospitable is indeed higher. It also means that the planets that are located in the Goldilock Zone most probably would have water in a liquid state. And we see how the chances and average lengths of CHZ layers are very low near Red Dwarf and White Dwarfs. It is indeed true due to the differences between luminosities and the amount of spread out power and heat. Can we conclude that the last and most preferable places for future humanity and civilizations would be Main Sequence stars and Red Giants?\\
 
