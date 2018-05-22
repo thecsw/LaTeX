@@ -1,0 +1,8 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+X-WR-CALNAME:test
+PRODID:-//Sagindyk Urazayev//Emacs with Org mode//EN
+X-WR-TIMEZONE:+04
+X-WR-CALDESC:Convergence of Divergent Series
+CALSCALE:GREGORIAN
+END:VCALENDAR
