@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2018-06-03 Sun 15:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Convergence of Divergent Series</title>
-<!-- 2018-05-22 Tue 18:48 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Sagindyk Urazayev" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Sagindyk Urazayev" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,111 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +177,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -93,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -134,48 +226,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
-<script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        // Only one of the two following lines, depending on user settings
-        // First allows browser-native MathML display, second forces HTML/CSS
-        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
-            jax: ["input/TeX", "output/HTML-CSS"],
-        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
-                     "TeX/noUndefined.js"],
-        tex2jax: {
-            inlineMath: [ ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
-            skipTags: ["script","noscript","style","textarea","pre","code"],
-            ignoreClass: "tex2jax_ignore",
-            processEscapes: false,
-            processEnvironments: true,
-            preview: "TeX"
-        },
-        showProcessingMessages: true,
         displayAlign: "center",
-        displayIndent: "2em",
+        displayIndent: "0em",
 
-        "HTML-CSS": {
-             scale: 100,
-             availableFonts: ["STIX","TeX"],
-             preferredFont: "TeX",
-             webFont: "TeX",
-             imageFont: "TeX",
-             showMathMenu: true,
-        },
-        MMLorHTML: {
-             prefer: {
-                 MSIE:    "MML",
-                 Firefox: "MML",
-                 Opera:   "HTML",
-                 other:   "HTML"
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
              }
-        }
-    });
-/*]]>*///-->
+});
 </script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -184,24 +256,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Introduction</a></li>
-<li><a href="#sec-2">2. Grandi's Series</a>
+<li><a href="#org65e1aa7">1. Introduction</a></li>
+<li><a href="#org217b0d2">2. Grandi's Series</a>
 <ul>
-<li><a href="#sec-2-1">2.1. First Solution</a></li>
-<li><a href="#sec-2-2">2.2. Second Solution</a></li>
-<li><a href="#sec-2-3">2.3. Third Solution</a></li>
+<li><a href="#org3630372">2.1. First Solution</a></li>
+<li><a href="#orgd7a4f58">2.2. Second Solution</a></li>
+<li><a href="#orgc2d8cc3">2.3. Third Solution</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3. Wolff's series (\(1-2+3-4+5-6+\cdots\))</a></li>
-<li><a href="#sec-4">4. \(1+2+3+4+5+\cdots\)</a></li>
-<li><a href="#sec-5">5. Euler-Riemann Zeta Function</a>
+<li><a href="#org61faaf5">3. Wolff's series (\(1-2+3-4+5-6+\cdots\))</a></li>
+<li><a href="#orgb00fae5">4. \(1+2+3+4+5+\cdots\)</a></li>
+<li><a href="#org2ad294d">5. Euler-Riemann Zeta Function</a>
 <ul>
-<li><a href="#sec-5-1">5.1. Product notation</a></li>
-<li><a href="#sec-5-2">5.2. Trivial Zeros</a></li>
-<li><a href="#sec-5-3">5.3. Negative Odd Arguments</a></li>
+<li><a href="#org495d7df">5.1. Product notation</a></li>
+<li><a href="#org8087c69">5.2. Trivial Zeros</a></li>
+<li><a href="#org33cdad2">5.3. Negative Odd Arguments</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">6. Conclusion</a></li>
+<li><a href="#orge110e9b">6. Conclusion</a></li>
 </ul>
 </div>
 </div>
@@ -213,14 +285,14 @@ for the JavaScript code in this tag.
 <p>
 \newpage
 </p>
-<div class="center">
+<div class="org-center">
 <p>
 "Divergent series are an invention of the devil and it is shameful to base on
 them any demonstration whatsoever."<a class='org-ref-reference' href="#Abel">Abel</a> &#x2013; N.H. Abel. 1826
 </p>
 </div>
 
-<div class="abstract">
+<div class="ABSTRACT">
 <p>
 Mathematics is the science of skilful operations, which are dealing with the
 logic of shape, quantity and rearrangement. Mathematics is using its core
@@ -235,11 +307,11 @@ zeta function.
 
 </div>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org65e1aa7" class="outline-2">
+<h2 id="org65e1aa7"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<a id="sec:intro" name="sec:intro"></a>
+<a id="orgceb8d69"></a>
 </p>
 
 <p>
@@ -263,7 +335,7 @@ convergent series. When I finally understood why it works, I found a new topic,
 that struck my mind – "Divergent series" and not the series in general, but how
 the most famous mathematicians: Leonhard Euler, Bernhard Riemann and Srinivasa
 Ramanujan proved that these series are in nature convergent too. Now it all made
-a perfect sense.<br  />
+a perfect sense.<br />
 </p>
 
 <p>
@@ -275,11 +347,11 @@ possible to find limit almost for any divergent series.
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Grandi's Series</h2>
+<div id="outline-container-org217b0d2" class="outline-2">
+<h2 id="org217b0d2"><span class="section-number-2">2</span> Grandi's Series</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-<a id="sec:grandi" name="sec:grandi"></a>
+<a id="org0df4142"></a>
 </p>
 
 <p>
@@ -317,11 +389,11 @@ reasoning of the "Witch of Agnesi". We will prove it arithmetically.
 </p>
 </div>
 
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> First Solution</h3>
+<div id="outline-container-org3630372" class="outline-3">
+<h3 id="org3630372"><span class="section-number-3">2.1</span> First Solution</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-<a id="sec:first" name="sec:first"></a>
+<a id="org788abf0"></a>
 </p>
 
 <p>
@@ -340,11 +412,11 @@ subtract <i>S</i> from 1, and then we will get:
 </div>
 </div>
 
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Second Solution</h3>
+<div id="outline-container-orgd7a4f58" class="outline-3">
+<h3 id="orgd7a4f58"><span class="section-number-3">2.2</span> Second Solution</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
-<a id="sec:second" name="sec:second"></a>
+<a id="org66297fc"></a>
 </p>
 
 <p>
@@ -367,11 +439,11 @@ thought about, when I imagined the Grandi's series as a geometric series.
 </div>
 </div>
 
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Third Solution</h3>
+<div id="outline-container-orgc2d8cc3" class="outline-3">
+<h3 id="orgc2d8cc3"><span class="section-number-3">2.3</span> Third Solution</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
-<a id="sec:third" name="sec:third"></a>
+<a id="org554041a"></a>
 </p>
 
 <p>
@@ -383,44 +455,44 @@ will be:
 
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="right">1</th>
-<th scope="col" class="right">-1</th>
-<th scope="col" class="right">+1</th>
-<th scope="col" class="right">-1</th>
-<th scope="col" class="right">+1</th>
-<th scope="col" class="right">-1</th>
-<th scope="col" class="right">+1</th>
-<th scope="col" class="left">\(\cdots\)</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-right">-1</th>
+<th scope="col" class="org-right">+1</th>
+<th scope="col" class="org-right">-1</th>
+<th scope="col" class="org-right">+1</th>
+<th scope="col" class="org-right">-1</th>
+<th scope="col" class="org-right">+1</th>
+<th scope="col" class="org-left">\(\cdots\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="right">1</td>
-<td class="right">0</td>
-<td class="right">1</td>
-<td class="right">0</td>
-<td class="right">1</td>
-<td class="right">0</td>
-<td class="right">1</td>
-<td class="left">\(\cdots\)</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-left">\(\cdots\)</td>
 </tr>
 </tbody>
 </table>
@@ -433,32 +505,32 @@ By averaging the sums, we can conclude that:
 
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="right">1</th>
-<th scope="col" class="left">\((1+0)/2\)</th>
-<th scope="col" class="left">\((1+0+1)/3\)</th>
-<th scope="col" class="left">\((1+0+1+0)/4\)</th>
-<th scope="col" class="left">\((1+0+1+0+1)/5\)</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-left">\((1+0)/2\)</th>
+<th scope="col" class="org-left">\((1+0+1)/3\)</th>
+<th scope="col" class="org-left">\((1+0+1+0)/4\)</th>
+<th scope="col" class="org-left">\((1+0+1+0+1)/5\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="right">1</td>
-<td class="left">\(1/2\)</td>
-<td class="left">\(2/3\)</td>
-<td class="left">\(1/4\)</td>
-<td class="left">\(3/5\)</td>
+<td class="org-right">1</td>
+<td class="org-left">\(1/2\)</td>
+<td class="org-left">\(2/3\)</td>
+<td class="org-left">\(1/4\)</td>
+<td class="org-left">\(3/5\)</td>
 </tr>
 </tbody>
 </table>
@@ -474,8 +546,8 @@ converge to \(1/2\).
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Wolff's series (\(1-2+3-4+5-6+\cdots\))</h2>
+<div id="outline-container-org61faaf5" class="outline-2">
+<h2 id="org61faaf5"><span class="section-number-2">3</span> Wolff's series (\(1-2+3-4+5-6+\cdots\))</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 This series is quite fascinating too. When Guido Grandi has published his work
@@ -483,7 +555,7 @@ on his infinite series that we explored above, famous mathematician Christian
 Wolff doubted the logic of Grandi's series and because of that, he wrote a
 letter to Gottfield Wilhelm Leibniz. After receiving a reply <a class='org-ref-reference' href="#Wolff">Wolff</a> from
 Leibniz, Wolff was so pleased with the solution that he wanted to extend the
-series to \(1-2+3-4+5-6+\cdots\) <br  />
+series to \(1-2+3-4+5-6+\cdots\) <br />
 </p>
 
 <p>
@@ -506,7 +578,7 @@ progression will look like this:
 <p>
 By analytical continuation and mathematical rules, we can find the limit of this
 series. The simplest solution follows the rule of infinite geometric series and
-derivation.<br  />
+derivation.<br />
 </p>
 
 <p>
@@ -572,8 +644,8 @@ applicable too.
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> \(1+2+3+4+5+\cdots\)</h2>
+<div id="outline-container-orgb00fae5" class="outline-2">
+<h2 id="orgb00fae5"><span class="section-number-2">4</span> \(1+2+3+4+5+\cdots\)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 It is safe to say that this is a fascinating series with a fascinating
@@ -599,13 +671,13 @@ Euler-Riemann zeta function:
 <p>
 I will talk about Euler-Riemann zeta function more in the next part. Back to our
 series. Interestingly enough, the finite value of this series is negative value
-of one over twelve or mathematically speaking, \(-1/12\).<br  />
+of one over twelve or mathematically speaking, \(-1/12\).<br />
 </p>
 
 <p>
 In this part, one solution with rearrangements and logic will be used, as the
 other one will be explored in the next chapter- "Euler-Riemann Zeta
-Function".<br  />
+Function".<br />
 </p>
 
 <p>
@@ -634,8 +706,8 @@ Now we can rewrite the equation by substituting \(1+2+3+4+5+\cdots\) as \(s_1\) 
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Euler-Riemann Zeta Function</h2>
+<div id="outline-container-org2ad294d" class="outline-2">
+<h2 id="org2ad294d"><span class="section-number-2">5</span> Euler-Riemann Zeta Function</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I would like to talk more about Euler-Riemann zeta function. Euler-Riemann zeta
@@ -656,7 +728,7 @@ It is called Euler-Riemann because Euler was the first mathematician who made a
 notable contribution to the function, but Euler was making his works on the
 Euler-Riemann zeta function using real values as ss, insteas of complex. Almost
 after a decade famous mathematician Bernhard Riemann has published his works
-about Euler-Riemann zeta function by using complex number.<br  />
+about Euler-Riemann zeta function by using complex number.<br />
 </p>
 
 <p>
@@ -667,7 +739,7 @@ that, we can prove that almost any divergent series formed by Euler-Riemann zeta
 converges and has a finite value. One of the "Millenium Prize Problems" is
 called "Riemann Hypothesis", which says that the Euler-Riemann zeta function
 returns zeros only at the negative even integers and complex numbers with real
-part \(1/2\).<br  />
+part \(1/2\).<br />
 </p>
 
 <p>
@@ -677,7 +749,7 @@ function's argument is a complex number. In this exploration I will research how
 to find finite values and trivial zeros for divergent series, which are
 particular cases of the Euler-Riemann zeta function, thus proving that almost
 all divergent series formed by Euler-Riemann zeta function are quite
-convergent.<br  />
+convergent.<br />
 </p>
 
 <p>
@@ -688,8 +760,8 @@ with Bernoulli numbers.
 </p>
 </div>
 
-<div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Product notation</h3>
+<div id="outline-container-org495d7df" class="outline-3">
+<h3 id="org495d7df"><span class="section-number-3">5.1</span> Product notation</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Firstly, we should know how to present the Euler-Riemann zeta function in the
@@ -704,7 +776,7 @@ form of a product, so:
 When I introduced my exploration topic to my math teacher, he struck me with a
 fact that the sum can be presented in the form of a product. So I have been
 trying to experiment with the Euler- Riemann zeta function in different ways and
-saw one easy way of transforming it.<br  />
+saw one easy way of transforming it.<br />
 </p>
 
 <p>
@@ -771,18 +843,18 @@ After some rearranging, we can see how the Euler-Riemann zeta function can be
 presented as sum and product. With knowledge of that, we can go further and find
 a value for Euler-Riemann zeta function with every negative integer, thus
 finding a finite value for any divergent series. We will need this identity to
-find values for Euler-Riemann zeta function with negative odd integers.<br  />
+find values for Euler-Riemann zeta function with negative odd integers.<br />
 </p>
 
 <p>
 From now on I will be using Wolfram Alpha and MATLAB to plot Euler-Riemann zeta
-function and find values for arguments.<br  />
+function and find values for arguments.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Trivial Zeros</h3>
+<div id="outline-container-org8087c69" class="outline-3">
+<h3 id="org8087c69"><span class="section-number-3">5.2</span> Trivial Zeros</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Firstly, we will find "trivial zeros" for Euler-Riemann zeta function. "Trivial
@@ -849,14 +921,14 @@ divergent series:
 In addition, we can plot the Euler-Riemann zeta function and prove the zero
 values for all even negative integers geometrically. I will use Wolfram Alpha
 Open Code to plot the Euler-Riemann zeta function and MATLAB to find the
-Euler-Riemann zeta function's zeros. Figure <a href="#fig:zeros">1</a> shows this graph. 
+Euler-Riemann zeta function's zeros. Figure <a href="#orgb992007">1</a> shows this graph. 
 </p>
 
 
-<div id="fig:zeros" class="figure">
+<div id="orgb992007" class="figure">
 <p><img src="./zeros.png" alt="zeros.png" />
 </p>
-<p><span class="figure-number">Figure 1:</span> Graph of Euler-Riemann zeta function using Wolfram|Alpha Open Code and built-in math functions.</p>
+<p><span class="figure-number">Figure 1: </span>Graph of Euler-Riemann zeta function using Wolfram|Alpha Open Code and built-in math functions.</p>
 </div>
 
 
@@ -865,20 +937,20 @@ In the graph above we can see how the Euler-Riemann zeta function intersects
 x-axis on negative even integers. However, each time the absolute value of an
 argument increases, this feature of Euler-Riemann zeta function will be
 discussed next. Also, we can ensure the values of Euler- Riemann zeta function
-by using MATLAB as shown in Figure <a href="#fig:zerosv">2</a>. 
+by using MATLAB as shown in Figure <a href="#org0ed41e7">2</a>. 
 </p>
 
 
-<div id="fig:zerosv" class="figure">
+<div id="org0ed41e7" class="figure">
 <p><img src="./zerosv.png" alt="zerosv.png" />
 </p>
-<p><span class="figure-number">Figure 2:</span> Euler-Riemann zeta function values for negative even integers, calculated in MATLAB.</p>
+<p><span class="figure-number">Figure 2: </span>Euler-Riemann zeta function values for negative even integers, calculated in MATLAB.</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5-3" class="outline-3">
-<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Negative Odd Arguments</h3>
+<div id="outline-container-org33cdad2" class="outline-3">
+<h3 id="org33cdad2"><span class="section-number-3">5.3</span> Negative Odd Arguments</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Secondly, as I discussed the “trivial zeros" for Euler-Riemann and as we have
@@ -917,64 +989,64 @@ where for every odd \(n\), \(B_n=0\):
 <p>
 The table below shows the values for the first 10 even Bernoulli numbers'
 arguments. These values have been calculated by using Wolfram|Alpha Open Code
-service. Table <a href="#tab:bernoulli">1</a> will show first 10 non-zero elements' values
+service. Table <a href="#org0b69e39">1</a> will show first 10 non-zero elements' values
 of Bernoulli numbers. 
 </p>
 
-<table id="tab:bernoulli" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org0b69e39" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> First 10 Non-Zero Elements of Bernoulli Numbers.</caption>
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left"><i>n</i></th>
-<th scope="col" class="right">0</th>
-<th scope="col" class="right">1</th>
-<th scope="col" class="right">2</th>
-<th scope="col" class="right">4</th>
-<th scope="col" class="right">6</th>
-<th scope="col" class="right">8</th>
-<th scope="col" class="right">10</th>
-<th scope="col" class="right">12</th>
-<th scope="col" class="right">14</th>
-<th scope="col" class="right">16</th>
+<th scope="col" class="org-left"><i>n</i></th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">6</th>
+<th scope="col" class="org-right">8</th>
+<th scope="col" class="org-right">10</th>
+<th scope="col" class="org-right">12</th>
+<th scope="col" class="org-right">14</th>
+<th scope="col" class="org-right">16</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">\(B_N\)</td>
-<td class="right">1</td>
-<td class="right">\(-\frac{1}{2}\)</td>
-<td class="right">\(\frac{1}{6}\)</td>
-<td class="right">\(-\frac{1}{30}\)</td>
-<td class="right">\(\frac{1}{42}\)</td>
-<td class="right">\(-\frac{1}{30}\)</td>
-<td class="right">\(\frac{5}{66}\)</td>
-<td class="right">\(-\frac{691}{2730}\)</td>
-<td class="right">\(\frac{7}{6}\)</td>
-<td class="right">\(-\frac{3617}{510}\)</td>
+<td class="org-left">\(B_N\)</td>
+<td class="org-right">1</td>
+<td class="org-right">\(-\frac{1}{2}\)</td>
+<td class="org-right">\(\frac{1}{6}\)</td>
+<td class="org-right">\(-\frac{1}{30}\)</td>
+<td class="org-right">\(\frac{1}{42}\)</td>
+<td class="org-right">\(-\frac{1}{30}\)</td>
+<td class="org-right">\(\frac{5}{66}\)</td>
+<td class="org-right">\(-\frac{691}{2730}\)</td>
+<td class="org-right">\(\frac{7}{6}\)</td>
+<td class="org-right">\(-\frac{3617}{510}\)</td>
 </tr>
 </tbody>
 </table>
@@ -1011,8 +1083,8 @@ converges. As an example, I would like to test out powers 3, 5 and 7:
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> Conclusion</h2>
+<div id="outline-container-orge110e9b" class="outline-2">
+<h2 id="orge110e9b"><span class="section-number-2">6</span> Conclusion</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 In the conclusion, throughout this exploration, we have explored the methods of
@@ -1029,7 +1101,7 @@ the limit of \(\zeta(-1)\) is used the "String Theory" by Joseph Polchinski
 series \(1+2+3+4+\cdots=-1/12\) has been mentioned in the media by Numberphile in
 video – "ASTOUNDING: 1+2+3+4+5+&ctdot;= -1/12" <a class='org-ref-reference' href="#Numberphile">Numberphile</a>. Sure, at the end
 we came up with a rather extraordinary result, which makes Mathematics as a
-science beautiful and encouraring for further researches and explorations.<br  />
+science beautiful and encouraring for further researches and explorations.<br />
 </p>
 
 <p>
@@ -1110,10 +1182,9 @@ NOTE = "Accessed on 11-11-2017",
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-05-15 Tue&gt;</span></span></p>
+<p class="date">Date: 2018-05-15 Tue 00:00</p>
 <p class="author">Author: Sagindyk Urazayev</p>
-<p class="date">Created: 2018-05-22 Tue 18:48</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2018-06-03 Sun 15:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

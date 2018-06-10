@@ -1,29 +1,30 @@
-% Created 2018-05-22 Tue 18:47
+% Created 2018-06-03 Sun 15:04
+% Intended LaTeX compiler: pdflatex
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{fixltx2e}
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{longtable}
-\usepackage{float}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
 \usepackage{textcomp}
-\usepackage{marvosym}
-\usepackage{wasysym}
 \usepackage{amssymb}
+\usepackage{capt-of}
 \usepackage{hyperref}
-\tolerance=1000
 \usepackage{minted}
 \author{Sagindyk Urazayev}
 \date{\textit{<2018-05-15 Tue>}}
 \title{Convergence of Divergent Series}
 \hypersetup{
-  pdfkeywords={},
-  pdfsubject={},
-  pdfcreator={Emacs 25.3.1 (Org mode 8.2.10)}}
+ pdfauthor={Sagindyk Urazayev},
+ pdftitle={Convergence of Divergent Series},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.9)}, 
+ pdflang={English}}
 \begin{document}
 
 \maketitle
@@ -38,7 +39,7 @@
 them any demonstration whatsoever."\cite{Abel} -- N.H. Abel. 1826
 \end{center}
 
-\begin{abstract}
+\begin{ABSTRACT}
 Mathematics is the science of skilful operations, which are dealing with the
 logic of shape, quantity and rearrangement. Mathematics is using its core
 principles and rules to solve problems and get a reasonable answer. In my
@@ -48,11 +49,11 @@ axioms. This exploration is about finding finite values, limits for famous
 divergent series and later analytically extending Euler-Riemann's zeta function
 to find a limit for any divergent series that can be formed by Euler- Riemann's
 zeta function.
-\end{abstract}
+\end{ABSTRACT}
 
 \section{Introduction}
-\label{sec-1}
-\label{sec:intro}
+\label{sec:org089950e}
+\label{orge7e275f}
 
 I tend to think that in order to create innovative theories, mathematics as a
 whole should be pushed to its boundaries and limits, new axioms should be
@@ -82,8 +83,8 @@ value that they are converging too and at the end, I will show how it is
 possible to find limit almost for any divergent series.
 
 \section{Grandi's Series}
-\label{sec-2}
-\label{sec:grandi}
+\label{sec:org8c84b3e}
+\label{orgd7d97cb}
 
 This is probably one of the famous and trickiest-at-the-beginning divergent series. It looks like
 this: 
@@ -103,22 +104,22 @@ that it should not affect the series value. Let me show you:
 \end{align*}
 
 Grandi explained this phenomenon by saying that – "Mettendo in modo diverso le
-parentesi nell'espressione $1-1+1-1+\cdots$ io posso, volendo, ottenere 0 o 1. Ma
+parentesi nell'espressione \(1-1+1-1+\cdots\) io posso, volendo, ottenere 0 o 1. Ma
 allora l'idea della creazione ex nihilo è perfettamente
 plausibile."\cite{Mettendo} Which translates from Italian to English - "By putting
-parentheses into the expression $1-1+1-1+\cdots$ in different ways, I can, if I
+parentheses into the expression \(1-1+1-1+\cdots\) in different ways, I can, if I
 want, obtain 0 or 1. But then the idea of the creation ex nihilo is perfectly
 plausible." Where "ex nihilo" means "out of nothing".\cite{Exnihilo} As a true
 mathematician, Leonhard Euler did not think that the value is either 0 or 1, he
-thought that the true limit was $1/2$. He proved it through the geometric
+thought that the true limit was \(1/2\). He proved it through the geometric
 reasoning of the "Witch of Agnesi". We will prove it arithmetically.
 
 \subsection{First Solution}
-\label{sec-2-1}
-\label{sec:first}
+\label{sec:org907a3db}
+\label{org59dd0d0}
 
 This is pretty easy and convenient solution for rearranging and ordering. Let us
-denote Grandi’s series by \emph{S}, so $S=1-1+1-1+\cdots$. Further, we will
+denote Grandi’s series by \emph{S}, so \(S=1-1+1-1+\cdots\). Further, we will
 subtract \emph{S} from 1, and then we will get: 
 
 \begin{align*}
@@ -130,35 +131,35 @@ subtract \emph{S} from 1, and then we will get:
 \end{align*}
 
 \subsection{Second Solution}
-\label{sec-2-2}
-\label{sec:second}
+\label{sec:orga75b783}
+\label{org85b5fb0}
 
 We can formulate the second solution by using the infinite formula for
-converging geometric series - $\frac{a}{1-r}$, where $a$ is the first element of
-the series and $r$ is the common ratio. Generally, the formula is applicable
-only of absolute value of the common ration is less than one, $|r| < 1$ but it
-is also applicable in our case, where $r = - 1$. In this case, let us denote
+converging geometric series - \(\frac{a}{1-r}\), where \(a\) is the first element of
+the series and \(r\) is the common ratio. Generally, the formula is applicable
+only of absolute value of the common ration is less than one, \(|r| < 1\) but it
+is also applicable in our case, where \(r = - 1\). In this case, let us denote
 Grandi's series as \emph{S}, and 
 
 \begin{equation*}
 S=\frac{1}{1-(-1)}=\frac{1}{1+1}=\frac{1}{2}
 \end{equation*}
 
-This proves how the series converges to $1/2$. This is the solution that I
+This proves how the series converges to \(1/2\). This is the solution that I
 thought about, when I imagined the Grandi's series as a geometric series.
 
 \subsection{Third Solution}
-\label{sec-2-3}
-\label{sec:third}
+\label{sec:orgf1c0f43}
+\label{org21361cf}
 
 Third solution can by achieved by using partial sums. So that the series's sum
 will be: 
 
 \begin{center}
 \begin{tabular}{rrrrrrrl}
-1 & -1 & +1 & -1 & +1 & -1 & +1 & $\cdots$\\
+1 & -1 & +1 & -1 & +1 & -1 & +1 & \(\cdots\)\\
 \hline
-1 & 0 & 1 & 0 & 1 & 0 & 1 & $\cdots$\\
+1 & 0 & 1 & 0 & 1 & 0 & 1 & \(\cdots\)\\
 \end{tabular}
 \end{center}
 
@@ -166,27 +167,27 @@ By averaging the sums, we can conclude that:
 
 \begin{center}
 \begin{tabular}{rllll}
-1 & $(1+0)/2$ & $(1+0+1)/3$ & $(1+0+1+0)/4$ & $(1+0+1+0+1)/5$\\
+1 & \((1+0)/2\) & \((1+0+1)/3\) & \((1+0+1+0)/4\) & \((1+0+1+0+1)/5\)\\
 \hline
-1 & $1/2$ & $2/3$ & $1/4$ & $3/5$\\
+1 & \(1/2\) & \(2/3\) & \(1/4\) & \(3/5\)\\
 \end{tabular}
 \end{center}
 
-Therefore, we can evaluate that with each even indexes the series equal to $1/2$
-and with odd indexes, the partial sums converge to $1/2+1/2n$, where \emph{n} is the
+Therefore, we can evaluate that with each even indexes the series equal to \(1/2\)
+and with odd indexes, the partial sums converge to \(1/2+1/2n\), where \emph{n} is the
 amount of elements summed up. If the amount of indexes tends to infinity then
-$1/2n$ will be infinitely small, resulting that the infinite partial sums will
-converge to $1/2$. 
+\(1/2n\) will be infinitely small, resulting that the infinite partial sums will
+converge to \(1/2\). 
 
-\section{Wolff's series ($1-2+3-4+5-6+\cdots$)}
-\label{sec-3}
+\section{Wolff's series (\(1-2+3-4+5-6+\cdots\))}
+\label{sec:org205e67f}
 
 This series is quite fascinating too. When Guido Grandi has published his work
 on his infinite series that we explored above, famous mathematician Christian
 Wolff doubted the logic of Grandi's series and because of that, he wrote a
 letter to Gottfield Wilhelm Leibniz. After receiving a reply \cite{Wolff} from
 Leibniz, Wolff was so pleased with the solution that he wanted to extend the
-series to $1-2+3-4+5-6+\cdots$ \\
+series to \(1-2+3-4+5-6+\cdots\) \\
 
 This series can be also represented like
 
@@ -211,10 +212,10 @@ If we have a series
 1+x+x^2+x^3+x^4+x^5+x^6+\cdots
 \end{equation*}
 
-let us denote it as $s$,
-where the absolute value of the common ration is less than 1: $|x| < 1$, then we
+let us denote it as \(s\),
+where the absolute value of the common ration is less than 1: \(|x| < 1\), then we
 can find the sum using the formula of infinite convergent geometric series -
-$\frac{1}{1-x}$ . It can be derived by using fundamental mathematical
+\(\frac{1}{1-x}\) . It can be derived by using fundamental mathematical
 operations: 
 
 \begin{align*}
@@ -242,7 +243,7 @@ right side of the equation, the equation will be:
   1+2x+3x^2+4x^3+5x^4+6x^5+\cdots=\frac{1}{(1-x)^2}
   \end{equation*}
 
-Now, if we will substitute $x$ as -1, so $x=-1$, on the left side we will get
+Now, if we will substitute \(x\) as -1, so \(x=-1\), on the left side we will get
 the Wolff's series and some finite value on the right side.
 
 \begin{equation}
@@ -254,11 +255,11 @@ Generally, the infinite sum formula for geometric series is valid only when the
 absolute value of the common ratio is less than one, but in our case, it is
 applicable too. 
 
-\section{$1+2+3+4+5+\cdots$}
-\label{sec-4}
+\section{\(1+2+3+4+5+\cdots\)}
+\label{sec:org720e4c7}
 
 It is safe to say that this is a fascinating series with a fascinating
-result. $1+2+3+\cdots$ is a particular case of Euler-Riemann zeta function, where
+result. \(1+2+3+\cdots\) is a particular case of Euler-Riemann zeta function, where
 the Euler-Riemann zeta function can be represented in the following way:
 
 \begin{equation}
@@ -266,7 +267,7 @@ the Euler-Riemann zeta function can be represented in the following way:
   \label{zetaf}
 \end{equation}
 
-This function of a complex variable $s$ that analytically continues from
+This function of a complex variable \(s\) that analytically continues from
 Dirichlet series, so our series from above can be written in terms of
 Euler-Riemann zeta function: 
 
@@ -276,15 +277,15 @@ Euler-Riemann zeta function:
 
 I will talk about Euler-Riemann zeta function more in the next part. Back to our
 series. Interestingly enough, the finite value of this series is negative value
-of one over twelve or mathematically speaking, $-1/12$.\\
+of one over twelve or mathematically speaking, \(-1/12\).\\
 
 In this part, one solution with rearrangements and logic will be used, as the
 other one will be explored in the next chapter- "Euler-Riemann Zeta
 Function".\\
 
 The first solution involves the series itself and the Wolff's series. So to
-start solving it, let us denote the series $1+2+3+4+5+\cdots$ as $s_1$ and the
-series $1-2+3-4+5-6+7-\cdots$ as $s_2$. So then we can write the following equation: 
+start solving it, let us denote the series \(1+2+3+4+5+\cdots\) as \(s_1\) and the
+series \(1-2+3-4+5-6+7-\cdots\) as \(s_2\). So then we can write the following equation: 
 
 \begin{align*}
   s_1-s_2&=1+2+3+4+5+6+\cdots\\
@@ -293,8 +294,8 @@ series $1-2+3-4+5-6+7-\cdots$ as $s_2$. So then we can write the following equat
   &=4(1+2+3+4+5+\cdots)=
 \end{align*}
 
-Now we can rewrite the equation by substituting $1+2+3+4+5+\cdots$ as $s_1$ and
-$s_2$ with the value from \ref{Wolff}
+Now we can rewrite the equation by substituting \(1+2+3+4+5+\cdots\) as \(s_1\) and
+\(s_2\) with the value from \ref{Wolff}
 
 \begin{align*}
   s_1-s_2&=4s_1\\
@@ -303,12 +304,12 @@ $s_2$ with the value from \ref{Wolff}
   \end{align*}
 
 \section{Euler-Riemann Zeta Function}
-\label{sec-5}
+\label{sec:org6ff87a5}
 
 I would like to talk more about Euler-Riemann zeta function. Euler-Riemann zeta
 function is a beautiful function in the world of complex numbers and later
 applied to real numbers. The notation of zeta Euler-Riemann function is
-$\zeta(s)$, where $s$ is some complex number and is defined only when the real
+\(\zeta(s)\), where \(s\) is some complex number and is defined only when the real
 part of ss is bigger than 1. From equation \ref{zetaf} we know the notation of
 Euler-Riemann zeta function 
 
@@ -330,10 +331,10 @@ that, we can prove that almost any divergent series formed by Euler-Riemann zeta
 converges and has a finite value. One of the "Millenium Prize Problems" is
 called "Riemann Hypothesis", which says that the Euler-Riemann zeta function
 returns zeros only at the negative even integers and complex numbers with real
-part $1/2$.\\
+part \(1/2\).\\
 
 This math exploration is called "Convergence of Divergent Series" and we are not
-going to explore Euler-Riemann zeta function, where $s$, Euler-Riemann zeta
+going to explore Euler-Riemann zeta function, where \(s\), Euler-Riemann zeta
 function's argument is a complex number. In this exploration I will research how
 to find finite values and trivial zeros for divergent series, which are
 particular cases of the Euler-Riemann zeta function, thus proving that almost
@@ -346,7 +347,7 @@ values for any zeta-function-formed divergent series and the connection of it
 with Bernoulli numbers. 
 
 \subsection{Product notation}
-\label{sec-5-1}
+\label{sec:orgab8bfb0}
 
 Firstly, we should know how to present the Euler-Riemann zeta function in the
 form of a product, so:
@@ -360,7 +361,7 @@ fact that the sum can be presented in the form of a product. So I have been
 trying to experiment with the Euler- Riemann zeta function in different ways and
 saw one easy way of transforming it.\\
 
-We can divide every element of the Euler-Riemann zeta function by $2^s$, so:
+We can divide every element of the Euler-Riemann zeta function by \(2^s\), so:
 
 \begin{equation*}
   \frac{\zeta(s)}{2^s}= (\frac{1}{1^s}+\frac{1}{2^s}+\frac{1}{3^s}+
@@ -421,25 +422,25 @@ From now on I will be using Wolfram Alpha and MATLAB to plot Euler-Riemann zeta
 function and find values for arguments.\\
 
 \subsection{Trivial Zeros}
-\label{sec-5-2}
+\label{sec:org1026a52}
 
 Firstly, we will find "trivial zeros" for Euler-Riemann zeta function. "Trivial
-zeros" are all zeros, which are a result of function $\zeta(-2n)$, where $n$ is
+zeros" are all zeros, which are a result of function \(\zeta(-2n)\), where \(n\) is
 a non-negative integer. In order to find these zeros, we should know the
 Euler-Riemann zeta function's functional equation. Basically, the functional
-equation \cite{Func} is an equation of the form $f(x, y, \cdots ) = 0$, where $f$
+equation \cite{Func} is an equation of the form \(f(x, y, \cdots ) = 0\), where \(f\)
 contains a finite number of independent variables, known function, and unknown
 functions which are to be solved for. I found the Euler-Riemann zeta function's
 functional equation in a fantastic book “Divergent Series” by
-G.H.Hardy \cite{Hardy} In the function below, $\Gamma$ is the gamma function,
-where $\Gamma(n) = (n-1)!$ 
+G.H.Hardy \cite{Hardy} In the function below, \(\Gamma\) is the gamma function,
+where \(\Gamma(n) = (n-1)!\) 
 
 \begin{equation}
   \zeta(s)=2^s\pi^{s-1}\sin(\frac{\pi s}{2})\Gamma(1-s)\zeta(1-s)
   \end{equation}
 
 Now, in order to prove that for any negative integer the Euler-Riemann zeta
-function will return zero, we should use an argument of $-2n$, where $n$ is a
+function will return zero, we should use an argument of \(-2n\), where \(n\) is a
 non-negative integer. 
 
 \begin{equation}
@@ -447,14 +448,14 @@ non-negative integer.
   \end{equation}
 
 Subsequently, we can ignore all variables in the equation above, except
-$\sin(-\pi n)$. As sine function is an even function, so then:
+\(\sin(-\pi n)\). As sine function is an even function, so then:
 
 \begin{equation}
   sin(-\pi n)=-sin(\pi n)
   \end{equation}
 
 Referring to the simplest trigonometric rules, we know that sine function with
-an angle, which is a multiple of $\pi$ will always return a zero. Now proceeding
+an angle, which is a multiple of \(\pi\) will always return a zero. Now proceeding
 next we can conclude that: 
 
 \begin{equation*}
@@ -477,12 +478,13 @@ divergent series:
 In addition, we can plot the Euler-Riemann zeta function and prove the zero
 values for all even negative integers geometrically. I will use Wolfram Alpha
 Open Code to plot the Euler-Riemann zeta function and MATLAB to find the
-Euler-Riemann zeta function's zeros. Figure \ref{fig:zeros} shows this graph. 
+Euler-Riemann zeta function's zeros. Figure \ref{fig:orgdb7b206} shows this graph. 
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./zeros.png}
-\caption{\label{fig:zeros}Graph of Euler-Riemann zeta function using Wolfram|Alpha Open Code and built-in math functions.}
+\caption{\label{fig:orgdb7b206}
+Graph of Euler-Riemann zeta function using Wolfram|Alpha Open Code and built-in math functions.}
 \end{figure}
 
 
@@ -490,16 +492,17 @@ In the graph above we can see how the Euler-Riemann zeta function intersects
 x-axis on negative even integers. However, each time the absolute value of an
 argument increases, this feature of Euler-Riemann zeta function will be
 discussed next. Also, we can ensure the values of Euler- Riemann zeta function
-by using MATLAB as shown in Figure \ref{fig:zerosv}. 
+by using MATLAB as shown in Figure \ref{fig:org87db691}. 
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./zerosv.png}
-\caption{\label{fig:zerosv}Euler-Riemann zeta function values for negative even integers, calculated in MATLAB.}
+\caption{\label{fig:org87db691}
+Euler-Riemann zeta function values for negative even integers, calculated in MATLAB.}
 \end{figure}
 
 \subsection{Negative Odd Arguments}
-\label{sec-5-3}
+\label{sec:orge5f35ef}
 
 Secondly, as I discussed the “trivial zeros" for Euler-Riemann and as we have
 proved the product form for Euler-Riemann function, now we can find the values
@@ -520,10 +523,10 @@ formula for negative integer arguments:
   \zeta(1-n)=-\frac{B_n}{n} \text{, $n\in N$}
   \end{equation}
 
-$B_n$ is the $n^{th}$ Bernoulli number. Bernoulli numbers are a series of
+\(B_n\) is the \(n^{th}\) Bernoulli number. Bernoulli numbers are a series of
 rational numbers, which are mainly used in number theoury. The values for nth
 value of Bernoulli numbers can defined in the following equation \cite{BernSeq},
-where for every odd $n$, $B_n=0$:
+where for every odd \(n\), \(B_n=0\):
 
 \begin{equation*}
   B_n=\frac{\sum_{k=1}^{n} \sum_{j=1}^{k} \frac{(-1)^j (j^n \binom{1+n}{-j+k}) }{\binom{n}{k}} }{1+n}
@@ -531,23 +534,24 @@ where for every odd $n$, $B_n=0$:
 
 The table below shows the values for the first 10 even Bernoulli numbers'
 arguments. These values have been calculated by using Wolfram|Alpha Open Code
-service. Table \ref{tab:bernoulli} will show first 10 non-zero elements' values
+service. Table \ref{tab:org8dc6ce7} will show first 10 non-zero elements' values
 of Bernoulli numbers. 
 
-\begin{table}[htb]
-\caption{\label{tab:bernoulli}First 10 Non-Zero Elements of Bernoulli Numbers.}
+\begin{table}[htbp]
+\caption{\label{tab:org8dc6ce7}
+First 10 Non-Zero Elements of Bernoulli Numbers.}
 \centering
 \begin{tabular}{lrrrrrrrrrr}
 \emph{n} & 0 & 1 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16\\
 \hline
-$B_N$ & 1 & $-\frac{1}{2}$ & $\frac{1}{6}$ & $-\frac{1}{30}$ & $\frac{1}{42}$ & $-\frac{1}{30}$ & $\frac{5}{66}$ & $-\frac{691}{2730}$ & $\frac{7}{6}$ & $-\frac{3617}{510}$\\
+\(B_N\) & 1 & \(-\frac{1}{2}\) & \(\frac{1}{6}\) & \(-\frac{1}{30}\) & \(\frac{1}{42}\) & \(-\frac{1}{30}\) & \(\frac{5}{66}\) & \(-\frac{691}{2730}\) & \(\frac{7}{6}\) & \(-\frac{3617}{510}\)\\
 \end{tabular}
 \end{table}
 
 
 Subsequently, we can now find finite values for Euler-Riemann zeta function with
 negative odd integer arguments. Referring to the previous chapter with the
-series $1+2+3+4+5+\cdots$, now we can present the following series in the form of
+series \(1+2+3+4+5+\cdots\), now we can present the following series in the form of
 Euler-Riemann zeta function with Bernoulli numbers and find a convergent value
 for the series. 
 
@@ -570,7 +574,7 @@ converges. As an example, I would like to test out powers 3, 5 and 7:
 \end{align*}
 
 \section{Conclusion}
-\label{sec-6}
+\label{sec:orgb7d1654}
 
 In the conclusion, throughout this exploration, we have explored the methods of
 finding the limit for divergent series. We should know that these limits are
@@ -581,10 +585,10 @@ Euler-Riemann zeta function. People tend to think of these results as
 "mathematical tricks" and theories to play around, however, these results are
 actively used in physics, as in physics we can not have an infinity or
 indefinite results, results should be finite, precise and exact. For example,
-the limit of $\zeta(-1)$ is used the "String Theory" by Joseph Polchinski
+the limit of \(\zeta(-1)\) is used the "String Theory" by Joseph Polchinski
 \cite{String} in order to compute energy levels of a single string. Also, the
-series $1+2+3+4+\cdots=-1/12$ has been mentioned in the media by Numberphile in
-video – "ASTOUNDING: 1+2+3+4+5+$\cdots{}$= -1/12" \cite{Numberphile}. Sure, at the end
+series \(1+2+3+4+\cdots=-1/12\) has been mentioned in the media by Numberphile in
+video – "ASTOUNDING: 1+2+3+4+5+\(\cdots{}\)= -1/12" \cite{Numberphile}. Sure, at the end
 we came up with a rather extraordinary result, which makes Mathematics as a
 science beautiful and encouraring for further researches and explorations.\\
 
@@ -600,5 +604,4 @@ future challenges may seem.
 
 \bibliography{cods}
 \bibliographystyle{ieeetr}
-% Emacs 25.3.1 (Org mode 8.2.10)
 \end{document}
