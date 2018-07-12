@@ -17,7 +17,7 @@
 them any demonstration whatsoever."cite:Abel -- N.H. Abel. 1826
 #+END_CENTER
 
-#+BEGIN_ABSTRACT
+\begin{abstract}
 Mathematics is the science of skilful operations, which are dealing with the
 logic of shape, quantity and rearrangement. Mathematics is using its core
 principles and rules to solve problems and get a reasonable answer. In my
@@ -27,7 +27,7 @@ axioms. This exploration is about finding finite values, limits for famous
 divergent series and later analytically extending Euler-Riemann's zeta function
 to find a limit for any divergent series that can be formed by Euler- Riemann's
 zeta function.
-#+END_ABSTRACT
+\end{abstract}
 
 * Introduction
 <<sec:intro>>
@@ -52,7 +52,7 @@ convergent series. When I finally understood why it works, I found a new topic,
 that struck my mind – "Divergent series" and not the series in general, but how
 the most famous mathematicians: Leonhard Euler, Bernhard Riemann and Srinivasa
 Ramanujan proved that these series are in nature convergent too. Now it all made
-a perfect sense.\\  
+a perfect sense.  
 
 In this exploration I will explore the most famous and
 well-known divergent series, proving with multiple ways that they have a finite
@@ -76,7 +76,7 @@ that it should not affect the series value. Let me show you:
 
 \begin{align*}
 &\text{Parenthesis before even elements: } 1-(1-1)-(1-1)-(1-1)\cdots&=1\\
-&\text{Parenthesis before odd elements: } (1-1)+(1-1)+(1-1)+(1\cdots&=1\\
+&\text{Parenthesis before odd elements: } (1-1)+(1-1)+(1-1)+(1\cdots&=1
 \end{align*}
 
 Grandi explained this phenomenon by saying that – "Mettendo in modo diverso le
@@ -151,7 +151,7 @@ on his infinite series that we explored above, famous mathematician Christian
 Wolff doubted the logic of Grandi's series and because of that, he wrote a
 letter to Gottfield Wilhelm Leibniz. After receiving a reply cite:Wolff from
 Leibniz, Wolff was so pleased with the solution that he wanted to extend the
-series to $1-2+3-4+5-6+\cdots$ \\
+series to $1-2+3-4+5-6+\cdots$ 
 
 This series can be also represented like
 
@@ -168,7 +168,7 @@ progression will look like this:
 
 By analytical continuation and mathematical rules, we can find the limit of this
 series. The simplest solution follows the rule of infinite geometric series and
-derivation.\\ 
+derivation. 
 
 If we have a series
 
@@ -186,7 +186,7 @@ operations:
   1+x+x^2+x^3+x^4+x^5+x^6\cdots&=1+x(1+x+x^2+x^3+x^4+x^5+\cdots)\\
   s&=1+xs\\
   s-xs&=1\\
-  s(1-x)&=1\\
+  s(1-x)&=1
 \end{align*}
 
 \begin{equation}
@@ -240,11 +240,11 @@ Euler-Riemann zeta function:
 
 I will talk about Euler-Riemann zeta function more in the next part. Back to our
 series. Interestingly enough, the finite value of this series is negative value
-of one over twelve or mathematically speaking, $-1/12$.\\
+of one over twelve or mathematically speaking, $-1/12$.
 
 In this part, one solution with rearrangements and logic will be used, as the
 other one will be explored in the next chapter- "Euler-Riemann Zeta
-Function".\\ 
+Function". 
 
 The first solution involves the series itself and the Wolff's series. So to
 start solving it, let us denote the series $1+2+3+4+5+\cdots$ as $s_1$ and the
@@ -263,7 +263,7 @@ $s_2$ with the value from \ref{Wolff}
 \begin{align*}
   s_1-s_2&=4s_1\\
   -3s_1&=s_2\\
-  s_1&=-\frac{1}{12}\\
+  s_1&=-\frac{1}{12}
   \end{align*}
 
 * Euler-Riemann Zeta Function
@@ -284,7 +284,7 @@ It is called Euler-Riemann because Euler was the first mathematician who made a
 notable contribution to the function, but Euler was making his works on the
 Euler-Riemann zeta function using real values as ss, insteas of complex. Almost
 after a decade famous mathematician Bernhard Riemann has published his works
-about Euler-Riemann zeta function by using complex number.\\
+about Euler-Riemann zeta function by using complex number.
 
 There are many solutions to this series that can be achieved by different
 approaches and formulas. I will explore some solutions to it and then I will try
@@ -293,7 +293,7 @@ that, we can prove that almost any divergent series formed by Euler-Riemann zeta
 converges and has a finite value. One of the "Millenium Prize Problems" is
 called "Riemann Hypothesis", which says that the Euler-Riemann zeta function
 returns zeros only at the negative even integers and complex numbers with real
-part $1/2$.\\  
+part $1/2$.  
 
 This math exploration is called "Convergence of Divergent Series" and we are not
 going to explore Euler-Riemann zeta function, where $s$, Euler-Riemann zeta
@@ -301,7 +301,7 @@ function's argument is a complex number. In this exploration I will research how
 to find finite values and trivial zeros for divergent series, which are
 particular cases of the Euler-Riemann zeta function, thus proving that almost
 all divergent series formed by Euler-Riemann zeta function are quite
-convergent.\\ 
+convergent. 
 
 In the last part of this exploration, I will show my way of presenting the
 Euler-Riemann zeta function in the form of a product, how to find convergent
@@ -320,7 +320,7 @@ form of a product, so:
 When I introduced my exploration topic to my math teacher, he struck me with a
 fact that the sum can be presented in the form of a product. So I have been
 trying to experiment with the Euler- Riemann zeta function in different ways and
-saw one easy way of transforming it.\\ 
+saw one easy way of transforming it. 
 
 We can divide every element of the Euler-Riemann zeta function by $2^s$, so:
 
@@ -377,10 +377,10 @@ After some rearranging, we can see how the Euler-Riemann zeta function can be
 presented as sum and product. With knowledge of that, we can go further and find
 a value for Euler-Riemann zeta function with every negative integer, thus
 finding a finite value for any divergent series. We will need this identity to
-find values for Euler-Riemann zeta function with negative odd integers.\\ 
+find values for Euler-Riemann zeta function with negative odd integers. 
 
 From now on I will be using Wolfram Alpha and MATLAB to plot Euler-Riemann zeta
-function and find values for arguments.\\
+function and find values for arguments.
 
 ** Trivial Zeros
 
@@ -537,7 +537,7 @@ cite:String in order to compute energy levels of a single string. Also, the
 series $1+2+3+4+\cdots=-1/12$ has been mentioned in the media by Numberphile in
 video – "ASTOUNDING: 1+2+3+4+5+\cdots= -1/12" cite:Numberphile. Sure, at the end
 we came up with a rather extraordinary result, which makes Mathematics as a
-science beautiful and encouraring for further researches and explorations.\\  
+science beautiful and encouraring for further researches and explorations.  
 
 I would like to end this exploration with
 an idea that relatively to its full potential, Mathematics is quite young
