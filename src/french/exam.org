@@ -1,0 +1,99 @@
+#+AUTHOR: Sagindyk Urazayev
+#+TITLE: French Examination tenses
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://gongzhitaao.org/orgcss/org.css"/>
+\newpage
+* Passé
+** Passé Composé
+
+*** Avoir
+
+avoir + verbe(é) (manger-mangé, parler-parlé, finir-fini)
+
+| j'    | ai    |
+| tu    | as    |
+| il    | a     |
+| elle  | a     |
+| nous  | avons |
+| vous  | avez  |
+| ils   | ont   |
+| elles | ont   |
+
+**** Exceptions
+
+Avoir - eu
+
+**** Other verbs
+
+| ouvrir | ouvert |
+| offrir | offert |
+
+*** Être
+
+| je    | suis   |
+| tu    | es     |
+| il    | est    |
+| elle  | est    |
+| nous  | sommes |
+| vous  | etes   |
+| ils   | sont   |
+| elles | sont   |
+
+**** Exceptions
+
+| aller     | allé     |
+| venir     | venu     |
+| partir    | parti    |
+| arriver   | arrivé   |
+| monter    | monté    |
+| entrer    | entré    |
+| rester    | resté    |
+| sortir    | sorti    |
+| descendre | descendu |
+| tomber    | tombé    |
+| mourir    | mort     |
+| naitre    | né       |
+| passer    | passé    |
+| tourner   | tourné   |
+
+**** Warnings!
+
+| partir | nous part *ons*   |
+| finir  | nous fini *ssons* |
+
+** Passé récent
+
+venir (au present) + de + infinitif
+
+* Present
+
+** Present progressif
+
+être (au present) + en train de + infinitif
+
+* Futur
+
+** Futur simple
+
+infinif + ai
+
+*** Exceptions
+
+| aller    | ir     |
+| venir    | viendr |
+| avoir    | aur    |
+| etre     | ser    |
+| voiloir  | voudr  |
+| pouvoir  | pourr  |
+| faire    | fer    |
+| courir   | courr  |
+| mourir   | mourr  |
+| devoir   | devr   |
+| recevoir | recevr |
+| voir     | verr   |
+| envoyer  | enverr |
+| falloir  | faudr  |
+| pleuvoir | pleuvr |
+
+** Futur Proche
+
+aller + infinitif
