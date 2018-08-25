@@ -1,6 +1,6 @@
-% Created 2018-07-10 Tue 23:29
+% Created 2018-08-23 Thu 22:02
 % Intended LaTeX compiler: pdflatex
-\documentclass[a4paper]{article}
+\documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -17,10 +17,10 @@
 \usepackage{minted}
 \author{Sagindyk Urazayev}
 \date{\textit{<2018-05-15 Tue>}}
-\title{Convergence of Divergent Series}
+\title{Approximation of the limit of Divergent Series}
 \hypersetup{
  pdfauthor={Sagindyk Urazayev},
- pdftitle={Convergence of Divergent Series},
+ pdftitle={Approximation of the limit of Divergent Series},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 26.1 (Org mode 9.1.9)}, 
@@ -52,8 +52,8 @@ zeta function.
 \end{abstract}
 
 \section{Introduction}
-\label{sec:orgbbe345e}
-\label{org178d42d}
+\label{sec:orgdb565cb}
+\label{org5ff4313}
 
 I tend to think that in order to create innovative theories, mathematics as a
 whole should be pushed to its boundaries and limits, new axioms should be
@@ -83,8 +83,8 @@ value that they are converging too and at the end, I will show how it is
 possible to find limit almost for any divergent series.
 
 \section{Grandi's Series}
-\label{sec:org718a73a}
-\label{org734cb2a}
+\label{sec:orgccccc17}
+\label{orgd6128cd}
 
 This is probably one of the famous and trickiest-at-the-beginning divergent series. It looks like
 this: 
@@ -115,8 +115,8 @@ thought that the true limit was \(1/2\). He proved it through the geometric
 reasoning of the "Witch of Agnesi". We will prove it arithmetically.
 
 \subsection{First Solution}
-\label{sec:org0995f03}
-\label{org4ace6df}
+\label{sec:org93090d4}
+\label{orgdeb8e3d}
 
 This is pretty easy and convenient solution for rearranging and ordering. Let us
 denote Grandi’s series by \emph{S}, so \(S=1-1+1-1+\cdots\). Further, we will
@@ -131,8 +131,8 @@ subtract \emph{S} from 1, and then we will get:
 \end{align*}
 
 \subsection{Second Solution}
-\label{sec:org9d93cf2}
-\label{org83f25e9}
+\label{sec:org472868c}
+\label{org859dc17}
 
 We can formulate the second solution by using the infinite formula for
 converging geometric series - \(\frac{a}{1-r}\), where \(a\) is the first element of
@@ -149,8 +149,8 @@ This proves how the series converges to \(1/2\). This is the solution that I
 thought about, when I imagined the Grandi's series as a geometric series.
 
 \subsection{Third Solution}
-\label{sec:org0b7432b}
-\label{org1eb1a73}
+\label{sec:org6ff619a}
+\label{org7cd7288}
 
 Third solution can by achieved by using partial sums. So that the series's sum
 will be: 
@@ -180,7 +180,7 @@ amount of elements summed up. If the amount of indexes tends to infinity then
 converge to \(1/2\). 
 
 \section{Wolff's series (\(1-2+3-4+5-6+\cdots\))}
-\label{sec:org8d323be}
+\label{sec:org3361655}
 
 This series is quite fascinating too. When Guido Grandi has published his work
 on his infinite series that we explored above, famous mathematician Christian
@@ -256,7 +256,7 @@ absolute value of the common ratio is less than one, but in our case, it is
 applicable too. 
 
 \section{\(1+2+3+4+5+\cdots\)}
-\label{sec:orgb3f31a0}
+\label{sec:org7a35a23}
 
 It is safe to say that this is a fascinating series with a fascinating
 result. \(1+2+3+\cdots\) is a particular case of Euler-Riemann zeta function, where
@@ -304,7 +304,7 @@ Now we can rewrite the equation by substituting \(1+2+3+4+5+\cdots\) as \(s_1\) 
   \end{align*}
 
 \section{Euler-Riemann Zeta Function}
-\label{sec:orgecf9cd9}
+\label{sec:org77469e6}
 
 I would like to talk more about Euler-Riemann zeta function. Euler-Riemann zeta
 function is a beautiful function in the world of complex numbers and later
@@ -347,7 +347,7 @@ values for any zeta-function-formed divergent series and the connection of it
 with Bernoulli numbers. 
 
 \subsection{Product notation}
-\label{sec:orgf34b8df}
+\label{sec:orgc0b727b}
 
 Firstly, we should know how to present the Euler-Riemann zeta function in the
 form of a product, so:
@@ -422,7 +422,7 @@ From now on I will be using Wolfram Alpha and MATLAB to plot Euler-Riemann zeta
 function and find values for arguments.
 
 \subsection{Trivial Zeros}
-\label{sec:orgf8d0d02}
+\label{sec:org220a68c}
 
 Firstly, we will find "trivial zeros" for Euler-Riemann zeta function. "Trivial
 zeros" are all zeros, which are a result of function \(\zeta(-2n)\), where \(n\) is
@@ -478,12 +478,12 @@ divergent series:
 In addition, we can plot the Euler-Riemann zeta function and prove the zero
 values for all even negative integers geometrically. I will use Wolfram Alpha
 Open Code to plot the Euler-Riemann zeta function and MATLAB to find the
-Euler-Riemann zeta function's zeros. Figure \ref{fig:org7519c02} shows this graph. 
+Euler-Riemann zeta function's zeros. Figure \ref{fig:org07da5df} shows this graph. 
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./zeros.png}
-\caption{\label{fig:org7519c02}
+\caption{\label{fig:org07da5df}
 Graph of Euler-Riemann zeta function using Wolfram|Alpha Open Code and built-in math functions.}
 \end{figure}
 
@@ -492,17 +492,17 @@ In the graph above we can see how the Euler-Riemann zeta function intersects
 x-axis on negative even integers. However, each time the absolute value of an
 argument increases, this feature of Euler-Riemann zeta function will be
 discussed next. Also, we can ensure the values of Euler- Riemann zeta function
-by using MATLAB as shown in Figure \ref{fig:org1dc130c}. 
+by using MATLAB as shown in Figure \ref{fig:org0ed39ad}. 
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./zerosv.png}
-\caption{\label{fig:org1dc130c}
+\caption{\label{fig:org0ed39ad}
 Euler-Riemann zeta function values for negative even integers, calculated in MATLAB.}
 \end{figure}
 
 \subsection{Negative Odd Arguments}
-\label{sec:orga6e9ac2}
+\label{sec:org4aefaf5}
 
 Secondly, as I discussed the “trivial zeros" for Euler-Riemann and as we have
 proved the product form for Euler-Riemann function, now we can find the values
@@ -534,11 +534,11 @@ where for every odd \(n\), \(B_n=0\):
 
 The table below shows the values for the first 10 even Bernoulli numbers'
 arguments. These values have been calculated by using Wolfram|Alpha Open Code
-service. Table \ref{tab:org0d68c65} will show first 10 non-zero elements' values
+service. Table \ref{tab:orge351542} will show first 10 non-zero elements' values
 of Bernoulli numbers. 
 
 \begin{table}[htbp]
-\caption{\label{tab:org0d68c65}
+\caption{\label{tab:orge351542}
 First 10 Non-Zero Elements of Bernoulli Numbers.}
 \centering
 \begin{tabular}{lrrrrrrrrrr}
@@ -574,7 +574,7 @@ converges. As an example, I would like to test out powers 3, 5 and 7:
 \end{align*}
 
 \section{Conclusion}
-\label{sec:org9816d69}
+\label{sec:org3301a14}
 
 In the conclusion, throughout this exploration, we have explored the methods of
 finding the limit for divergent series. We should know that these limits are

@@ -1,10 +1,8 @@
-
-#+TITLE:Convergence of Divergent Series
+#+TITLE:Approximation of the limit of Divergent Series
 #+AUTHOR: Sagindyk Urazayev
 #+DATE: <2018-05-15 Tue>
 #+OPTIONS: texht:t
 #+LATEX_CLASS: article
-#+LATEX_CLASS_OPTIONS: [a4paper]
 #+LATEX_HEADER:
 #+LATEX_HEADER_EXTRA:
  
